@@ -1,0 +1,9 @@
+<html lang="ko">    <head>        <title>Example</title>        <meta charset="utf-8">        <script language="JavaScript" charset="utf-8">
+            function isOdd(num)            {                if ((num % 2) == 1)                {                    document.write("<p>")                    document.write(num)                    document.write(" is odd.</p>")                }                else                {                    document.write("<p>")                    document.write(num)                    document.write(" is NOT odd.</p>")                }            }
+            var a = 10;            var b = "20";            var c = "string";            var d = 2;            var e = a - b;
+            var f = true;            var g = false;
+            isOdd(a);
+            function fn_1()             {                alert("1번 함수 테스트 중!!");            }
+            function fn_2()             {                alert(" 2번 함수 테스트 중!!");            }
+        </script>    </head>    <body>            <p><input type=button  onClick="fn_1()" value="1번 함수 테스트">            <p><a href="#" onmouseOver="fn_2()">2번 함수 테스트</a>
+    </body></html>
