@@ -7,19 +7,12 @@
 
     <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nanum+Myeongjo" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:500,700" rel="stylesheet">
 
-    <script src="prefixfree.min.js"></script>
-    <script language="JavaScript">
-    </script>
-
-    <title>CYAN4STUDIO</title>
+    <title>CYAN4S STUDIO</title>
 
     <style>
-        * {
-            font-family: 'Nanum Gothic', sans-serif;
-        }
+        * {}
 
         a {
             text-decoration: none;
@@ -37,28 +30,65 @@
             color: darkcyan;
         }
 
+        .seven {
+            font-family: 'Montserrat', sans-serif;
+            text-align: left;
+            font-weight: 700
+        }
+
+        .five {
+            font-family: 'Montserrat', sans-serif;
+            text-align: left;
+            font-weight: 500
+        }
+
+        body {
+            margin: 0%;
+        }
+
         header {
-            background: #ccffff;
+            /* padding: 1em; */
+            background: #5DDBD3;
+            padding: 10px;
+
+            color: white;
+            font-size: 1.5em;
+            position: fixed;
+            width: 100%;
         }
 
         section {
-            background: #fafafa;
+            /* text-align: center;
+            align-content: center; */
         }
 
         footer {
             background: #757575;
             color: white;
         }
+
+        .titlepart {
+            background: #5DDBD3;
+            margin: 0;
+        }
+
+        .mainpart {
+            background: #FFFFFF;
+            padding: 1%
+        }
     </style>
 </head>
 
 <body>
     <header>
-        <h1 style="font-family: 'Montserrat', sans-serif; text-align: center;">ROYAL AZALEA in May</h1>
-        <h2 style="font-family: 'Titillium Web', sans-serif; text-align: center; color: darkcyan;">CYAN4STUDIO</h2>
+        <span class="seven">CYAN4S STUDIO </span><span class="five">GitHub Pages</span>
     </header>
 
-    <section style="text-align: center; align-content: center;">
+    <section class="titlepart">
+        <img src="image/title.svg" alt="title" width="100%">
+    </section>
+    
+    <section class="mainpart">
         <p>환영합니다.
             <br>이 곳은 CYAN4S의 개인적인 웹 연습공간입니다.
             <br>자유롭게 둘러보세요.
@@ -71,7 +101,8 @@
         </figure>
         <hr>
     </section>
-    <section>
+
+    <section class="mainpart">
 
         <h3>특수 기호 출력 테스트</h3>
         <p> &amp; &nbsp; &lt; &gt; &quot; &#124; &#40; &#41; &#44; &#45; </p>
@@ -160,7 +191,7 @@
         <hr>
 
         <h3>벡터 파일 불러오기 실험</h3>
-        <img src="image/cm.svg" alt="CYAN4S 로고(브라우저가 svg를 지원해야 합니다.)" width="400">
+        <img src="image/cm.svg" alt="CYAN4S 로고(브라우저가 svg를 지원해야 합니다.)" width="100">
         <hr>
 
         <h3>링크 실험</h3>
