@@ -1,91 +1,76 @@
-<!doctype html>
-<html lang="ko">
+<!DOCTYPE html>
+<html>
 
 <head>
-    <meta charset="utf-8">
-    <meta name="description" content="테스트 서버입니다.">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:500,700" rel="stylesheet">
-
-    <title>CYAN4S STUDIO</title>
-
-    <style>
-        .seven {
-            font-family: 'Montserrat', sans-serif;
-            text-align: left;
-            font-weight: 700;
-        }
-
-        .five {
-            font-family: 'Montserrat', sans-serif;
-            text-align: left;
-            font-weight: 500;
-        }
-
-        body {
-            margin: 0%;
-        }
-
-        header {
-            background: #5DDBD3;
-            padding: 10px;
-            color: white;
-            font-size: 1.5em;
-            position: fixed;
-            width: 100%;
-        }
-
-        footer {
-            background: #757575;
-            color: white;
-            margin: 0%;
-        }
-
-        .titlepart {
-            background: #5DDBD3;
-            margin: 0%;
-        }
-
-        .mainpart {
-            background: #FFFFFF;
-            padding: 1%
-        }
-
-        h1 {
-            font-family: 'Montserrat', sans-serif;
-            text-align: left;
-            font-weight: 700;
-            color: #5DDBD3;
-            size: 2em;
-        }
-
-        a {
-            font-family: 'Montserrat', sans-serif;
-            text-align: left;
-            font-weight: 500;
-            color: #757575;
-            size: 1.2em;
-            text-decoration: underline;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+    <title>CYAN4S Studio</title>
+    <link rel="stylesheet" href="c4sstyle.css">
+    <script src="c4sscript.js"></script>
 </head>
 
 <body>
-    <header>
-        <span class="seven">CYAN4S STUDIO </span><span class="five">GitHub Pages</span>
-    </header>
+    <nav id="nav">
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="aboutus.html">ABOUT US</a></li>
+            <li><a href="works.html">WORKS</a></li>
+            <li><a href="hobbies.html">HOBBIES</a></li>
+            <li><a href="links.html">LINKS</a></li>
+        </ul>
+    </nav>
 
-    <section class="titlepart">
-        <img src="image/title.svg" alt="title" width="100%">
-    </section>
+    <div class="scene title">
+        <div class="titleh">CYAN4S<br>creates<br>what you<br>desire.</div>
+        <div class="titles" id="titles">SCROLL DOWN FOR MORE INFORMATION.</div>
+    </div>
 
-    <section class="mainpart">
-        <h1>LINK</h1>
-        <a href="https://blog.naver.com/sih5214p">CYAN4S STUDIO naverblog</a>
-        <br><br>
-        <a href="https://connect.unity.com/u/5ab8bf8c0909150019143ac6">CYAN4S STUDIO unity Connect</a>
-        <br><br>
-        <a href="https://github.com/CYAN4S">CYAN4S GitHub</a>
-    </section>
+    <nav class="scene aboutus">
+        <div class="childtitle">ABOUT US</div>
+    </nav>
+
+    <div id="aboutus" class="section">
+        <h1>ABOUT US</h1>
+        <h2>CYAN4S</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem minus officia explicabo sint impedit.
+            Excepturi nam similique optio sint ex. Ipsa, vitae culpa quam adipisci nesciunt minus aliquid temporibus
+            tempore.</p>
+        <a href="aboutus.html" class="seemore">SEE MORE : ABOUT US</a>
+    </div>
+
+    <nav class="scene works">
+        <div class="childtitle">WORKS</div>
+    </nav>
+
+    <div id="works" class="section">
+        <h1>WORKS</h1>
+        <h2>PORTFOLIO</h2>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi delectus mollitia, placeat ducimus quis
+            quibusdam repellendus inventore dolorem quas et quo veritatis aspernatur molestias dolore ratione blanditiis
+            consequuntur id ab!</p>
+        <a href="works.html" class="seemore">SEE MORE : WORKS</a>
+    </div>
+
+    <nav class="scene hobbies">
+        <div class="childtitle">HOBBIES</div>
+    </nav>
+
+    <div id="hobbies" class="section">
+        <h1>HOOBIES</h1>
+        <h2>GAME & ART & MUSIC</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et error tempore, dolor explicabo nisi aliquam
+            voluptates dolore pariatur reiciendis officiis voluptatibus dolorum ex, harum, eius facere quaerat quia
+            excepturi aspernatur!</p>
+        <a href="HOBBIES.html" class="seemore">SEE MORE : HOBBIES</a>
+    </div>
+
+    <div class="scene links">
+        <div class="childtitle" style="top: 30%">LINKS</div>
+    </div>
+
 </body>
 
 </html>
