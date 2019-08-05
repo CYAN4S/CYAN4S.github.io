@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+}
+
+#main {
+    height: 100vh;
+    background: url("contents/images/mainback.svg") no-repeat center fixed;
+    background-size: cover;
+}
+
+.sector {
+    height: 100vh;
+    color: #5ddbd3;
+
+    padding: 0 0 0 4vh;
+}
+
+.sector h1 {
+    font-size: 75px; 
+    color: #5ddbd3;
+    padding: 8vh 0 0 0;
+}
+
+.sector h2 {
+    padding: 5vh 0 0 0; 
+    font-size: 30px;
+    color: gray;
+}
+
+.sector p {
+    font-family: 'Noto Sans KR', sans-serif;
+    padding: 3vh 0 0 0; 
+    font-size: 20px;
+    color: black;
+}
+
+.sector li {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.sep {
+    height: 50vh;
+    
+}
+
+.sep h1 {
+    color: rgba(255, 255, 255, 0.5);
+    top: 40%;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    font-size: 8vh;
+}
+
+#sep0 {background: url("contents/images/p1.png") no-repeat center fixed; background-size: cover;}
+#sep1 {background: url("contents/images/p2.png") no-repeat center fixed; background-size: cover;}
+#sep2 {background: url("contents/images/p4.png") no-repeat center fixed; background-size: cover;}
+
+.button {
+    background-color: #FF9EAD;
+    color: white;
+    font-weight: 700;
+    font-size: 30px;
+    padding: 10px 20px;
+    display: inline-block;
+    margin: 5vh 10px 0 0;
+}
+
+#contact {
+    height: 100vh;
+    background: url("contents/images/mainback.svg") no-repeat center fixed;
+    background-size: cover;
+}
