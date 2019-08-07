@@ -8,13 +8,25 @@
     height: 100vh;
     background: url("contents/images/mainback.svg") no-repeat center fixed;
     background-size: cover;
+    position: relative;
 }
 
+#t1, #t2 {
+    font-size: 8vh;
+    padding: 6vh;
+    transform: translate(0%, -50%);
+    position: absolute;
+}
+
+#t1 {top: 40%;}
+#t2 {top: 50%;}
+
 .sector {
-    height: 100vh;
+    min-height: 100vh;
     color: #5ddbd3;
 
     padding: 0 0 0 4vh;
+    overflow: auto;
 }
 
 .sector h1 {
@@ -26,14 +38,14 @@
 .sector h2 {
     padding: 5vh 0 0 0; 
     font-size: 30px;
-    color: gray;
+    color: #00BAAE;
 }
 
 .sector p {
     font-family: 'Noto Sans KR', sans-serif;
     padding: 3vh 0 0 0; 
     font-size: 20px;
-    color: black;
+    color: #41615F;
 }
 
 .sector li {
@@ -42,16 +54,17 @@
 
 .sep {
     height: 50vh;
-    
+    position: relative;
+    overflow: hidden;
 }
 
 .sep h1 {
     color: rgba(255, 255, 255, 0.5);
-    top: 40%;
-    width: 100%;
-    text-align: center;
-    position: relative;
+    position: absolute;
     font-size: 8vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 #sep0 {background: url("contents/images/p1.png") no-repeat center fixed; background-size: cover;}
@@ -65,7 +78,7 @@
     font-size: 30px;
     padding: 10px 20px;
     display: inline-block;
-    margin: 5vh 10px 0 0;
+    margin: 5vh 10px 5vh 0;
 }
 
 #contact {
@@ -73,3 +86,13 @@
     background: url("contents/images/mainback.svg") no-repeat center fixed;
     background-size: cover;
 }
+
+#c1 {
+    color: white;
+    padding: 4vh;
+    font-size: 8vh;
+
+}
+
+
+
