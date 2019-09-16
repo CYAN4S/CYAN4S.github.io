@@ -331,7 +331,7 @@ html {
     background-color: rgba(0,0,0, 0.9);
     color: white;
     overflow-x: hidden;
-    /*display: none;*/
+    display: none;
 }
 
 .overlay a {
