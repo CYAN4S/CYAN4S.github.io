@@ -6,11 +6,14 @@ Development progress of CYAN4S's official website
 -
 
 # 1. 릴리스 노트 Release Note
-**최신 버전: v0.1.0 20190914**
+**최신 버전: v0.1.1 20190916**
 
 ## 1. 메이저 업데이트
 1. 웹사이트 첫 공개
 1. README 첫 공개
+
+## 2. 마이너 업데이트
+1. 네비게이션 버튼 구현
 
 # 2. 로드맵 Roadmap
 
@@ -18,7 +21,6 @@ Development progress of CYAN4S's official website
 웹사이트 전반에 사용되는 요소에 대해 다룹니다.
 
 ### 1. 헤더 Header
-1. 네비게이션 버튼 구현
 1. 드롭다운 내용 수정
     1. 아이콘 추가
 1. 드롭다운 애니메이션 수정
