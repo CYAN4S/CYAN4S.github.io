@@ -1,209 +1,30 @@
-<!DOCTYPE html>
-<html lang="ko">
+<html>
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <title>CYAN4S</title>
-    <link rel="stylesheet" href="/c4sstyle.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css">
-
-    <link rel="apple-touch-icon" sizes="57x57" href="favicons/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="favicons/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="favicons/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="favicons/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="favicons/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="favicons/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="favicons/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="favicons/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="favicons/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="favicons/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
-    <link rel="manifest" href="favicons/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="favicons/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
+    <link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="c4sstyle.css">
+    <title>CYAN4S STUDIO</title>
 </head>
 
 <body>
-    <div class="header grid-container-6">
-        <div class="blank-item-left"></div>
+    <img src="c4slogo.svg" alt="CYAN4S Logo" height="60px" style="position: fixed; top: 50px; left: 50px;">
 
-        <div class="top-left">
-            <a href="index.html">
-                <img src="images/logo.svg" alt="CYAN4S LOGO" width="40px">
-                <span>CYAN4S</span>
-            </a>
-        </div>
 
-        <div class="top-menu hide-in-mobile">
-            <ul class="grid-container-4 nav-ul">
-                <li class="dropdown">
-                    <a href="intro.html"><span>안내</span></a>
-                    <div class="dropdown-content">
-                        <a href="intro.html"><span>소개</span></a>
-                    </div>
-                </li>
-                <li class="dropdown">
-                    <a href=""><span>작업</span></a>
-                    <div class="dropdown-content">
-                        <a href=""><span>(준비 중)</span></a>
-                    </div>
-                </li>
-                <li class="dropdown">
-                    <a href=""><span>게시판</span></a>
-                    <div class="dropdown-content">
-                        <a href="https://twitter.com/cyan4s"><span>트위터</span><span
-                                style="font-size: 14px; font-weight: 400;">바로가기</span></a>
-                    </div>
-                </li>
-                <li class="dropdown">
-                    <a href=""><span>연락</span></a>
-                    <div class="dropdown-content">
-                        <a href="mailto:sih5214p@naver.com">
-                            <span>이메일</span><span style="font-size: 14px; font-weight: 400;">보내기</span>
-                        </a>
-                    </div>
-                </li>
-            </ul>
-        </div>
-
-        <div class="top-right">
-            <a href="javascript:void(0)" onclick="showNav()">
-                <img src="images/menu.svg" alt="MENU" width="40px">
-            </a>
-        </div>
-
-        <div class="blank-item-right top-right-blank hide-in-mobile">
-            <div>
-                <a href="mailto:sih5214p@naver.com"><img src="images/email.svg" alt="EMAIL" width="40px"></a>
-            </div>
-        </div>
-    </div>
-
-    <div class="title">
-        <div class="title_image grid-container-6">
-            <div class="blank-item-left"></div>
-
-            <div class="item-main">
-                <h1>Keep creating<br>what you want.</h1>
-            </div>
-
-            <div class="blank-item-right"></div>
-        </div>
-    </div>
-
-    <div class="title-sub">
-        <div class="item-sub update">
-            <a href="https://github.com/CYAN4S/CYAN4S.github.io">
-                <h1>업데이트</h1>
-                <p>CYAN4S Website v0.1</p>
-                <span class="item-sub-more">more ></span>
-            </a>
-        </div>
-        <div class="item-sub news">
-            <a href="">
-                <h1>뉴스</h1>
-                <p>CYAN4S의 웹사이트가 새롭게 단장하였습니다.
-                    뉴스 링크는 준비 중입니다.
-                </p>
-                <span class="item-sub-more">more ></span>
-            </a>
-        </div>
-    </div>
-
-    <div class="substance">
-        <div class="grid-container-4 substance-grid">
-            <div class="square-side-content">
-                <h1>작업 링크</h1>
-            </div>
-
-            <a href="https://github.com/CYAN4S" class="square">
-                <img src="logos/github.svg" alt="GitHub">
-                <h1>GitHub</h1>
-                <h2>programming</h2>
-            </a>
-            <a href="https://connect.unity.com/u/cyan4s-lj" class="square">
-                <img src="logos/unity.svg" alt="Unity">
-                <h1>Unity</h1>
-                <h2>game dev</h2>
-            </a>
-            <a href="https://www.pixiv.net/member.php?id=15130363" class="square">
-                <img src="logos/pixiv.svg" alt="Pixiv">
-                <h1>Pixiv</h1>
-                <h2>illustration</h2>
-            </a>
-
-            <a href="https://www.pinterest.co.kr/CYAN4S/" class="square">
-                <img src="logos/pinterest.svg" alt="Pinterest">
-                <h1>Pinterest</h1>
-                <h2>graphic design</h2>
-            </a>
-
-            <a href="https://www.youtube.com/channel/UCTULs32ge4GlFxoguQyd9jg" class="square">
-                <img src="logos/youtube.svg" alt="YouTube">
-                <h1>YouTube</h1>
-                <h2>vlog</h2>
-            </a>
-
-            <a href="https://blog.naver.com/sih5214p" class="square">
-                <img src="logos/naverblog.svg" alt="Naver Blog">
-                <h1>Naver</h1>
-                <h2>blog</h2>
-            </a>
-
-        </div>
-    </div>
-
-    <div class="footer">
-        <p>
-            Copyright 2019. CYAN4S. All rights reserved. <br>
-            이 홈페이지는 아직 완성되지 않았습니다. <br>
-            This page is not completed yet. <br>
-        </p>
-
-    </div>
-
-    <div id="fullnav" class="overlay">
-        <a href="javascript:void(0)" onclick="hideNav()" class="closebtn">&times;</a>
-        <ul class="grid-container-4 overlay-content">
-            <li>
-                <a href="intro.html"><span>안내</span></a>
-                <div>
-                    <a href="intro.html"><span>소개</span></a>
-                </div>
-            </li>
-            <li>
-                <a href=""><span>작업</span></a>
-                <div>
-                    <a href=""><span>(준비 중)</span></a>
-                </div>
-            </li>
-            <li>
-                <a href=""><span>게시판</span></a>
-                <div>
-                    <a href="https://twitter.com/cyan4s"><span>트위터</span><span
-                            style="font-size: 14px; font-weight: 400;">바로가기</span></a>
-                </div>
-            </li>
-            <li>
-                <a href=""><span>연락</span></a>
-                <div>
-                    <a href="mailto:sih5214p@naver.com">
-                        <span>이메일</span><span style="font-size: 14px; font-weight: 400;">보내기</span>
-                    </a>
-                </div>
-            </li>
-        </ul>
-    </div>
+    <section>
+        <h1><b>CYAN4S</b> STUDIO</h1>
+        <h2><b>Creation For Us</b></h2>
+        <p>홈페이지는 공사 중 입니다.<br>
+            Development in progress.</p>
+        <a href="https://twitter.com/cyan4s" class="round-btn"><b>twitter</b></a>
+        <a href="https://github.com/CYAN4S" class="round-btn"><b>github</b></a>
+        <a href="https://www.pixiv.net/member.php?id=15130363" class="round-btn"><b>pixiv</b></a>
+        <a href="https://connect.unity.com/u/cyan4s-lj" class="round-btn"><b>unity hub</b></a>
+        <a href="https://steamcommunity.com/id/cyan4s/" class="round-btn"><b>steam</b></a>
+        <a href="https://my.playstation.com/profile/CYAN4S_artist" class="round-btn"><b>playstation</b></a>
+    </section>
 </body>
-
-<script src="c4sscript.js"></script>
-
 </html>
