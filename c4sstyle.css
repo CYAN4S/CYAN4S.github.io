@@ -12,6 +12,7 @@ section {
 
 body {
     border: 20px solid;
+    height: 100%;
 }
 
 section a {
