@@ -1,9 +1,29 @@
+:root {
+    --m: #25bdbe;
+    --b: #f2f2f2;
+} 
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --b: rgb(0, 56, 93);
+    }
+}
+
 * {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat';
     font-weight: 700;
     margin: 0;
     box-sizing: border-box;
-    color: #2EE6D6;
+    color: var(--m);
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    position: fixed;
+    top: 50px;
+    left: 50px;
+    fill: var(--m);
 }
 
 section {
@@ -13,6 +33,7 @@ section {
 body {
     border: 20px solid;
     height: 100%;
+    background-color: var(--b);
 }
 
 section a {
@@ -26,14 +47,14 @@ section a {
 }
 
 section a:hover {
-    color: white;
-    background-color: #2EE6D6;
+    color: var(--b);
+    background-color: var(--m);
+    border: 2px solid var(--m);
 }
 
 .title-s {
     font-size: 60px;
     padding-bottom: 40px;
-    font-family: 'Montserrat', sans-serif;
     letter-spacing: 5px;
 }
 
