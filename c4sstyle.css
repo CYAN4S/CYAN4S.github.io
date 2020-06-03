@@ -3,6 +3,11 @@
     --b: #ffffff;
 } 
 
+@font-face {
+    font-family: "Metropolis";
+    src: url("./Metropolis-Bold.woff");
+}
+
 /* @media (prefers-color-scheme: dark) {
     :root {
         --b: rgb(0, 56, 93);
@@ -11,7 +16,6 @@
 
 * {
     font-family: 'Metropolis';
-    font-weight: 700;
     margin: 0;
     box-sizing: border-box;
     color: var(--m);
