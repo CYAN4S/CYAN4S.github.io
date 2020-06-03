@@ -5,7 +5,8 @@
 
 @font-face {
     font-family: "Metropolis";
-    src: url("./Metropolis-Bold.woff");
+    font-weight: 700;
+    src: local("Metropolis"), url("./Metropolis-Bold.woff") format('woff');
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -16,6 +17,7 @@
 
 * {
     font-family: 'Metropolis';
+    font-weight: 700;
     margin: 0;
     box-sizing: border-box;
     color: var(--m);
