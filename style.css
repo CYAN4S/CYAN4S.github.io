@@ -17,7 +17,7 @@ header {
 }
 
 section {
-    height: 100%;
+    height: calc(100%);
     display: flex;
     align-items: center;
     padding: 0 5vw;
@@ -29,15 +29,17 @@ section div {
 }
 
 section h1 {
-    font-family: Manrope;
-    font-weight: 500;
+    font-family: 'NanumSquare';
+    font-weight: 800;
     font-size: 60px;
+    padding-bottom: 20px;
+    line-height: 76px;
 }
 
-section h1 strong { font-weight: 700;}
+section h1 strong { font-weight: bolder;}
 
 section h2, p {
-    font-family: Inter, 'Noto Sans KR';
+    font-family: 'NanumSquare';
     font-size: 20px;
 }
 
