@@ -1,5 +1,5 @@
 
-function* doAnimateP0h1() {
+function* animateTitle() {
     let p0 = document.getElementById("p0h1");
     const p0st = "우리, <br>모두를 <br>위한 ";
     let status = 0;
@@ -16,5 +16,5 @@ function* doAnimateP0h1() {
     }
 }
 
-let p0iter = doAnimateP0h1();
-let aniP0h1 = setInterval(() => p0iter.next(), 500);
+let titleGen = animateTitle();
+let titlenum = setInterval(() => titleGen.next(), 500);
