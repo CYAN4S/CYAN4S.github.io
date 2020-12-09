@@ -1,43 +1,70 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <meta name="description" content="CYAN4S's homepage" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/apple-touch-icon.png?v=xQ7qaGwj3G"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicon-32x32.png?v=xQ7qaGwj3G"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicon-16x16.png?v=xQ7qaGwj3G"
+    />
+    <link rel="manifest" href="/site.webmanifest?v=xQ7qaGwj3G" />
+    <link
+      rel="mask-icon"
+      href="/safari-pinned-tab.svg?v=xQ7qaGwj3G"
+      color="#26bfb3"
+    />
+    <link rel="shortcut icon" href="/favicon.ico?v=xQ7qaGwj3G" />
+    <meta name="msapplication-TileColor" content="#26bfb3" />
+    <meta name="theme-color" content="#26bfb3" />
+    <title>CYAN4S</title>
+  </head>
 
-<head>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&amp;text=CYAN4S&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <meta name="theme-color" content="#26BFB3">
-    <title>CYAN4S STUDIO</title>
-</head>
-
-<body>
+  <body>
     <header>
-        <div>
-            <img src="c4s.svg" alt="CYAN4S Logo" width="32px">
-        </div>
-        <div>
-            <span style="font:700 32px Montserrat; color: var(--m);">CYAN4S</span>
-        </div>
+      <div class="flex-container">
+        <img id="logo" src="c4s.svg" alt="CYAN4S Logo" class="flex-item" />
+        <span class="flex-item" id="title">CYAN4S</span>
+      </div>
     </header>
 
-    <section id="p0">
-        <div>
-            <h1 id="p0h1">우리, <br>모두를 <br>위한 </h1>
-            <p>CYAN4S STUDIO에 오신 것을 환영합니다.<br></p>
-        </div>
-    </section>
+    <main>
+      <div class="flex-container">
+        <div id="main-l">create</div>
+        <div id="main-m"><div id="parallelogram"></div></div>
+        <div id="main-r">for us.</div>
+      </div>
+    </main>
 
-    <section id="p1">
-        <div>
-            <h1>바로가기</h1>
-            <a href="https://twitter.com/cyan4s">Twitter</a>
-            <a href="https://github.com/CYAN4S">GitHub</a>
-            <a href="https://cyan4s.github.io/blog/">TECH BLOG</a>
-            <a href="https://www.pixiv.net/member.php?id=15130363">Pixiv</a>
-            <a href="https://steamcommunity.com/id/cyan4s/">Steam</a>
-        </div>
-    </section>
-    <script src="script.js"></script>
-</body>
-
+    <footer>
+      <div class="flex-container">
+        <a href="https://github.com/CYAN4S">GITHUB</a>
+        <a href="https://cyan4s.github.io/blog/">BLOG</a>
+        <a href="https://twitter.com/cyan4s">TWITTER</a>
+        <a href="https://www.behance.net/CYAN4S">BEHANCE</a>
+        <a href="https://www.pixiv.net/users/15130363">PIXIV</a>
+      </div>
+    </footer>
+  </body>
 </html>
