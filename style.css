@@ -64,16 +64,7 @@ footer .flex-container a:hover {
   text-decoration: underline;
 }
 
-@media (max-width: 600px) {
-  footer {
-    height: 200px;
-  }
 
-  footer .flex-container {
-    justify-content: space-evenly;
-    flex-direction: column;
-  }
-}
 
 main {
   height: 100vh;
@@ -92,7 +83,7 @@ main .flex-container {
 main .flex-container * {
   flex: 1;
   font-weight: 700;
-  font-size: 80px;
+  font-size: 72px;
   letter-spacing: -1.2px;
   color: var(--cyan);
 }
@@ -108,10 +99,21 @@ main .flex-container * {
 #parallelogram {
   width: 85%;
   max-width: 480px;
-  height: 120px;
+  height: 90px;
   margin: 0 auto;
   background-color: var(--cyan);
   transform: skewX(-15deg);
+}
+
+@media (max-width: 600px) {
+  footer {
+    height: 200px;
+  }
+
+  footer .flex-container {
+    justify-content: space-evenly;
+    flex-direction: column;
+  }
 }
 
 @media (max-width: 1000px) {
