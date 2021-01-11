@@ -2,6 +2,7 @@
   margin: 0;
   --cyan: #26bfb3;
   font-family: "Montserrat";
+  font-weight: 700;
 }
 
 .flex-container {
@@ -103,6 +104,14 @@ main .flex-container * {
   margin: 0 auto;
   background-color: var(--cyan);
   transform: skewX(-15deg);
+  animation-name: parall;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+}
+
+@keyframes parall {
+  from {width: 0%;}
+  to {width: 85%;}
 }
 
 @media (max-width: 600px) {
