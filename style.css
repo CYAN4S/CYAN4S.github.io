@@ -1,8 +1,8 @@
 * {
   margin: 0;
   --cyan: #26bfb3;
-  font-family: "Montserrat";
-  font-weight: 700;
+  font-family: "Outfit";
+  font-weight: 400;
 }
 
 .flex-container {
@@ -65,8 +65,6 @@ footer .flex-container a:hover {
   text-decoration: underline;
 }
 
-
-
 main {
   height: 100vh;
 }
@@ -83,7 +81,7 @@ main .flex-container {
 
 main .flex-container * {
   flex: 1;
-  font-weight: 700;
+  font-weight: 900;
   font-size: 72px;
   letter-spacing: -1.2px;
   color: var(--cyan);
@@ -110,8 +108,12 @@ main .flex-container * {
 }
 
 @keyframes parall {
-  from {width: 0%;}
-  to {width: 85%;}
+  from {
+    width: 0%;
+  }
+  to {
+    width: 85%;
+  }
 }
 
 @media (max-width: 600px) {
@@ -131,7 +133,9 @@ main .flex-container * {
     justify-content: center;
   }
 
-  #main-l, #main-m, #main-r {
+  #main-l,
+  #main-m,
+  #main-r {
     flex: none;
     text-align: center;
   }
