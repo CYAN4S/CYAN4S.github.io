@@ -2,47 +2,263 @@
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <link rel="shortcut icon" href="/favicon.ico?v=xQ7qaGwj3G" />
-    <meta name="theme-color" content="#26bfb3" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap"
-      rel="stylesheet"
+      rel="preload"
+      href="/public/Mona-Sans.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
     />
-
-    <!-- Google meta tags -->
-    <meta name="description" content="CYAN4S's Home Page - CREATOR FOR US" />
-
-    <title>CYAN4S - CREATOR FOR US</title>
+    <title>CYAN4S - Creator for us</title>
   </head>
-
   <body>
     <header>
-      <div class="flex-container">
-        <img id="logo" src="c4s.svg" alt="CYAN4S Logo" class="flex-item" />
-        <span class="flex-item" id="title">CYAN4S</span>
-      </div>
+      <img src="/public/logo.svg" alt="CYAN4S" width="40px" height="40px" style="color: white;">
     </header>
-
     <main>
-      <div class="flex-container">
-        <div id="main-l">CREATOR</div>
-        <div id="main-m"><div id="parallelogram"></div></div>
-        <div id="main-r">FOR US</div>
-      </div>
+      <section id="title">
+        <h1>CREATOR <br />FOR US</h1>
+        <p>Son Inho / 손인호 / CYAN4S</p>
+        <p>Game Developer / Web Developer</p>
+      </section>
+      <section id="works01">
+        <h6>WORKS 01</h6>
+        <img
+          src="/public/br.png"
+          alt="Bouncy Rumble"
+          width="400px"
+          height="200px"
+        />
+        <hr />
+        <h2>BOUNCY RUMBLE</h2>
+        <h3>공에 바람을 넣고 던지는 TPS 게임</h3>
+        <p>IN ACTIVE DEVELOPMENT</p>
+        <a class="hyper" href="">PLAY PRE-RELEASE</a>
+      </section>
+      <section id="works02">
+        <h6>WORKS 02</h6>
+        <img
+          src="/public/rl.png"
+          alt="RHYACTION LIVE"
+          width="400px"
+          height="200px"
+        />
+        <hr />
+        <h2>RHYACTION LIVE</h2>
+        <h3>오픈소스 Unity 리듬게임</h3>
+        <p>IN ACTIVE DEVELOPMENT</p>
+        <a class="hyper" href="">BROWSE SOURCE CODE</a>
+      </section>
+      <section id="works03">
+        <h6>WORKS 03</h6>
+        <h2>OTHER PROJECTS</h2>
+        <div class="grid">
+          <a href="https://github.com/CYAN4S/book-community">
+            <h3>Bookstamp</h3>
+            <p>웹 기반 도서 커뮤니티 (w/ TEAM CHOCOLATTE)</p>
+            <ul>
+              <li>Web</li>
+              <li>Next.js</li>
+              <li>React</li>
+              <li>Firebase</li>
+              <li>Tensorflow</li>
+            </ul>
+          </a>
+          <a>
+            <h3>AR Experience</h3>
+            <p>AR 시연 및 슈팅 게임</p>
+            <ul>
+              <li>Android</li>
+              <li>Unity</li>
+              <li>C#</li>
+            </ul>
+          </a>
+          <a href="https://github.com/CYAN4S/wordle-clone">
+            <h3>Wordle Clone</h3>
+            <p>Wordle 게임 모작</p>
+            <ul>
+              <li>Web</li>
+              <li>Unity</li>
+              <li>C#</li>
+            </ul>
+          </a>
+          <a href="https://github.com/CYAN4S/three">
+            <h3>Three</h3>
+            <p>3D 아트 시연</p>
+            <ul>
+              <li>Web</li>
+              <li>Three.js</li>
+              <li>TypeScript</li>
+              <li>Vite</li>
+            </ul>
+          </a>
+          <a href="https://github.com/CYAN4S/microplatform">
+            <h3>Microplatform</h3>
+            <p>간단한 2D 플랫폼 게임</p>
+            <ul>
+              <li>Web</li>
+              <li>Unity</li>
+              <li>C#</li>
+            </ul>
+          </a>
+          <a href="https://github.com/CYAN4S/sloydjs">
+            <h3>SloydJS</h3>
+            <p>간단한 2D 플랫폼 게임</p>
+            <ul>
+              <li>Web</li>
+              <li>Unity</li>
+              <li>C#</li>
+            </ul>
+          </a>
+          <a href="https://github.com/CYAN4S/sloydjs">
+            <h3>SloydJS</h3>
+            <p>웹 기반 슬라이드 퍼즐 게임 및 솔버</p>
+            <ul>
+              <li>Web</li>
+              <li>TypeScript</li>
+            </ul>
+          </a>
+          <a href="https://github.com/CYAN4S/hydn">
+            <h3>Hydn</h3>
+            <p>Jekyll 테마</p>
+            <ul>
+              <li>Web</li>
+              <li>Jekyll</li>
+            </ul>
+          </a>
+          <a href="https://github.com/CYAN4S/moview">
+            <h3>Moview</h3>
+            <p>영화 탐색 사이트</p>
+            <ul>
+              <li>Web</li>
+              <li>React</li>
+            </ul>
+          </a>
+          <a href="https://github.com/CYAN4S/opengl-playground">
+            <h3>OpenGL Playground</h3>
+            <p>OpenGL 시연</p>
+            <ul>
+              <li>Windows</li>
+              <li>OpenGL</li>
+              <li>C++</li>
+            </ul>
+          </a>
+          <a href="https://github.com/CYAN4S/Sloyd">
+            <h3>Sloyd</h3>
+            <p>슬라이드 퍼즐 게임 및 솔버</p>
+            <ul>
+              <li>Windows</li>
+              <li>WPF</li>
+              <li>C#</li>
+            </ul>
+          </a>
+          <a href="https://github.com/CYAN4S/Mazel">
+            <h3>Mazel</h3>
+            <p>미로 생성기 & 솔버 & 게임</p>
+            <ul>
+              <li>Windows</li>
+              <li>WPF</li>
+              <li>C#</li>
+            </ul>
+          </a>
+          <a href="https://github.com/CYAN4S/Pn">
+            <h3>Pn</h3>
+            <p>간단한 페인터</p>
+            <ul>
+              <li>Windows</li>
+              <li>WPF</li>
+              <li>C#</li>
+            </ul>
+          </a>
+          <a href="https://github.com/CYAN4S/blog">
+            <h3>CYAN4S BLOG</h3>
+            <p>블로그</p>
+            <ul>
+              <li>Web</li>
+              <li>Jekyll</li>
+            </ul>
+          </a>
+        </div>
+      </section>
+      <section id="about">
+        <h6>ABOUT</h6>
+        <h2>우리 모두를 위한 게임 크리에이터,<br />손인호입니다.</h2>
+        <p>
+          Unity를 활용한 게임 개발이 주력이며, 풀스택 웹앱 개발 또한
+          자신있습니다. 게임 개발에 필요한 각종 리소스를 직접 만들어 하나의
+          게임이 이루어지도록 합치는 방법을 잘 알고 있습니다. 또한, 팀
+          프로젝트에서 협업 방식을 정의하는 업무를 주로 맡아왔습니다.
+        </p>
+      </section>
+      <section id="others">
+        <h6>EDUCATION</h6>
+        <div>
+          <h3>금오공과대학교 — 컴퓨터공학과 학사</h3>
+          <p>2017.03 - 2023.02(졸업 예정)</p>
+        </div>
+        <div>
+          <h3>속초고등학교 — 과학중점</h3>
+          <p>2014.03 - 2017.02</p>
+        </div>
+        <h6>AWARDS</h6>
+        <div>
+          <h3>2022 경북 게임인 해커톤 — 최우수상</h3>
+          <p>
+            <a class="link" href="https://github.com/CYAN4S/bouncy-rumble"
+              >Bouncy Rumble</a
+            >
+          </p>
+        </div>
+        <div>
+          <h3>우수 논문상 — 동상</h3>
+          <p>
+            <a class="link" href="https://github.com/CYAN4S/book-community">
+              Bookstamp
+            </a>
+          </p>
+          <p>
+            <a
+              class="link"
+              href="https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11082600"
+            >
+              관련 논문
+            </a>
+          </p>
+        </div>
+        <h6>SKILLS</h6>
+        <h4>프로그래밍 언어</h4>
+        <ul>
+          <li>주력 — C#, JavaScript/TypeScript</li>
+          <li>다룰 수 있음 — C, C++, Java, Kotlin, Python, SQL</li>
+          <li>배우고 있음 — HLSL/ShaderLab</li>
+        </ul>
+        <h4>사용 도구</h4>
+        <ul>
+          <li>주력 — Unity, .NET, React, Next.js, Firebase, TensorFlow, Node.js</li>
+          <li>다룰 수 있음 — Supabase, SolidJS, Jekyll, Express, Vite, Webpack</li>
+          <li>
+            참고: 개발 환경 — JetBrains Rider, Visual Studio Code, Visual
+            Studio, JetBrains IntellJ IDEA, JetBrains PyCharm, Android Studio
+          </li>
+        </ul>
+        <h4>에술 도구</h4>
+        <ul>
+          <li>UI/UX 및 2D 그래픽 — CSS/SCSS, Affinity Designer, Figma, Krita, SVGator</li>
+          <li>3D 그래픽 — Blender, VRoid Studio</li>
+          <li>오디오 — FL Studio</li>
+        </ul>
+        <h4>영어</h4>
+        <ul>
+          <li>TOEIC 795 — 2000.00.00</li>
+          <li>대학교 모의 TOEIC 805</li>
+          <li>영어로 된 기술 문서를 무리없이 읽을 수 있음</li>
+        </ul>
+        <h6>EXTERNAL LINKS</h6>
+      </section>
+      <footer></footer>
     </main>
-
-    <footer>
-      <div class="flex-container">
-        <a href="https://github.com/CYAN4S">GITHUB</a>
-        <a href="https://blog.cyan4s.com">BLOG</a>
-        <a href="https://twitter.com/cyan4s">TWITTER</a>
-        <a href="https://www.behance.net/CYAN4S">BEHANCE</a>
-        <a href="https://soundcloud.com/cyan4s">SOUNDCLOUD</a>
-      </div>
-    </footer>
   </body>
 </html>

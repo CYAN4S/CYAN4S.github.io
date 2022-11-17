@@ -1,4 +1,0 @@
-This is a Brave Rewards publisher verification file.
-
-Domain: cyan4s.com
-Token: 84332b565d5323c5d9a16e9c3e7e616ae04484b6d57628184589ca988b78d0bd
