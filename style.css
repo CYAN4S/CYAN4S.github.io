@@ -32,6 +32,12 @@ section {
   overflow: auto;
 }
 
+section img {
+  max-width: 100vw;
+  height: auto;
+  object-fit: cover;
+}
+
 section > * {
   margin-left: max(20px, 50% - 640px);
   margin-right: max(20px, 50% - 640px);
