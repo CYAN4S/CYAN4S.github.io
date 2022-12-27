@@ -1,0 +1,33 @@
+---
+import Layout from "./Layout.astro";
+
+const { frontmatter } = Astro.props;
+
+import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
+import Section from "../components/Section.astro";
+
+export interface Props {
+  content: {
+    title: string;
+    description: string;
+    date: string;
+    link?: string;
+    repo?: string;
+    platform: string[];
+    stack: string[];
+  };
+}
+
+const {
+  content: { title, description, date, link, repo, platform, stack },
+} = Astro.props;
+---
+
+<Layout>
+  <Section>
+    <h1>{title}</h1>
+    <a href={link}>홈페이지로 이동</a>
+    <a href={repo}>소스 코드 보기</a>
+    <slot />
+  </Section>
+</Layout>

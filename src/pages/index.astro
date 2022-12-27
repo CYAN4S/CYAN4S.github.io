@@ -1,0 +1,205 @@
+---
+import { log } from "astro/dist/core/logger/core";
+import Section from "../components/Section.astro";
+import Layout from "../layouts/Layout.astro";
+
+const works = await Astro.glob("./works/*.{md,mdx}");
+---
+
+<Layout>
+  <Section id="title">
+    <h1>CREATOR <br />FOR US</h1>
+    <p><b>Son Inho / 손인호 / CYAN4S</b></p>
+    <p>Game Developer / Web Developer</p>
+    <p><i>홈페이지가 아직 공사 중에 있습니다. 양해 부탁드립니다.</i></p>
+  </Section>
+  <Section id="rl">
+    <h6>FEATURE 01</h6>
+    <img src="/rl.png" alt="RHYACTION LIVE" width="400px" height="200px" />
+    <h2>RHYACTION LIVE</h2>
+    <p>오픈소스 Unity 리듬게임</p>
+    <a class="hyper" href="https://github.com/CYAN4S/rhyaction-live">
+      BROWSE SOURCE CODE
+    </a>
+  </Section>
+  <Section id="br">
+    <h6>FEATURE 02</h6>
+    <img src="/br.png" alt="Bouncy Rumble" width="400px" height="200px" />
+    <h2>BOUNCY RUMBLE</h2>
+    <p>공에 바람을 넣어 던지는 TPS 게임</p>
+    <a class="hyper" href="https://github.com/CYAN4S/bouncy-rumble/releases">
+      PLAY PRE-RELEASE
+    </a>
+  </Section>
+  <Section>
+    <h2>ALL PROJECTS</h2>
+    <div class="grid">
+      {
+        works.map((work) => (
+            <a href={work.url}>
+              <h4>{work.frontmatter.title}</h4>
+              <p>{work.frontmatter.description}</p>
+              <h6>PLATFORM</h6>
+              <ul>
+                {work.frontmatter.platform.map((stack: string) => (
+                  <li>{stack}</li>
+                ))}
+              </ul>
+              <h6>STACK</h6>
+              <ul>
+                {work.frontmatter.stack.map((stack: string) => (
+                  <li>{stack}</li>
+                ))}
+              </ul>
+            </a>
+          )
+        )
+      }
+    </div>
+  </Section>
+  <Section id="about">
+    <h6>ABOUT</h6>
+    <h2>
+      우리 모두를 위한 게임 크리에이터,<br />
+      <span style="color: #26bfb3">손인호</span>
+      <svg
+        style="
+            fill: #26bfb3;
+            width: 40px;
+            height: 40px;
+            vertical-align: -0.4rem;
+          "
+      >
+        <use xlink:href="/icon.svg#cyan4s"></use>
+      </svg>입니다.
+    </h2>
+    <div id="about-grid">
+      <div>
+        <p>
+          Unity를 활용한 게임 개발이 주력이며, 풀스택 웹앱 개발 또한
+          자신있습니다. 게임 개발에 필요한 각종 리소스를 직접 만들어 하나의
+          게임이 이루어지도록 합치는 방법을 잘 알고 있습니다. 또한, 팀
+          프로젝트에서 협업 방식을 정의하는 업무를 주로 맡아왔습니다.
+        </p>
+      </div>
+      <img
+        src="./cyan.svg"
+        alt="Cyan, CYAN4S's persona OC"
+        style="max-width: 400px"
+      />
+    </div>
+  </Section>
+  <Section id="others">
+    <h6>OTHERS</h6>
+    <h3>EDUCATION</h3>
+    <h4>금오공과대학교 — 컴퓨터공학과 학사</h4>
+    <p>2017.03 - 2023.02(졸업 예정)</p>
+    <h4>속초고등학교 — 과학중점</h4>
+    <p>2014.03 - 2017.02</p>
+    <h3>AWARDS</h3>
+    <h4>2022 경북 게임인 해커톤 — 최우수상</h4>
+    <a class="link" href="https://github.com/CYAN4S/bouncy-rumble"
+      >Bouncy Rumble</a
+    >
+    <h4>우수 논문상 — 동상</h4>
+    <a class="link" href="https://github.com/CYAN4S/book-community">
+      Bookstamp
+    </a>
+    <a
+      class="link"
+      href="https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11082600"
+    >
+      관련 논문
+    </a>
+    <h3>SKILLS</h3>
+    <h4>프로그래밍 언어</h4>
+    <ul>
+      <li>주력 — <b>C#, JavaScript/TypeScript</b></li>
+      <li>다룰 수 있음 — C, C++, Java, Kotlin, Python, SQL</li>
+      <li>배우고 있음 — HLSL/ShaderLab</li>
+    </ul>
+    <h4>사용 도구</h4>
+    <ul>
+      <li>주력 — <b>Unity, .NET, React, Next.js, Firebase, Node.js</b></li>
+      <li>
+        다룰 수 있음 — Supabase, SolidJS, Jekyll, Express, Vite, Webpack,
+        TensorFlow
+      </li>
+      <li>
+        참고: 사용 개발 환경 — JetBrains Rider, Visual Studio Code, Visual
+        Studio, JetBrains IntellJ IDEA, JetBrains PyCharm, Android Studio
+      </li>
+    </ul>
+    <h4>예술 도구</h4>
+    <ul>
+      <li>
+        UI/UX 및 2D 그래픽 —
+        <b>CSS/SCSS, Affinity Designer, Figma, Krita, SVGator</b>
+      </li>
+      <li>3D 그래픽 — <b>Blender, VRoid Studio</b></li>
+      <li>오디오 — <b>FL Studio</b></li>
+    </ul>
+    <h4>영어</h4>
+    <ul>
+      <li>TOEIC <b>795</b> — 2020.12.13</li>
+      <li>대학교 모의 TOEIC <b>805</b> — 2022.05.12</li>
+      <li>영어로 된 기술 문서를 무리없이 읽을 수 있음</li>
+    </ul>
+    <h3>EXTERNAL LINKS</h3>
+    <div class="grid ex">
+      <a href="https://blog.cyan4s.com/" style="background-color: #26bfb3">
+        <svg style="fill: white; width: 48px; height: 48px">
+          <use xlink:href="/icon.svg#cyan4s"></use>
+        </svg>
+        <span>CYAN4S BLOG</span>
+      </a>
+      <a href="https://github.com/CYAN4S/" style="background-color: #231f20">
+        <svg style="fill: white; width: 48px; height: 48px">
+          <use xlink:href="/icon.svg#github"></use>
+        </svg>
+        <span>GitHub</span>
+      </a>
+      <a href="https://twitter.com/cyan4s" style="background-color: #1d9bf0">
+        <svg style="fill: white; width: 48px; height: 48px">
+          <use xlink:href="/icon.svg#twitter"></use>
+        </svg>
+        <span>Twitter</span>
+      </a>
+      <a
+        href="https://www.behance.net/CYAN4S"
+        style="background-color: #0057ff"
+      >
+        <svg style="fill: white; width: 48px; height: 48px">
+          <use xlink:href="/icon.svg#behance"></use>
+        </svg>
+        <span>Behance</span>
+      </a>
+      <a href="https://soundcloud.com/cyan4s" style="background-color: #ff5500">
+        <svg style="fill: white; width: 48px; height: 48px">
+          <use xlink:href="/icon.svg#soundcloud"></use>
+        </svg>
+        <span>SoundCloud</span>
+      </a>
+      <a
+        href="https://www.instagram.com/cyan4s"
+        style="
+            background: linear-gradient(
+                45deg,
+                #fdd915,
+                #fac520 10%,
+                #ef4623 40%,
+                #eb2028 50%,
+                #ac3889 90%,
+                #a53b94
+              )
+              border-box;
+          "
+      >
+        <svg style="fill: white; width: 48px; height: 48px">
+          <use xlink:href="/icon.svg#instagram"></use>
+        </svg>
+        <span>Instagram</span>
+      </a>
+    </div>
+  </Section>
+</Layout>
