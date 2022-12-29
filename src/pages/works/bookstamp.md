@@ -3,7 +3,7 @@ title: "Bookstamp"
 description: "웹 기반 도서 커뮤니티 (w/ TEAM CHOCOLATTE)"
 date: "2022/02"
 layout: "../../layouts/Work.astro"
-link: "https://github.com/CYAN4S/book-community"
+link: "https://book-community.vercel.app/"
 repo: "https://github.com/CYAN4S/book-community"
 platform: ["web"]
 stack: ["nextjs", "react", "firebase", "tensorflow", "ts"]

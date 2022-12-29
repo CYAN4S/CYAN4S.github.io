@@ -4,7 +4,7 @@ description: "CYAN4S의 메인 웹사이트"
 date: "2022/12"
 layout: "../../layouts/Work.astro"
 link: "https://www.cyan4s.com"
-repo: "https://github.com/CYAN4S/"
+repo: "https://github.com/CYAN4S/CYAN4S.github.io"
 platform: ["web"]
 stack: ["astro", "html"]
 ---

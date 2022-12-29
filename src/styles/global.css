@@ -131,6 +131,7 @@ a.hyper {
   font-variation-settings: "wdth" 125;
   text-decoration: none;
   border: none;
+  margin: 0 8px 8px 0;
 }
 
 div.grid {

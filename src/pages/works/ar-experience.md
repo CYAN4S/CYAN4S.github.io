@@ -3,8 +3,7 @@ title: "AR Experience"
 description: "AR 시연 및 슈팅 게임"
 date: "2022/09"
 layout: "../../layouts/Work.astro"
-link: "https://github.com/CYAN4S/"
-repo: "https://github.com/CYAN4S/"
+repo: "https://github.com/CYAN4S/ar-experience"
 platform: ["android"]
 stack: ["unity", "csharp"]
 ---

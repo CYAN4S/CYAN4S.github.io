@@ -4,7 +4,6 @@ description: "공에 바람을 넣어 던지는 TPS 게임"
 date: "2022/11"
 layout: "../../layouts/Work.astro"
 link: "https://github.com/CYAN4S/bouncy-rumble/releases"
-repo: "https://github.com/CYAN4S/bouncy-rumble"
 platform: ["windows"]
 stack: ["unity", "csharp"]
 status: "active"

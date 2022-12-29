@@ -36,45 +36,44 @@ const works = await Astro.glob("./works/*.{md,mdx}");
     <div class="grid">
       {
         works.map((work) => (
-            <a href={work.url}>
-              <h4>{work.frontmatter.title}</h4>
-              <p>{work.frontmatter.description}</p>
-              <h6>PLATFORM</h6>
-              <ul>
-                {work.frontmatter.platform.map((stack: string) => (
-                  <li>{stack}</li>
-                ))}
-              </ul>
-              <h6>STACK</h6>
-              <ul>
-                {work.frontmatter.stack.map((stack: string) => (
-                  <li>{stack}</li>
-                ))}
-              </ul>
-            </a>
-          )
-        )
+          <a href={work.url}>
+            <h4>{work.frontmatter.title}</h4>
+            <p>{work.frontmatter.description}</p>
+            <h6>PLATFORM</h6>
+            <ul>
+              {work.frontmatter.platform.map((stack: string) => (
+                <li>{stack}</li>
+              ))}
+            </ul>
+            <h6>STACK</h6>
+            <ul>
+              {work.frontmatter.stack.map((stack: string) => (
+                <li>{stack}</li>
+              ))}
+            </ul>
+          </a>
+        ))
       }
     </div>
   </Section>
   <Section id="about">
-    <h6>ABOUT</h6>
-    <h2>
-      우리 모두를 위한 게임 크리에이터,<br />
-      <span style="color: #26bfb3">손인호</span>
-      <svg
-        style="
+    <div id="about-grid">
+      <div>
+        <h6>ABOUT</h6>
+        <h2>
+          우리 모두를 위한 게임 크리에이터,<br />
+          <span style="color: #26bfb3">손인호</span>
+          <svg
+            style="
             fill: #26bfb3;
             width: 40px;
             height: 40px;
             vertical-align: -0.4rem;
           "
-      >
-        <use xlink:href="/icon.svg#cyan4s"></use>
-      </svg>입니다.
-    </h2>
-    <div id="about-grid">
-      <div>
+          >
+            <use xlink:href="/icon.svg#cyan4s"></use>
+          </svg>입니다.
+        </h2>
         <p>
           Unity를 활용한 게임 개발이 주력이며, 풀스택 웹앱 개발 또한
           자신있습니다. 게임 개발에 필요한 각종 리소스를 직접 만들어 하나의
@@ -98,19 +97,21 @@ const works = await Astro.glob("./works/*.{md,mdx}");
     <p>2014.03 - 2017.02</p>
     <h3>AWARDS</h3>
     <h4>2022 경북 게임인 해커톤 — 최우수상</h4>
-    <a class="link" href="https://github.com/CYAN4S/bouncy-rumble"
-      >Bouncy Rumble</a
-    >
+    <p>
+      <a class="link" href="https://github.com/CYAN4S/bouncy-rumble"
+        >Bouncy Rumble</a>
+    </p>
     <h4>우수 논문상 — 동상</h4>
-    <a class="link" href="https://github.com/CYAN4S/book-community">
-      Bookstamp
-    </a>
-    <a
-      class="link"
-      href="https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11082600"
-    >
-      관련 논문
-    </a>
+    <p>
+      <a class="link" href="https://github.com/CYAN4S/book-community"
+        >Bookstamp</a>
+    </p>
+    <p>
+      <a
+        class="link"
+        href="https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11082600"
+        >관련 논문</a>
+    </p>
     <h3>SKILLS</h3>
     <h4>프로그래밍 언어</h4>
     <ul>
@@ -199,6 +200,12 @@ const works = await Astro.glob("./works/*.{md,mdx}");
           <use xlink:href="/icon.svg#instagram"></use>
         </svg>
         <span>Instagram</span>
+      </a>
+      <a href="mailto:me@cyan4s" style="background-color: #666666">
+        <svg style="fill: white; width: 48px; height: 48px">
+          <use xlink:href="/icon.svg#email"></use>
+        </svg>
+        <span>me@cyan4s.com</span>
       </a>
     </div>
   </Section>
