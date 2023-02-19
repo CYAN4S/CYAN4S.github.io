@@ -1,10 +1,20 @@
 ---
-import { log } from "astro/dist/core/logger/core";
 import Section from "../components/Section.astro";
+import Social from "../components/Social.astro";
+import SocialIcon from "../components/SocialIcon.astro";
 import Layout from "../layouts/Layout.astro";
+
+import SocialInfo from "../social.json";
 
 const works = await Astro.glob("./works/*.{md,mdx}");
 ---
+
+<style>
+  .icons {
+    display: flex;
+    gap: 8px;
+  }
+</style>
 
 <Layout>
   <Section id="title">
@@ -12,7 +22,11 @@ const works = await Astro.glob("./works/*.{md,mdx}");
     <p><b>Son Inho / 손인호 / CYAN4S</b></p>
     <p>Game Developer / Web Developer</p>
     <p><i>홈페이지가 아직 공사 중에 있습니다. 양해 부탁드립니다.</i></p>
+    <div class="icons">
+      {SocialInfo.map((o) => <SocialIcon name={o.name} link={o.link} />)}
+    </div>
   </Section>
+
   <Section id="rl">
     <h6>FEATURE 01</h6>
     <img src="/rl.png" alt="RHYACTION LIVE" width="400px" height="200px" />
@@ -22,6 +36,7 @@ const works = await Astro.glob("./works/*.{md,mdx}");
       BROWSE SOURCE CODE
     </a>
   </Section>
+
   <Section id="br">
     <h6>FEATURE 02</h6>
     <img src="/br.png" alt="Bouncy Rumble" width="400px" height="200px" />
@@ -31,6 +46,7 @@ const works = await Astro.glob("./works/*.{md,mdx}");
       PLAY PRE-RELEASE
     </a>
   </Section>
+
   <Section>
     <h2>ALL PROJECTS</h2>
     <div class="grid">
@@ -56,6 +72,7 @@ const works = await Astro.glob("./works/*.{md,mdx}");
       }
     </div>
   </Section>
+
   <Section id="about">
     <div id="about-grid">
       <div>
@@ -76,8 +93,19 @@ const works = await Astro.glob("./works/*.{md,mdx}");
         </h2>
         <p>
           Unity를 활용한 게임 개발이 주력이며, 풀스택 웹앱 개발 또한
-          자신있습니다. 게임 개발에 필요한 각종 리소스를 직접 만들어 하나의
-          게임이 이루어지도록 합치는 방법을 잘 알고 있습니다. 또한, 팀
+          자신있습니다.
+        </p>
+        <p>
+          게임 프로그래밍 개발에 필요한 컴퓨터공학 지식을 계속 습득해왔으며,
+          동시에 게임 내 그래픽 및 사운드 등의 각종 예술적 리소스를 직접 만드는
+          방법 또한 공부해왔습니다.
+        </p>
+        <p>
+          무엇보다, 이러한 여러 요소를 합쳐서 하나의 게임이 이루어지는 방법을
+          알고 있습니다.
+        </p>
+        <p>
+          또한, 프로젝트 진행을 위한 프로젝트 관리 방법을 알고 있으며, 팀
           프로젝트에서 협업 방식을 정의하는 업무를 주로 맡아왔습니다.
         </p>
       </div>
@@ -88,6 +116,7 @@ const works = await Astro.glob("./works/*.{md,mdx}");
       />
     </div>
   </Section>
+
   <Section id="others">
     <h6>OTHERS</h6>
     <h3>EDUCATION</h3>
@@ -99,43 +128,45 @@ const works = await Astro.glob("./works/*.{md,mdx}");
     <h4>2022 경북 게임인 해커톤 — 최우수상</h4>
     <p>
       <a class="link" href="https://github.com/CYAN4S/bouncy-rumble"
-        >Bouncy Rumble</a>
+        >Bouncy Rumble</a
+      >
     </p>
     <h4>우수 논문상 — 동상</h4>
     <p>
       <a class="link" href="https://github.com/CYAN4S/book-community"
-        >Bookstamp</a>
+        >Bookstamp</a
+      >
     </p>
     <p>
       <a
         class="link"
         href="https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11082600"
-        >관련 논문</a>
+        >관련 논문</a
+      >
     </p>
     <h3>SKILLS</h3>
     <h4>프로그래밍 언어</h4>
     <ul>
       <li>주력 — <b>C#, JavaScript/TypeScript</b></li>
-      <li>다룰 수 있음 — C, C++, Java, Kotlin, Python, SQL</li>
-      <li>배우고 있음 — HLSL/ShaderLab</li>
+      <li>부주력 — Python, SQL</li>
+      <li>다룰 수 있음 — C, C++, Java, Kotlin</li>
     </ul>
     <h4>사용 도구</h4>
     <ul>
-      <li>주력 — <b>Unity, .NET, React, Next.js, Firebase, Node.js</b></li>
+      <li>주력 — <b>Unity, React, Next.js, Firebase, Node.js, SolidJS, Astro</b></li>
       <li>
-        다룰 수 있음 — Supabase, SolidJS, Jekyll, Express, Vite, Webpack,
-        TensorFlow
+        다룰 수 있음 — TensorFlow, Supabase, Jekyll, Express, Vite,
+        Webpack
       </li>
       <li>
-        참고: 사용 개발 환경 — JetBrains Rider, Visual Studio Code, Visual
-        Studio, JetBrains IntellJ IDEA, JetBrains PyCharm, Android Studio
+        사용 개발 환경 — <b>JetBrains Rider, Visual Studio Code</b>, Visual Studio,
+        JetBrains IntellJ IDEA, JetBrains PyCharm
       </li>
     </ul>
     <h4>예술 도구</h4>
     <ul>
       <li>
-        UI/UX 및 2D 그래픽 —
-        <b>CSS/SCSS, Affinity Designer, Figma, Krita, SVGator</b>
+        UI/UX 및 2D 그래픽 — <b>CSS/SCSS, Affinity Designer, Figma, SVGator</b>
       </li>
       <li>3D 그래픽 — <b>Blender, VRoid Studio</b></li>
       <li>오디오 — <b>FL Studio</b></li>
@@ -154,53 +185,11 @@ const works = await Astro.glob("./works/*.{md,mdx}");
         </svg>
         <span>CYAN4S BLOG</span>
       </a>
-      <a href="https://github.com/CYAN4S/" style="background-color: #231f20">
-        <svg style="fill: white; width: 48px; height: 48px">
-          <use xlink:href="/icon.svg#github"></use>
-        </svg>
-        <span>GitHub</span>
-      </a>
-      <a href="https://twitter.com/cyan4s" style="background-color: #1d9bf0">
-        <svg style="fill: white; width: 48px; height: 48px">
-          <use xlink:href="/icon.svg#twitter"></use>
-        </svg>
-        <span>Twitter</span>
-      </a>
-      <a
-        href="https://www.behance.net/CYAN4S"
-        style="background-color: #0057ff"
-      >
-        <svg style="fill: white; width: 48px; height: 48px">
-          <use xlink:href="/icon.svg#behance"></use>
-        </svg>
-        <span>Behance</span>
-      </a>
-      <a href="https://soundcloud.com/cyan4s" style="background-color: #ff5500">
-        <svg style="fill: white; width: 48px; height: 48px">
-          <use xlink:href="/icon.svg#soundcloud"></use>
-        </svg>
-        <span>SoundCloud</span>
-      </a>
-      <a
-        href="https://www.instagram.com/cyan4s"
-        style="
-            background: linear-gradient(
-                45deg,
-                #fdd915,
-                #fac520 10%,
-                #ef4623 40%,
-                #eb2028 50%,
-                #ac3889 90%,
-                #a53b94
-              )
-              border-box;
-          "
-      >
-        <svg style="fill: white; width: 48px; height: 48px">
-          <use xlink:href="/icon.svg#instagram"></use>
-        </svg>
-        <span>Instagram</span>
-      </a>
+      {
+        SocialInfo.map((o) => (
+          <Social name={o.name} fullname={o.fullname} link={o.link} />
+        ))
+      }
       <a href="mailto:me@cyan4s" style="background-color: #666666">
         <svg style="fill: white; width: 48px; height: 48px">
           <use xlink:href="/icon.svg#email"></use>

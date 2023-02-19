@@ -1,0 +1,52 @@
+.social {
+  fill: white;
+  width: 48px;
+  height: 48px;
+}
+
+.icon {
+  fill: white;
+  width: 20px;
+  height: 20px;
+}
+
+.github {
+  background-color: #231f20;
+}
+
+.twitter {
+  background-color: #1d9bf0;
+}
+
+.behance {
+  background-color: #0057ff;
+}
+
+.dribbble {
+  background-color: #ea4c89;
+}
+
+.vimeo {
+  background-color: #1ab7ea;
+}
+
+.soundcloud {
+  background-color: #ff5500;
+}
+
+.instagram {
+  background: linear-gradient(
+      45deg,
+      #fdd915,
+      #fac520 10%,
+      #ef4623 40%,
+      #eb2028 50%,
+      #ac3889 90%,
+      #a53b94
+    )
+    border-box;
+}
+
+.linkedin {
+  background-color: #3e78bc;
+}

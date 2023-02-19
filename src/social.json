@@ -1,0 +1,42 @@
+[
+  {
+    "name": "github",
+    "fullname": "GitHub",
+    "link": "https://github.com/CYAN4S/"
+  },
+  {
+    "name": "twitter",
+    "fullname": "Twitter",
+    "link": "https://twitter.com/cyan4s"
+  },
+  {
+    "name": "dribbble",
+    "fullname": "Dribbble",
+    "link": "https://dribbble.com/CYAN4S"
+  },
+  {
+    "name": "behance",
+    "fullname": "Behance",
+    "link": "https://www.behance.net/CYAN4S"
+  },
+  {
+    "name": "vimeo",
+    "fullname": "Vimeo",
+    "link": "https://vimeo.com/cyan4s"
+  },
+  {
+    "name": "soundcloud",
+    "fullname": "SoundCloud",
+    "link": "https://soundcloud.com/cyan4s"
+  },
+  {
+    "name": "instagram",
+    "fullname": "Instagram",
+    "link": "https://www.instagram.com/cyan4s"
+  },
+  {
+    "name": "linkedin",
+    "fullname": "LinkedIn",
+    "link": "https://www.linkedin.com/in/cyan4s/"
+  }
+]

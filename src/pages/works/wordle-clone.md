@@ -9,6 +9,6 @@ platform: ["web"]
 stack: ["unity", "csharp"]
 ---
 
-Wordle을 Unity를 사용하여 클론코딩
+유명한 영단어 퍼즐 게임 Wordle을 Unity로 제작하였습니다.
 
-UI Toolkit을 이용해 UI를 구성하였습니다.
+UI Toolkit만을 이용해 UI를 구성하였습니다.
