@@ -4,7 +4,7 @@ import "../styles/social.css";
 const {name, link} = Astro.props;
 ---
 
-<a href={link}>
+<a href={link} class="button">
   <svg class="icon">
     <use xlink:href={`/icon.svg#${name}`}></use>
   </svg>

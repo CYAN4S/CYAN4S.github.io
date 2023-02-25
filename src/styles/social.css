@@ -4,6 +4,10 @@
   height: 48px;
 }
 
+.button {
+  border: none;
+}
+
 .icon {
   fill: white;
   width: 20px;

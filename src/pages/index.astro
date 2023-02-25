@@ -5,6 +5,9 @@ import SocialIcon from "../components/SocialIcon.astro";
 import Layout from "../layouts/Layout.astro";
 
 import SocialInfo from "../social.json";
+import { Content as About } from "../about.md";
+import { Content as Others } from "../others.md";
+
 
 const works = await Astro.glob("./works/*.{md,mdx}");
 ---
@@ -91,23 +94,7 @@ const works = await Astro.glob("./works/*.{md,mdx}");
             <use xlink:href="/icon.svg#cyan4s"></use>
           </svg>입니다.
         </h2>
-        <p>
-          Unity를 활용한 게임 개발이 주력이며, 풀스택 웹앱 개발 또한
-          자신있습니다.
-        </p>
-        <p>
-          게임 프로그래밍 개발에 필요한 컴퓨터공학 지식을 계속 습득해왔으며,
-          동시에 게임 내 그래픽 및 사운드 등의 각종 예술적 리소스를 직접 만드는
-          방법 또한 공부해왔습니다.
-        </p>
-        <p>
-          무엇보다, 이러한 여러 요소를 합쳐서 하나의 게임이 이루어지는 방법을
-          알고 있습니다.
-        </p>
-        <p>
-          또한, 프로젝트 진행을 위한 프로젝트 관리 방법을 알고 있으며, 팀
-          프로젝트에서 협업 방식을 정의하는 업무를 주로 맡아왔습니다.
-        </p>
+        <About />
       </div>
       <img
         src="./cyan.svg"
@@ -119,64 +106,8 @@ const works = await Astro.glob("./works/*.{md,mdx}");
 
   <Section id="others">
     <h6>OTHERS</h6>
-    <h3>EDUCATION</h3>
-    <h4>금오공과대학교 — 컴퓨터공학과 학사</h4>
-    <p>2017.03 - 2023.02(졸업 예정)</p>
-    <h4>속초고등학교 — 과학중점</h4>
-    <p>2014.03 - 2017.02</p>
-    <h3>AWARDS</h3>
-    <h4>2022 경북 게임인 해커톤 — 최우수상</h4>
-    <p>
-      <a class="link" href="https://github.com/CYAN4S/bouncy-rumble"
-        >Bouncy Rumble</a
-      >
-    </p>
-    <h4>우수 논문상 — 동상</h4>
-    <p>
-      <a class="link" href="https://github.com/CYAN4S/book-community"
-        >Bookstamp</a
-      >
-    </p>
-    <p>
-      <a
-        class="link"
-        href="https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE11082600"
-        >관련 논문</a
-      >
-    </p>
-    <h3>SKILLS</h3>
-    <h4>프로그래밍 언어</h4>
-    <ul>
-      <li>주력 — <b>C#, JavaScript/TypeScript</b></li>
-      <li>부주력 — Python, SQL</li>
-      <li>다룰 수 있음 — C, C++, Java, Kotlin</li>
-    </ul>
-    <h4>사용 도구</h4>
-    <ul>
-      <li>주력 — <b>Unity, React, Next.js, Firebase, Node.js, SolidJS, Astro</b></li>
-      <li>
-        다룰 수 있음 — TensorFlow, Supabase, Jekyll, Express, Vite,
-        Webpack
-      </li>
-      <li>
-        사용 개발 환경 — <b>JetBrains Rider, Visual Studio Code</b>, Visual Studio,
-        JetBrains IntellJ IDEA, JetBrains PyCharm
-      </li>
-    </ul>
-    <h4>예술 도구</h4>
-    <ul>
-      <li>
-        UI/UX 및 2D 그래픽 — <b>CSS/SCSS, Affinity Designer, Figma, SVGator</b>
-      </li>
-      <li>3D 그래픽 — <b>Blender, VRoid Studio</b></li>
-      <li>오디오 — <b>FL Studio</b></li>
-    </ul>
-    <h4>영어</h4>
-    <ul>
-      <li>TOEIC <b>795</b> — 2020.12.13</li>
-      <li>대학교 모의 TOEIC <b>805</b> — 2022.05.12</li>
-      <li>영어로 된 기술 문서를 무리없이 읽을 수 있음</li>
-    </ul>
+    <Others />
+    
     <h3>EXTERNAL LINKS</h3>
     <div class="grid ex">
       <a href="https://blog.cyan4s.com/" style="background-color: #26bfb3">
