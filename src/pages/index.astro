@@ -1,4 +1,26 @@
 ---
+<<<<<<< HEAD
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+---
+
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header title={SITE_TITLE} />
+    <main>
+      <h1>안녕하세요! CYAN4S입니다.</h1>
+      <p>홈페이지가 아직 공사 중입니다.</p>
+    </main>
+    <Footer />
+  </body>
+</html>
+=======
 import Section from "../components/Section.astro";
 import Social from "../components/Social.astro";
 import SocialIcon from "../components/SocialIcon.astro";
@@ -130,3 +152,4 @@ const works = await Astro.glob("./works/*.{md,mdx}");
     </div>
   </Section>
 </Layout>
+>>>>>>> 1cb1f188adaa28eb21a5b405c5d258a6f3d135d5
