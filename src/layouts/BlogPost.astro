@@ -4,93 +4,93 @@ import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import FormattedDate from "../components/FormattedDate.astro";
+import Default from "./Default.astro";
+import PostComment from "../components/PostComment";
 
-type Props = CollectionEntry<"blog">["data"];
+type Props = CollectionEntry<"blog">["data"] & {
+  prev: any;
+  next: any;
+  slug: string;
+};
 
-const { title, description, pubDate, updatedDate, heroImage, prev, next } =
-  Astro.props;
+const {
+  title,
+  description,
+  pubDate,
+  updatedDate,
+  heroImage,
+  prev,
+  next,
+  slug,
+} = Astro.props;
 ---
 
-<html lang="ko">
-  <head>
-    <BaseHead title={title} description={description} image={heroImage} />
-    <style>
-      .title {
-        font-size: 2em;
-        margin: 0.25em 0 0;
-      }
-      hr {
-        border-top: 1px solid #ddd;
-        margin: 2rem 0 4rem;
-      }
-      .last-updated-on {
-        font-style: italic;
-      }
-      .neighbor {
-        margin: 48px 0;
-        display: grid;
-        grid-template-columns: auto 1fr;
-        row-gap: 12px;
-        column-gap: 20px;
-      }
-      .neighbor span {
-        color: gray;
-      }
-    </style>
-  </head>
+<Default title={title} description={description} heroImage={heroImage}>
+  <style slot="style">
+    .title {
+      font-size: 2em;
+      margin: 0.25em 0 0;
+    }
+    hr {
+      border-top: 1px solid #ddd;
+      margin: 2rem 0 4rem;
+    }
+    .last-updated-on {
+      font-style: italic;
+    }
+    .neighbor {
+      margin: 48px 0;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      row-gap: 12px;
+      column-gap: 20px;
+    }
+    .neighbor span {
+      color: gray;
+    }
+  </style>
 
-  <body>
-    <Header />
-    <main>
-      <article>
-        {
-          heroImage && (
-            <img
-              width={720}
-              height={360}
-              src={heroImage}
-              alt={`게시글 '${title}'의 헤더 이미지`}
-            />
-          )
-        }
-        <h1>{title}</h1>
-        <FormattedDate date={pubDate} />
-        {
-          updatedDate && (
-            <div class="last-updated-on">
-              <FormattedDate date={updatedDate} />에 수정됨
-            </div>
-          )
-        }
-        <hr />
-        <slot />
-      </article>
-
-      <div class="react">
-        <div class="buttons">
-          
+  <article>
+    {
+      heroImage && (
+        <img src={heroImage} alt={`게시글 '${title}'의 헤더 이미지`} />
+      )
+    }
+    <h1>{title}</h1>
+    <FormattedDate date={pubDate} />
+    {
+      updatedDate && (
+        <div class="last-updated-on">
+          <FormattedDate date={updatedDate} />에 수정됨
         </div>
-      </div>
+      )
+    }
+    <hr />
+    <slot />
+  </article>
 
-      <div class="neighbor">
-        <b>이전 게시글</b>
-        {
-          prev.slug ? (
-            <a href={`/blog/${prev.slug}`}>{prev.title}</a>
-          ) : (
-            <span>첫 게시글입니다.</span>
-          )
-        }
-        <b>다음 게시글</b>
-        {
-          next.slug ? (
-            <a href={`/blog/${next.slug}`}>{next.title}</a>
-          ) : (
-            <span>마지막 게시글입니다.</span>
-          )
-        }
-      </div>
-    </main>
-    <Footer />
-  </body>
-</html>
+  <div class="comment">
+    <PostComment client:load slug={slug}/>
+  </div>
+
+  <hr>
+
+  <div class="neighbor">
+    <b>이전 게시글</b>
+    {
+      prev.slug ? (
+        <a href={`/blog/${prev.slug}`}>{prev.title}</a>
+      ) : (
+        <span>첫 게시글입니다.</span>
+      )
+    }
+    <b>다음 게시글</b>
+    {
+      next.slug ? (
+        <a href={`/blog/${next.slug}`}>{next.title}</a>
+      ) : (
+        <span>마지막 게시글입니다.</span>
+      )
+    }
+  </div>
+</Default>

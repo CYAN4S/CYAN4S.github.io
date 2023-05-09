@@ -28,7 +28,7 @@ Learn Next.js를 통해 제작될 수 있는 프로젝트는 [이 링크](https:
 
 ### 앱 생성
 
-[Create Next App](https://nextjs.org/docs/api-reference/create-next-app)을 이용해 Next.js 앱을 만들 수 있습니다. 버전 **10.13** 이상의 **[Node.js](https://nodejs.org)**가 사전에 설치되어 있어야 합니다.
+[Create Next App](https://nextjs.org/docs/api-reference/create-next-app)을 이용해 Next.js 앱을 만들 수 있습니다. 버전 **10.13** 이상의 [**Node.js**](https://nodejs.org)가 사전에 설치되어 있어야 합니다.
 
 ```shell
 npx create-next-app
@@ -63,7 +63,7 @@ Next.js에서 페이지는 **[`pages` 디렉토리](https://nextjs.org/docs/basi
 
 ```jsx
 export default function FirstPost() {
-  return <h1>First Post</h1>
+  return <h1>First Post</h1>;
 }
 ```
 
@@ -71,7 +71,7 @@ export default function FirstPost() {
 
 일반적으로 웹사이트에서 다른 페이지를 연결할 때, `<a>` HTML 태그를 사용합니다.
 
-만약 외부 링크가 아닌, 같은 Next.js 어플리케이션 내의 다른 페이지를 연결할 때, `<a>` HTML 태그를 **[`Link` 컴포넌트](https://nextjs.org/docs/api-reference/next/link)**로 감싸서 사용합니다.
+만약 외부 링크가 아닌, 같은 Next.js 어플리케이션 내의 다른 페이지를 연결할 때, `<a>` HTML 태그를 [**`Link` 컴포넌트**](https://nextjs.org/docs/api-reference/next/link)로 감싸서 사용합니다.
 
 `<Link>`를 통해, **client-side navigation**이 가능해집니다.
 
@@ -155,7 +155,7 @@ export default function FirstPost() {
 `<script>` HTML 태그의 확장형인, [`Script`](https://nextjs.org/docs/api-reference/next/script) 컴포넌트를 이용해 제3자 스크립트를 불러올 수 있습니다.
 
 ```jsx
-import Script from 'next/script'
+import Script from "next/script";
 
 export default function FirstPost() {
   return (
@@ -168,7 +168,7 @@ export default function FirstPost() {
         }
       />
     </>
-  )
+  );
 }
 ```
 
@@ -188,7 +188,7 @@ export default function Layout({ children }) {
 }
 ```
 
-CSS 모듈에 사용할 CSS 파일의 이름은 항상 **`.module.css`**로 끝나야합니다. 예로, `components/layout.module.css`의 내용입니다.
+CSS 모듈에 사용할 CSS 파일의 이름은 항상 **`.module.css`로** 끝나야합니다. 예로, `components/layout.module.css`의 내용입니다.
 
 ```css
 .container {
@@ -201,20 +201,16 @@ CSS 모듈에 사용할 CSS 파일의 이름은 항상 **`.module.css`**로 끝�
 만든 Layout은 다음과 같이 사용합니다.
 
 ```jsx
-import Layout from '../../components/layout'
+import Layout from "../../components/layout";
 
 export default function FirstPost() {
-  return (
-    <Layout>
-      Lorem Ipsum
-    </Layout>
-  )
+  return <Layout>Lorem Ipsum</Layout>;
 }
 ```
 
 ### 전역 스타일
 
-**`pages/_app.js`의 [`App` 컴포넌트](https://nextjs.org/docs/advanced-features/custom-app)**는 모든 페이지를 아우르는 top-level 컴포넌트입니다. 이를 통해, 페이지를 이동할 때에도 상태를 유지하는 데 사용할 수 있습니다.
+`pages/_app.js`의 [**`App` 컴포넌트**](https://nextjs.org/docs/advanced-features/custom-app)는 모든 페이지를 아우르는 top-level 컴포넌트입니다. 이를 통해, 페이지를 이동할 때에도 상태를 유지하는 데 사용할 수 있습니다.
 
 이를 이용하여 모든 페이지에 적용할 전역적인 CSS를 만들고 싶을 때 사용할 수 있습니다. CSS 파일인 `styles/global.css`를 만들어 사용하는 예제입니다.
 
@@ -232,7 +228,7 @@ export default function App({ Component, pageProps }) {
 
 ### Pre-rendering
 
-Next.js는 기본적으로 모든 페이지를 **pre-render**합니다. 즉, *모든 페이지에 대한 HTML을 사전에 생성합니다.* Pre-rendering은 성능과 SEO에 유리합니다.
+Next.js는 기본적으로 모든 페이지를 **pre-render**합니다. 즉, _모든 페이지에 대한 HTML을 사전에 생성합니다._ Pre-rendering은 성능과 SEO에 유리합니다.
 
 생성된 각 HTML 문서에는, 문서에 필요한 최소한의 JavaScript 코드가 같이 나옵니다. 페이지가 로딩될 때 해당 JavaScript 코드가 실행되면서 페이지를 완전히 인터렉티브하게 만들어주며, 이 과정을 **hydration**이라 부릅니다.
 
@@ -285,7 +281,7 @@ export async function getStaticProps() {
 }
 ```
 
-`getStaticProps`를 사용함으로서, Next.js에게 *"이 페이지는 데이터 의존성이 있어! 그래서, pre-render 이전에 이걸 먼저 수행해야 해!* 라고 안내할 수 있습니다.
+`getStaticProps`를 사용함으로서, Next.js에게 _"이 페이지는 데이터 의존성이 있어! 그래서, pre-render 이전에 이걸 먼저 수행해야 해!_ 라고 안내할 수 있습니다.
 
 이를 이용하여 Markdown 형태의 블로그 포스트를 불러와, 블로그 사이트를 만들 수 있습니다. 다음은 이를 활용한 블로그 사이트 코드의 일부입니다.
 
@@ -310,7 +306,7 @@ export default function Home({ allPostsData }) {
 
 `getStaticProps`는 **server-side에서만 작동**합니다. Client-side에선 절대로 작동하지 않으며, JS 파일이 번들로 들어가지도 않습니다. 즉, 브라우저에 무언가를 보낼 필요없이, 데이터베이스에 직접적으로 쿼리를 보내는 코드를 넣을 수도 있습니다.
 
-**개발 모드**에서는 `getStaticProps`는 *매 요청*마다 실행됩니다. **프로덕션 모드**에서는 기본적으로 *빌드 시* 수행되지만, [`getStaticPaths`](https://nextjs.org/docs/basic-features/data-fetching#getstaticpaths-static-generation)가 반환하는 [`fallback` key](https://nextjs.org/docs/basic-features/data-fetching#the-fallback-key-required) 를 이용해 변경할 수 있습니다.
+**개발 모드**에서는 `getStaticProps`는 *매 요청*마다 실행됩니다. **프로덕션 모드**에서는 기본적으로 _빌드 시_ 수행되지만, [`getStaticPaths`](https://nextjs.org/docs/basic-features/data-fetching#getstaticpaths-static-generation)가 반환하는 [`fallback` key](https://nextjs.org/docs/basic-features/data-fetching#the-fallback-key-required) 를 이용해 변경할 수 있습니다.
 
 `getStaticProps`는 **페이지로부터만** export될 수 있습니다. 페이지가 아닌 파일에서는 불가능합니다. 이유는, React는 페이지가 렌더링되기 전에 필요한 모든 데이터를 필요로 하기 때문입니다.
 
@@ -396,7 +392,7 @@ return {
 };
 ```
 
-- `paths`: 가능한 주소값을 모두 담는 일종의 배열로, *그냥 배열 형태가 아닌* **반드시** 위와 같은 형태를 띄어야합니다.
+- `paths`: 가능한 주소값을 모두 담는 일종의 배열로, _그냥 배열 형태가 아닌_ **반드시** 위와 같은 형태를 띄어야합니다.
   - 각 객체는 `params` 키와, 값으로 또 다른 객체를 포함합니다.
   - 또 다른 객체는 키 이름이 주소(여기서는 파일 이름이 `[id].js`이므로 `id`)이며, 값으로 가능한 주소값이 들어갑니다.
 - `fallback`: `paths`에 해당되지 않는 주소가 들어올 때 처리 방법을 지정합니다. 뒤에서 자세히 설명하겠습니다.
@@ -422,7 +418,7 @@ export async function getStaticProps({ params }) {
 
 `getStaticProps`와 비슷하게, `getStaticPaths` 또한 다른 곳에서 데이터를 페치할 수 있습니다.
 
-**개발 모드**에서는 *매 요청*마다, **프로덕션 모드**에서는 *빌드 시* 수행됩니다.
+**개발 모드**에서는 *매 요청*마다, **프로덕션 모드**에서는 _빌드 시_ 수행됩니다.
 
 #### Fallback
 

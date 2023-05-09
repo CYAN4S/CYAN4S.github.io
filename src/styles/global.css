@@ -25,98 +25,54 @@ body {
 }
 
 h1 {
-  font-size: 2.4rem;
+  font-size: 2.2rem;
   font-weight: 800;
   letter-spacing: -0.8px;
-  margin: 3.6rem 0 1rem;
+  margin: 3.6rem 0 1.2rem;
 }
 
 h2 {
-  font-size: 2.5rem;
-  margin-top: 3.75rem;
-  margin-bottom: 1rem;
-  font-weight: 800;
+  font-size: 1.9rem;
+  margin: 3rem 0 1.2rem;
+  font-weight: 700;
 }
 
 h3 {
-  font-size: 2rem;
-  margin-top: 3rem;
-  margin-bottom: 1rem;
-  font-weight: 700;
-  margin: 2.6rem 0 1rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin: 2.6rem 0 1.2rem;
 }
 
 h4 {
   font-size: 1.5rem;
-  margin-top: 2.25rem;
-  margin-bottom: 1rem;
-  font-weight: 600;
-}
-
-h5 {
-  font-size: 1.25rem;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-}
-
-h6 {
-  font-size: 1.2rem;
-  margin: 1.5rem 0 1rem;
+  font-weight: 500;
+  margin: 2.25rem 0 1.2rem;
 }
 
 p {
   line-height: 1.7;
-  margin: 0 0 1rem;
+  margin: 0 0 1.2rem;
 }
 
 a,
 a:visited {
   color: #1c8c83;
+  text-decoration-style: dotted;
 }
 
 nav a {
   margin-right: 10px;
 }
 
-textarea {
-  width: 100%;
-  font-size: 16px;
-}
-
-input {
-  font-size: 16px;
-}
-
-a.link {
-  color: #225a55;
-  border-bottom: 1px dotted #000;
-}
-
-a.link::after {
-  content: "↗";
-}
-
-a.hyper {
-  display: inline-block;
-  font-size: 16pt;
-  font-weight: 900;
-  color: white;
-  background-color: #26bfb3;
-  padding: 12pt 20pt;
-  border-radius: 8pt;
-  font-variation-settings: "wdth" 125;
-  text-decoration: none;
-  border: none;
-  margin: 0 8px 8px 0;
-}
-
 code {
   padding: 2px 5px;
-  background-color: #f2f2f2;
+  background-color: #fff4c57f;
+  border-radius: 8px;
 }
 
 pre {
-  padding: 1rem;
+  padding: var(--gap);
+  border-radius: var(--gap);
 }
 
 pre > code {
@@ -166,12 +122,12 @@ ul > li {
 }
 
 *::selection {
-  background-color: #26bfb3;
-  color: white;
+  background-color: #00ffea;
 }
 
 article img {
   max-width: 100%;
+  max-height: 540px;
   border-radius: var(--gap);
   display: block;
   margin-left: auto;
