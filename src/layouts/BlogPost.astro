@@ -1,11 +1,7 @@
 ---
 import type { CollectionEntry } from "astro:content";
-import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
 import FormattedDate from "../components/FormattedDate.astro";
 import Default from "./Default.astro";
-import PostComment from "../components/PostComment";
 
 type Props = CollectionEntry<"blog">["data"] & {
   prev: any;
@@ -68,10 +64,6 @@ const {
     <hr />
     <slot />
   </article>
-
-  <div class="comment">
-    <PostComment client:load slug={slug}/>
-  </div>
 
   <hr>
 
