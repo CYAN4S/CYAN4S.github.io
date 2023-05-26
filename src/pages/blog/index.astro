@@ -21,7 +21,7 @@ const posts = (await getCollection("blog"))
           <img src={post.data.heroImage || "/placeholder-blog.png"}/>
           <div class="card-title">{post.data.title}</div>
           <div class="card-desc">{post.data.description}</div>
-          <div class="card-date">{post.data.pubDate.toDateString()}</div>
+          <div class="card-date"><FormattedDate date={post.data.pubDate}/></div>
         </a>
       ))
     }

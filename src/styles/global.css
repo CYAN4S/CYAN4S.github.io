@@ -174,7 +174,7 @@ article img {
 
 [class^=grid] {
   display: grid;
-  gap: var(--gap);
+  gap: 10px var(--gap);
 }
 
 .grid-1-2 {
@@ -183,6 +183,13 @@ article img {
 
 .grid-1-1 {
   grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 740px) {
+  .grid-1-2, .grid-1-1 {
+    grid-template-columns: auto;
+
+  }
 }
 
 footer {
@@ -194,7 +201,7 @@ footer {
 
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
   gap: var(--gap);
   align-items: center;
   justify-content: center;
@@ -202,7 +209,7 @@ footer {
 
 .empty-card {
   display: flex;
-  height: 420px;
+  height: 450px;
   border: 1px solid #ddd;
   border-radius: var(--gap);
   justify-content: center;
@@ -212,7 +219,7 @@ footer {
 .card {
   display: flex;
   flex-direction: column;
-  height: 420px;
+  height: 450px;
   border: 1px solid #eee;
   border-radius: var(--gap);
   overflow: hidden;
@@ -228,19 +235,22 @@ footer {
 
 .card img {
   border-bottom: 1px solid #eee;
+  max-height: 240px;
+  object-fit: cover;
 }
 
 .card-date {
   padding: 8px var(--gap);
-  font: 200 0.8rem monospace;
-  color: gray;
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: #888;
   text-align: end;
 }
 
 .card-title {
   padding: 20px var(--gap) 0;
   color: #444;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 600;
 }
 

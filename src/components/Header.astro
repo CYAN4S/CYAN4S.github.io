@@ -17,11 +17,7 @@ import Icon from "./Icon.astro";
   #h-1 {
     display: flex;
     align-items: center;
-    > div {
-      margin-left: 36px;
-      display: flex;
-      gap: 24px;
-    }
+    gap: 24px;
   }
 
   #h-2 {
@@ -30,25 +26,62 @@ import Icon from "./Icon.astro";
     justify-content: center;
     gap: 12px;
 
-    a {
+    > * {
       width: 24px;
       height: 24px;
+    }
+  }
+
+  #menu-btn {
+    display: none;
+  }
+
+  @media (max-width: 600px) {
+    #menu-btn {
+      display: block;
+      cursor: pointer;
+    }
+    #h-1 {
+      position: fixed;
+      flex-direction: column;
+      background-color: #fffc;
+      border: 1px solid #fff8;
+      box-shadow: 0px 8px 8px -8px #0002;
+      border-radius: var(--gap);
+      padding: var(--gap);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      top: 100px;
+      right: var(--gap);
+      transition: right 0.2s;
+    }
+    #h-1.hide {
+      right: -110px;
     }
   }
 </style>
 
 <header>
-  <nav id="h-1">
-    <a href="/" id="cyan4s"><Icon id="cyan4s" />CYAN4S</a>
-    <div>
-      <HeaderLink href="/blog">Blog</HeaderLink>
-      <HeaderLink href="/portfolio">Portfolio</HeaderLink>
-      <HeaderLink href="/resume">Résumé</HeaderLink>
-    </div>
+  <a href="/" id="cyan4s"><Icon id="cyan4s" />CYAN4S</a>
+  <nav id="h-1" class="hide">
+    <HeaderLink href="/blog">Blog</HeaderLink>
+    <HeaderLink href="/portfolio">Portfolio</HeaderLink>
+    <HeaderLink href="/resume">Résumé</HeaderLink>
   </nav>
   <nav id="h-2">
     <a href="https://twitter.com/cyan4s"><Icon id="twitter" /></a>
     <a href="https://github.com/CYAN4S"><Icon id="github" /></a>
     <a href="https://dribbble.com/CYAN4S"><Icon id="dribbble" /></a>
+    <div id="menu-btn"><Icon id="menu" /></div>
   </nav>
 </header>
+
+<script>
+  const menuBtn = document.getElementById("menu-btn")!;
+  const menu = document.getElementById("h-1")!;
+
+  menuBtn.addEventListener("click", () => {
+    if (menu.classList.contains("hide")) menu.classList.remove("hide");
+    else menu.classList.add("hide");
+  });
+</script>
