@@ -1,0 +1,83 @@
+---
+import { CollectionEntry, getCollection } from "astro:content";
+import Default from "../../layouts/Default.astro";
+import ScrollToTop from "../../components/ScrollToTop.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("portfolio");
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: {
+      post,
+      slug: post.slug,
+    },
+  }));
+}
+
+type Props = {
+  post: CollectionEntry<"portfolio">;
+};
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+---
+
+<style>
+  .meta {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 8px 18px;
+  }
+
+  .meta .label {
+    margin: 0 6px 8px 0;
+    padding: 3px 9px 0 0;
+    color: #5f5f5f;
+    font-size: 0.9rem;
+    font-weight: 800;
+  }
+
+  .meta span {
+    display: inline-block;
+    padding: 3px 9px;
+    border-radius: 999px;
+    border: 1px solid #099f93;
+    color: #099f93;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  .stack, .tag, .platform {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  hr {
+    margin: 4rem 0;
+  }
+</style>
+
+<Default>
+  <article>
+    <img src={post.data.heroImage} alt="" />
+    <h1>{post.data.title}</h1>
+    <div class="meta">
+      <div class="label">사용 스택</div>
+      <div class="stack">
+        {post.data.stack.map((v) => <span>{v}</span>)}
+      </div>
+      <div class="label">태그</div>
+      <div class="tag">
+        {post.data.tag.map((v) => <span>{v}</span>)}
+      </div>
+      <div class="label">플랫폼</div>
+      <div class="platform">
+        {post.data.platform.map((v) => <span>{v}</span>)}
+      </div>
+    </div>
+    <hr />
+    <Content />
+  </article>
+  <ScrollToTop />
+</Default>

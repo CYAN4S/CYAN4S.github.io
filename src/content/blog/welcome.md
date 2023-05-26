@@ -3,7 +3,6 @@ title: "Welcome to CYAN4S's blog!"
 description: "이 블로그의 첫 게시글입니다."
 pubDate: "2019/10/02"
 updatedDate: "2023/03/05"
-heroImage: "/placeholder-default.png"
 ---
 
 > 이 게시글은 이 블로그가 아직 Jekyll 기반이었을 때 작성되었으며, 현재는 Astro 기반입니다.

@@ -1,0 +1,8 @@
+---
+type Props = { id: string; fill?: string; size?: number };
+const { id, fill = "26bfb3", size = 24 } = Astro.props;
+---
+
+<svg style={`fill: #${fill}`} width={`${size}px`} height={`${size}px`}>
+  <use href={`/icon.svg#${id}`}></use>
+</svg>

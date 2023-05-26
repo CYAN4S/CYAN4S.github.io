@@ -1,36 +1,54 @@
 ---
 import HeaderLink from "./HeaderLink.astro";
-import { SITE_TITLE } from "../consts";
+import Icon from "./Icon.astro";
 ---
 
-<header>
-  <div><b>CYAN4S</b></div>
-  <nav>
-    <HeaderLink href="/">Home</HeaderLink>
-    <HeaderLink href="/blog">Blog</HeaderLink>
-    <HeaderLink href="https://twitter.com/cyan4s" target="_blank">
-      Twitter
-    </HeaderLink>
-    <HeaderLink href="https://github.com/cyan4s" target="_blank">
-      GitHub
-    </HeaderLink>
-  </nav>
-</header>
-
-<style>
-  div {
-    color: #26bfb3;
-    font-size: 2.4rem;
-    font-family: "Plus Jakarta Sans";
-    margin: 1rem 0;
-  }
-  div b {
+<style lang="scss">
+  #cyan4s {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    font-size: 1.5rem;
     font-weight: 800;
+    color: var(--cyan);
+    text-decoration: none;
   }
-  header {
-    margin: 0em 0 2em;
+
+  #h-1 {
+    display: flex;
+    align-items: center;
+    > div {
+      margin-left: 36px;
+      display: flex;
+      gap: 24px;
+    }
   }
-  h2 {
-    margin: 0.5em 0;
+
+  #h-2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    a {
+      width: 24px;
+      height: 24px;
+    }
   }
 </style>
+
+<header>
+  <nav id="h-1">
+    <a href="/" id="cyan4s"><Icon id="cyan4s" />CYAN4S</a>
+    <div>
+      <HeaderLink href="/blog">Blog</HeaderLink>
+      <HeaderLink href="/portfolio">Portfolio</HeaderLink>
+      <HeaderLink href="/resume">Résumé</HeaderLink>
+    </div>
+  </nav>
+  <nav id="h-2">
+    <a href="https://twitter.com/cyan4s"><Icon id="twitter" /></a>
+    <a href="https://github.com/CYAN4S"><Icon id="github" /></a>
+    <a href="https://dribbble.com/CYAN4S"><Icon id="dribbble" /></a>
+  </nav>
+</header>

@@ -1,21 +1,129 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import Demo from "../components/Demo.astro";
+import Icon from "../components/Icon.astro";
+import Default from "../layouts/Default.astro";
 ---
 
-<!DOCTYPE html>
-<html lang="ko">
-  <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-  </head>
-  <body>
-    <Header title={SITE_TITLE} />
-    <main>
-      <h1>안녕하세요! CYAN4S입니다.</h1>
-      <p>홈페이지가 아직 공사 중입니다.</p>
-    </main>
-    <Footer />
-  </body>
-</html>
+<style lang="scss">
+  section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: transparent;
+  }
+
+  #title {
+    background-color: transparent;
+
+    div {
+      font: 800 4rem "Plus Jakarta Sans";
+      color: var(--cyan);
+      background-color: #f5f5f580;
+      display: flex;
+      overflow: hidden;
+    }
+
+    .a {
+      animation-duration: 1s;
+      animation-name: slideup;
+      animation-fill-mode: both;
+    }
+  }
+
+  @keyframes slideup {
+    from {
+      transform: translate(0, 90%);
+    }
+    to {
+      transform: none;
+    }
+  }
+
+  #i-1 {
+    display: flex;
+  }
+
+  .t {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    align-items: stretch;
+    justify-content: space-between;
+    background-color: white;
+    margin: var(--gap) auto;
+    max-width: 1080px;
+    gap: var(--gap);
+    border-radius: var(--gap);
+    overflow: hidden;
+    box-shadow: 0px 16px 16px -8px #00b8a922;
+  }
+
+  .t-1 {
+    padding: var(--gap);
+    margin: auto;
+  }
+
+  .t-2 {
+    background-color: var(--cyan);
+  }
+</style>
+
+<Default seamless={true}>
+  <Demo />
+
+  <section id="title">
+    <div>
+      <span class="a" style="animation-delay: 0s">CREATOR</span>&nbsp;
+    </div>
+    <div>
+      <span class="a" style="animation-delay: 0.25s">FOR</span>&nbsp;
+      <span class="a" style="animation-delay: 0.5s">US</span>
+    </div>
+
+    <p>CYAN4S [시안포에스] / Inho Son / 손인호</p>
+    <blockquote>
+      <strong>🛠️ 홈페이지가 아직 공사 중입니다.</strong>
+      <br />
+      내용이 불완전하거나, 레이아웃이 깨져 보이는 페이지가 아직 많습니다. 양해 부탁드립니다.
+    </blockquote>
+  </section>
+
+  <section>
+    <div class="t">
+      <div class="t-1">
+        <Icon id="cyan4s" size={36} />
+        <h1>
+          모두를 위한 게임 크리에이터,<br />
+          <span style="color: var(--cyan)">손인호</span>입니다!
+        </h1>
+        <p>
+          <strong>게임 프로그래밍</strong>을 시작으로, 그래픽 디자인, 기획 등 <strong
+            >게임 개발의 전반</strong
+          >을 다루고 있어요. 게임 개발 분야의 다재다능한 인물이 되고 싶어 열심히
+          노력하고 있어요!
+        </p>
+        <p>
+          당연히 게임을 좋아하며, 게임 중에선 <strong>리듬게임</strong>을 가장
+          좋아해요. 요즘엔 장르를 가리지 않고, 다양한 장르의 게임을 해보고
+          있어요.
+        </p>
+        <p>
+          게임 외의 취미로 웹 개발, 캐릭터 드로잉, 일렉트로닉 음악 작곡,
+          알고리즘 문제 풀기 등이 있어요. 특히 <strong>웹 개발</strong> 분야에 관심이
+          많아요.
+        </p>
+        <p>
+          <strong>커다란 공</strong>을 엄청나게 좋아해요. 커다란 공을 꽈악
+          끌어안고 있으면 기분이 좋아져요. 방에 커다란 공을 여러 개 쌓아두고
+          지내고 있답니다. ;)
+        </p>
+      </div>
+      <div class="t-2">
+        <a href="https://boun.cyan4s.com">
+          <img src="/bouncyan.svg" width="100%" />
+        </a>
+      </div>
+    </div>
+  </section>
+</Default>

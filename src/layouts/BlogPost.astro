@@ -2,50 +2,56 @@
 import type { CollectionEntry } from "astro:content";
 import FormattedDate from "../components/FormattedDate.astro";
 import Default from "./Default.astro";
+import ScrollToTop from "../components/ScrollToTop.astro";
 
 type Props = CollectionEntry<"blog">["data"] & {
-  prev: any;
-  next: any;
-  slug: string;
+  post: CollectionEntry<"blog">;
+  prev: CollectionEntry<"blog">;
+  next: CollectionEntry<"blog">;
 };
 
 const {
-  title,
-  description,
-  pubDate,
-  updatedDate,
-  heroImage,
+  post: {
+    data: { title, description, pubDate, updatedDate, heroImage },
+  },
   prev,
   next,
-  slug,
 } = Astro.props;
 ---
 
-<Default title={title} description={description} heroImage={heroImage}>
-  <style slot="style">
-    .title {
-      font-size: 2em;
-      margin: 0.25em 0 0;
-    }
-    hr {
-      border-top: 1px solid #ddd;
-      margin: 2rem 0 4rem;
-    }
-    .last-updated-on {
-      font-style: italic;
-    }
-    .neighbor {
-      margin: 48px 0;
-      display: grid;
-      grid-template-columns: auto 1fr;
-      row-gap: 12px;
-      column-gap: 20px;
-    }
-    .neighbor span {
-      color: gray;
-    }
-  </style>
+<style>
+  .title {
+    font-size: 2em;
+    margin: 0.25em 0 0;
+  }
 
+  hr {
+    border-top: 1px solid #ddd;
+    margin: 2rem 0 4rem;
+  }
+
+  .last-updated-on {
+    font-style: italic;
+  }
+
+  .neighbor {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--gap);
+    max-width: 720px;
+  }
+
+  .neighbor span {
+    color: gray;
+  }
+
+  .card {
+    max-width: 330px;
+  }
+</style>
+
+<Default title={title} description={description} heroImage={heroImage}>
   <article>
     {
       heroImage && (
@@ -63,26 +69,44 @@ const {
     }
     <hr />
     <slot />
+    <hr />
   </article>
 
-  <hr>
-
   <div class="neighbor">
-    <b>이전 게시글</b>
-    {
-      prev.slug ? (
-        <a href={`/blog/${prev.slug}`}>{prev.title}</a>
-      ) : (
-        <span>첫 게시글입니다.</span>
-      )
-    }
-    <b>다음 게시글</b>
-    {
-      next.slug ? (
-        <a href={`/blog/${next.slug}`}>{next.title}</a>
-      ) : (
-        <span>마지막 게시글입니다.</span>
-      )
-    }
+    <div>
+      <b>이전 게시글</b>
+      {
+        prev ? (
+          <a class="card" href={`/blog/${prev.slug}`}>
+            <img src={prev.data.heroImage || "/placeholder-blog.png"} />
+            <div class="card-title">{prev.data.title}</div>
+            <div class="card-desc">{prev.data.description}</div>
+            <div class="card-date">{prev.data.pubDate.toDateString()}</div>
+          </a>
+        ) : (
+          <div class="empty-card">
+            <span>첫 게시글입니다.</span>
+          </div>
+        )
+      }
+    </div>
+    <div>
+      <b>다음 게시글</b>
+      {
+        next ? (
+          <a class="card" href={`/blog/${next.slug}`}>
+            <img src={next.data.heroImage || "/placeholder-blog.png"} />
+            <div class="card-title">{next.data.title}</div>
+            <div class="card-desc">{next.data.description}</div>
+            <div class="card-date">{next.data.pubDate.toDateString()}</div>
+          </a>
+        ) : (
+          <div class="empty-card">
+            <span>마지막 게시글입니다.</span>
+          </div>
+        )
+      }
+    </div>
   </div>
+  <ScrollToTop />
 </Default>

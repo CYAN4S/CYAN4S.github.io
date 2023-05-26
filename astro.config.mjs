@@ -2,7 +2,6 @@ import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 
-
 // https://astro.build/config
 import solidJs from "@astrojs/solid-js";
 
@@ -13,7 +12,8 @@ export default defineConfig({
   markdown: {
     shikiConfig: {
       theme: "one-dark-pro",
-      wrap: true
-    }
-  }
+      wrap: true,
+    },
+  },
+  compressHTML: true,
 });

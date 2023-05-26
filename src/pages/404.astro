@@ -1,0 +1,28 @@
+---
+import Default from "../layouts/Default.astro";
+---
+
+<style>
+  section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+  }
+
+  .fof {
+    font: 404 4.04rem "Plus Jakarta Sans";
+    color: var(--cyan);
+  }
+</style>
+
+<Default seamless={true}>
+  <section>
+    <div class="fof">404</div>
+    <p><strong>Not Found</strong></p>
+    <p>여기엔 아무것도 없는 것 같습니다.</p>
+    <p>혹시 여기에 뭔가가 있어야 정상이라면, <a href="mailto:me@cyan4s.com">저에게 연락주세요.</a></p>
+  </section>
+</Default>

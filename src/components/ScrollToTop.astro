@@ -1,0 +1,41 @@
+---
+import Icon from "./Icon.astro";
+---
+
+<style>
+  button {
+    display: block;
+    width: 48px;
+    height: 48px;
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    border-radius: 999px;
+    border: none;
+    background-color: var(--cyan);
+    transition: background-color 0.2s, transform 0.1s;
+    trasform: scale(1);
+    padding: 0;
+    margin: 0;
+  }
+
+  button:hover {
+    background-color: #22dbcb;
+  }
+
+  button:active {
+    background-color: var(--cyan);
+    transform: scale(1.1, 0.9);
+  }
+</style>
+
+<button id="top">
+  <Icon id="uparrow" fill="fff" size={28}/>
+</button>
+
+<script>
+  const button = document.getElementById("top")!;
+  button.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+</script>
