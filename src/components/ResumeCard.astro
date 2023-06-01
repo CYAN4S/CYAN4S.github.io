@@ -1,0 +1,31 @@
+---
+import type { CollectionEntry } from "astro:content";
+import Meta from "./Meta.astro";
+
+type Props = {
+  folio: CollectionEntry<"portfolio">;
+  img?: string;
+};
+
+const { folio, img = folio.data.heroImage } = Astro.props;
+---
+
+<h3>{folio.data.title}</h3>
+<div>
+  <slot name="description" />
+</div>
+<img src={img} alt={`${folio.data.title}의 대표 이미지`} />
+<Meta post={folio} />
+<div class="grid-1-3">
+  <p><strong>개발 기간</strong></p>
+  <slot name="period" />
+
+  <p><strong>프로젝트 목적</strong></p>
+  <slot name="purpose" />
+
+  <p><strong>주요 업무</strong></p>
+  <slot name="task" />
+
+  <p><strong>느낀 점</strong></p>
+  <slot name="feel" />
+</div>

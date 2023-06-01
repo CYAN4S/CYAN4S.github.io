@@ -5,8 +5,6 @@ team: 개인
 stack:
   [
     Astro,
-    CSS,
-    HTML,
     JavaScript,
     TypeScript,
     PostgreSQL,

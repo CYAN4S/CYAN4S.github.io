@@ -2,7 +2,7 @@
 title: SloydJS
 period: 2020년 5월
 team: 개인
-stack: [CSS, HTML, JavaScript, TypeScript]
+stack: [JavaScript, TypeScript]
 description: 숫자 슬라이드 퍼즐 게임 및 솔버
 repo: https://github.com/cyan4s/sloydjs
 tag: [게임, 퍼즐]

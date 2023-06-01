@@ -8,6 +8,7 @@ repo: https://github.com/cyan4s/rhyaction-live
 tag: [게임, 리듬]
 platform: [Windows]
 heroImage: /portfolio/rhyaction-live/rllogo.png
+periodDetail: { "v0.1": ["2022/09", "2023/02"] }
 ---
 
 ![게임 플레이 스크린샷](/portfolio/rhyaction-live/ss.jpg)

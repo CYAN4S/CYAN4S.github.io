@@ -4,9 +4,7 @@ period: 2022년 3월 - 2022년 12월
 team: 3인 팀
 stack:
   [
-    CSS,
     Firebase,
-    HTML,
     JavaScript,
     Next.js,
     React,

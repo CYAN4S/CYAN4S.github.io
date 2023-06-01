@@ -1,0 +1,24 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+type Props = {
+  post: CollectionEntry<"portfolio">;
+};
+
+const { post } = Astro.props;
+---
+
+<div class="meta">
+  <div class="label">사용 스택</div>
+  <div class="stack">
+    {post.data.stack.map((v) => <span>{v}</span>)}
+  </div>
+  <div class="label">태그</div>
+  <div class="tag">
+    {post.data.tag.map((v) => <span>{v}</span>)}
+  </div>
+  <div class="label">플랫폼</div>
+  <div class="platform">
+    {post.data.platform.map((v) => <span>{v}</span>)}
+  </div>
+</div>
