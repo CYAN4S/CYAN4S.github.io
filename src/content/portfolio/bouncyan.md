@@ -2,9 +2,10 @@
 title: Bouncing Cyan!
 period: 2023년 2월
 team: 개인
-stack: [JavaScript, SVG, SolidJS, TypeScript, Vite]
+stack: [JavaScript, SVG, SolidJS, JS/TS, Vite]
 description: 통통 튀는 캐릭터 애니메이션
 repo: https://github.com/cyan4s/bouncyan
+link: https://boun.cyan4s.com
 tag: [아트, 에니메이션, 웹]
 platform: [웹]
 heroImage: /portfolio/bouncyan/bc.png

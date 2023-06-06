@@ -8,7 +8,6 @@
   --gap: 24px;
   --rad: 8px;
   --cyan: #26bfb3;
-  --bg: #fff;
   --icon: 24px;
   --article: 780px;
   box-sizing: border-box;
@@ -199,12 +198,7 @@ article img {
   }
 }
 
-footer {
-  height: 40px;
-  background-color: var(--cyan);
-  font: 400 0.8rem "Plus Jakarta Sans";
-  color: white;
-}
+
 
 .card-grid {
   display: grid;
@@ -273,37 +267,7 @@ hr {
   border-radius: 999px;
 }
 
-.meta {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 8px 18px;
-  margin: 36px 0;
-  align-items: center;
-}
 
-.meta .label {
-  color: #5f5f5f;
-  font-size: 0.9rem;
-  font-weight: 800;
-}
-
-.meta span {
-  display: inline-block;
-  padding: 3px 9px;
-  border-radius: 999px;
-  border: 1px solid #099f93;
-  color: #099f93;
-  font-size: 0.9rem;
-  font-weight: 600;
-}
-
-.stack,
-.tag,
-.platform {
-  display: flex;
-  gap: 6px;
-  flex-wrap: wrap;
-}
 
 .counter {
   display: flex;

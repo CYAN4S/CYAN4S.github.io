@@ -27,7 +27,9 @@ const portfolio = defineCollection({
     description: z.string(),
     tag: z.array(z.string()),
     platform: z.array(z.string()),
-    heroImage: z.string()
+    heroImage: z.string(),
+    repo: z.string().optional(),
+    link: z.string().optional()
   }),
 });
 

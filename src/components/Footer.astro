@@ -2,6 +2,18 @@
 const today = new Date();
 ---
 
+<style lang="scss">
+  footer {
+    margin-top: 24px;
+    padding: var(--gap);
+    height: 120px;
+    background-color: var(--cyan);
+
+
+    display: grid;
+  }
+</style>
+
 <footer>
-  &copy; {today.getFullYear()} CYAN4S. All rights reserved.
+  <div>&copy; {today.getFullYear()} CYAN4S. All rights reserved.</div>
 </footer>
