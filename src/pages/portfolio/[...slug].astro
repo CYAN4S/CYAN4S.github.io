@@ -2,6 +2,7 @@
 import { CollectionEntry, getCollection } from "astro:content";
 import Default from "../../layouts/Default.astro";
 import ScrollToTop from "../../components/ScrollToTop.astro";
+import Meta from "../../components/Meta.astro";
 
 export async function getStaticPaths() {
   const posts = await getCollection("portfolio");
@@ -10,7 +11,7 @@ export async function getStaticPaths() {
     props: {
       post,
       slug: post.slug,
-    }, 
+    },
   }));
 }
 
@@ -23,7 +24,6 @@ const { Content } = await post.render();
 ---
 
 <style>
-
   hr {
     margin: 4rem 0;
   }
@@ -33,20 +33,7 @@ const { Content } = await post.render();
   <article>
     <img src={post.data.heroImage} alt="" />
     <h1>{post.data.title}</h1>
-    <div class="meta">
-      <div class="label">사용 스택</div>
-      <div class="stack">
-        {post.data.stack.map((v) => <span>{v}</span>)}
-      </div>
-      <div class="label">태그</div>
-      <div class="tag">
-        {post.data.tag.map((v) => <span>{v}</span>)}
-      </div>
-      <div class="label">플랫폼</div>
-      <div class="platform">
-        {post.data.platform.map((v) => <span>{v}</span>)}
-      </div>
-    </div>
+    <Meta post={post} />
     <hr />
     <Content />
   </article>

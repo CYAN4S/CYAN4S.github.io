@@ -13,13 +13,19 @@ function find(slug: string) {
 }
 ---
 
-<Default title="CYAN4S's Résumé" description="손인호의 이력서입니다.">
+<Default title="CYAN4S Résumé" description="손인호의 이력서입니다.">
   <article>
     <h1>손인호</h1>
 
     <p style="text-align: end; color: gray; font-weight: 700;">
       2023년 6월 7일에 수정됨
     </p>
+
+    <blockquote>
+      본 이력서는 2023년 6월 7일에 마지막으로 수정되었으며,
+      <a href="https://cyan4s.com/resume"> https://cyan4s.com/resume</a>
+      에서 최신판을 확인하실 수 있습니다.
+    </blockquote>
 
     <div class="grid-1-2">
       <p><strong>희망 분야</strong></p>
@@ -35,9 +41,7 @@ function find(slug: string) {
     <hr />
 
     <h2>소개합니다.</h2>
-    <blockquote>
-      <p>모두를 위한 게임 크리에이터, <strong>손인호</strong>입니다.</p>
-    </blockquote>
+    <p>모두를 위한 게임 크리에이터, <strong>손인호</strong>입니다.</p>
     <p>
       게임 개발에 대한 열정이 가득하며, Unity를 활용하여 리듬 게임, 3D TPS,
       퍼즐, AR 등 다양한 장르의 게임을 제작해 왔습니다. 뿐만 아니라 웹 기술만을
@@ -46,9 +50,11 @@ function find(slug: string) {
     </p>
     <p>
       컴퓨터 공학을 전공하여 소프트웨어 개발에 대한 지식을 쌓았으며, 이를
-      바탕으로 게임 프로그래밍 능력을 길러왔습니다. 또한 게임 프로그래밍뿐만
-      아닌 게임 그래픽, 게임 기획 등 게임 개발의 전반적인 영역에 도전하고
-      있습니다. 다재다능한 게임 개발자로 성장하는 것을 목표로 삼고 있습니다.
+      바탕으로 <strong>게임 프로그래밍 능력</strong>을 길러왔습니다. 또한 게임
+      프로그래밍뿐만 아닌 게임 그래픽, 게임 기획 등 <strong
+        >게임 개발의 전반적인 영역</strong
+      >에 도전하고 있습니다. 다재다능한 게임 개발자로 성장하는 것을 목표로 삼고
+      있습니다.
     </p>
     <p>
       그래픽 디자인 분야에 꾸준히 관심을 가지며, 게임 내 그래픽 리소스 작업과 웹
@@ -188,7 +194,7 @@ function find(slug: string) {
       <p><strong>Game Development</strong></p>
       <ul>
         <li><strong>자신 있음 — Unity</strong></li>
-        <li>다룬 경험 있음 — Unreal, Godot</li>
+        <li>이론적 지식 있음 — Unreal, Godot</li>
       </ul>
       <p><strong>Programming Language</strong></p>
       <ul>
@@ -251,10 +257,10 @@ function find(slug: string) {
         <li>게임 내 그래픽 요소 제작</li>
       </ul>
       <ul slot="feel">
-        <li>온전한 게임을 개발하는 것은 매우 힘든 일임을 느낌.</li>
+        <li>온전한 게임을 개발하는 것은 매우 힘든 일임을 느꼈다.</li>
         <li>
           프로젝트의 규모가 커지는 만큼 프로젝트 관리의 중요성을 느꼈으며,
-          디자인 패턴, 이슈 트래커 등의 여러 방법론을 배우는 계기가 됨.
+          디자인 패턴, 이슈 트래커 등의 여러 방법론을 배우는 계기가 되었다.
         </li>
       </ul>
     </ResumeCard>
@@ -317,7 +323,7 @@ function find(slug: string) {
         <li>주제를 고안하고, 기능 및 사용자 경험을 기획</li>
         <li>개발 스택 선정 및 CI/CD 업무 수행</li>
         <li>
-          초반 <strong>풀스택 개발</strong> 참여
+          프로젝트 초반 <strong>풀스택 개발</strong> 참여
           <ul>
             <li>Firebase를 통한 사용자 계정 관리</li>
             <li>React 상태 관리</li>
@@ -338,8 +344,8 @@ function find(slug: string) {
         </li>
       </ul>
       <ul slot="feel">
-        <li>협업을 통해, 커뮤니케이션 능력의 중요성을 느낌과 동시에 능력을 키울 수 있었음</li>
-        <li>자신의 작업물을 문서화하는 것이 협업에 중요함을 느꼈음</li>
+        <li>협업을 통해, 커뮤니케이션 능력을 기를 수 있었다.</li>
+        <li>제작된 작업물 및 계획을 문서화하는 것이 중요함을 느꼈다.</li>
       </ul>
     </ResumeCard>
 
@@ -362,16 +368,29 @@ function find(slug: string) {
         </li>
       </ul>
       <ul slot="task">
-        <li>재사용 가능한 컴포넌트로 분리하여, 사이트 곳곳에 사용</li>
-        <li>검색 엔진에서 상위권 표시를 위해 SEO 최적화</li>
-        <li>작업물 관리 및 표시</li>
-        <li>메인 화면의 3D 인터렛티브 아트 및 SVG 캐릭터 애니메이션 제작</li>
+        <li>
+          Astro를 이용해 Static Site Generation 방식으로 사이트 생성
+          <ul>
+            <li>
+              사이트 내에서 자주 사용되는 요소를 컴포넌트로 만들어, 사이트
+              곳곳에 사용
+            </li>
+            <li>
+              Astro Island 기능으로, 클라이언트 측 JavaScript 사용을 최소화
+            </li>
+          </ul>
+        </li>
+        <li>검색 엔진에서 상위권 표시를 위한 SEO 작업</li>
+        <li>Three.js를 사용해, 메인 화면의 3D 인터렉티브 아트 제작</li>
+        <li>
+          Supabase 및 SolidJS를 사용해, 방문자 수 카운터 및 좋아요 기능 제작
+        </li>
       </ul>
       <ul slot="feel">
-        <li>자신만의 사이트를 만들었다는 것이 보람참</li>
+        <li>자신만의 사이트를 만들었다는 것에 큰 보람을 느꼈다.</li>
         <li>
-          다양한 형태의 컨텐츠를 다루면서, 컨텐츠의 일관적인 관리의 필요성을
-          느낌
+          다양한 형태의 컨텐츠를 다루면서, 컨텐츠를 일관적인 방식으로 정리하는
+          것이 중요함을 알게 되었다.
         </li>
       </ul>
     </ResumeCard>
@@ -456,27 +475,14 @@ function find(slug: string) {
 
     <hr />
 
-    <h2 id="디자인">디자인</h2>
-    <ul>
-      <li>
-        Dribbble —
-        <a href="https://dribbble.com/CYAN4S"> https://dribbble.com/CYAN4S</a>
-      </li>
-      <li>
-        Behance —
-        <a href="https://www.behance.net/CYAN4S">
-          https://www.behance.net/CYAN4S
-        </a>
-      </li>
-      <li>
-        Vimeo —
-        <a href="https://vimeo.com/cyan4s"> https://vimeo.com/cyan4s</a>
-      </li>
-    </ul>
+    <h2>디자인</h2>
     <p>
       <strong>
         Affinity Designer, Figma, SVGator, Blender, VRoid Studio, Unreal Engine</strong
-      >을 사용합니다.
+      >등을 활용하여, 여러 종류 및 여러 스타일의 그래픽 디자인 아트웍을 만들 수
+      있습니다. Dribbble(<a href="https://dribbble.com/CYAN4S"
+        >https://dribbble.com/CYAN4S</a
+      >)에서 아트웍을 확인하실 수 있습니다.
     </p>
     <div class="flex">
       <div>
@@ -495,10 +501,6 @@ function find(slug: string) {
     </div>
     <div class="flex">
       <div>
-        <img
-          src="/resume/warehouse.jpg"
-          alt="버려진 창고 컨셉의 포토리얼리스틱 아트웍"
-        />
         <p><strong>환경 디자인</strong></p>
         <p>Unreal Engine을 통한 실사 환경을 디자인해보고 있습니다.</p>
       </div>
@@ -507,9 +509,9 @@ function find(slug: string) {
         <p>Blender를 통한 VJ Loop 영상을 제작할 수 있습니다.</p>
       </div>
     </div>
-
     <hr />
-    <h2 id="취미">취미</h2>
+
+    <h2>취미</h2>
     <ul>
       <li>
         <strong>FL Studio</strong>로 EDM 프로듀싱에 도전 중이며,
@@ -530,7 +532,7 @@ function find(slug: string) {
     </ul>
     <hr />
 
-    <h2 id="추가-사항">추가 사항</h2>
+    <h2>추가 사항</h2>
     <div class="grid-1-2">
       <p><strong>영어</strong></p>
       <ul>
