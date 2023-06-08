@@ -10,6 +10,10 @@ const posts = await getCollection("portfolio");
   description="CYAN4S의 포트폴리오입니다."
   heroImage="/placeholder-blog.png"
 >
+  <blockquote style="margin: var(--gap) var(--gap) 0">
+    <p><strong>🚧 포트폴리오 사이트는 아직 공사 중이에요.</strong></p>
+    <p>내용적으로 부실하거나, 현재와 맞지 않는 내용이 있을 수 있어요. 최대한 빨리 수정할께요!</p>
+  </blockquote>
   <div class="card-grid">
     {
       posts.map((post) => (

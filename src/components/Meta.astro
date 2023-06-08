@@ -1,11 +1,19 @@
 ---
 import type { CollectionEntry } from "astro:content";
 
+const metaLabel = {
+  "team": "개발 인원",
+  "stack": "사용 스택",
+  "tag": "태그",
+  "platform": "플랫폼"
+}
+
 type Props = {
   post: CollectionEntry<"portfolio">;
+  order?: (keyof typeof metaLabel)[];
 };
 
-const { post } = Astro.props;
+const { post, order = ["team", "stack", "tag", "platform"] } = Astro.props;
 ---
 
 <style>
@@ -44,10 +52,6 @@ const { post } = Astro.props;
 </style>
 
 <div class="meta">
-  <div class="label">개발 인원</div>
-  <div class="team">
-    <span>{post.data.team}</span>
-  </div>
   <div class="label">사용 스택</div>
   <div class="stack">
     {post.data.stack.map((v) => <span>{v}</span>)}

@@ -74,7 +74,7 @@ export default function PostComment(props: Props) {
   };
 
   return (
-    <Show when={!fetched.loading} fallback={<p>정보를 불러오고 있습니다.</p>}>
+    <Show when={!fetched.loading} fallback={<p>카운터 정보를 불러오고 있습니다. 잠시만 기다려주세요.</p>}>
       <div class="counter">
         <div class="visit">
           <svg style={`fill: #aaa`} width={`24px`} height={`24px`}>

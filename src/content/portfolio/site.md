@@ -8,7 +8,7 @@ repo: https://github.com/cyan4s/cyan4s.github.io
 link: https://cyan4s.com
 tag: [아트, 웹]
 platform: [웹]
-heroImage: /placeholder-default.png
+heroImage: /portfolio/site/site.png
 ---
 
 ## 컨텐츠 관리

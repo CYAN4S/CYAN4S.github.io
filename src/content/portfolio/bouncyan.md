@@ -2,7 +2,7 @@
 title: Bouncing Cyan!
 period: 2023년 2월
 team: 개인
-stack: [JavaScript, SVG, SolidJS, JS/TS, Vite]
+stack: [SVG, SolidJS, JS/TS, Vite]
 description: 통통 튀는 캐릭터 애니메이션
 repo: https://github.com/cyan4s/bouncyan
 link: https://boun.cyan4s.com
@@ -13,7 +13,7 @@ heroImage: /portfolio/bouncyan/bc.png
 
 ![bc.png](/portfolio/bouncyan/bc.png)
 
-🎈 저의 페르소나 캐릭터 ‘시안’의 애니메이션 시연 웹사이트입니다.
+🎈 저의 페르소나 캐릭터 '시안'의 애니메이션 시연 웹사이트입니다.
 
 - **시연 링크** — [https://boun.cyan4s.com/](https://boun.cyan4s.com/)
 

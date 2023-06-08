@@ -74,20 +74,24 @@ const {
       )
     }
     <h1>{title}</h1>
-    <FormattedDate date={pubDate} />
-    {
-      updatedDate && (
-        <div class="last-updated-on">
-          <FormattedDate date={updatedDate} />에 수정됨
-        </div>
-      )
-    }
-    <hr />
+    <div style="text-align: end; color: gray; font-weight: 700; margin: 8px 0 32px">
+      <FormattedDate date={pubDate} />
+      {
+        updatedDate && (
+          <>
+            <br />
+            <span style="font-style: italic;">
+              <FormattedDate date={updatedDate} />에 수정됨
+            </span>
+          </>
+        )
+      }
+    </div>
     <slot />
     <hr />
   </article>
 
-  <div class="act"><PostComment slug={slug} client:visible /></div>
+  <div class="act"><PostComment slug={slug} client:load /></div>
 
   <div class="neighbor">
     <div>

@@ -31,6 +31,10 @@ const { Content } = await post.render();
 
 <Default>
   <article>
+    <blockquote style="margin: 0 0 var(--gap)">
+      <p><strong>🚧 포트폴리오 사이트는 아직 공사 중이에요.</strong></p>
+      <p>내용적으로 부실하거나, 현재와 맞지 않는 내용이 있을 수 있어요. 최대한 빨리 수정할께요!</p>
+    </blockquote>
     <img src={post.data.heroImage} alt="" />
     <h1>{post.data.title}</h1>
     <Meta post={post} />
