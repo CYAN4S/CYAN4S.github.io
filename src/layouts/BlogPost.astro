@@ -3,6 +3,7 @@ import type { CollectionEntry } from "astro:content";
 import FormattedDate from "../components/FormattedDate.astro";
 import Default from "./Default.astro";
 import ScrollToTop from "../components/ScrollToTop.astro";
+import PostComment from "../components/PostComment";
 
 type Props = CollectionEntry<"blog">["data"] & {
   post: CollectionEntry<"blog">;
@@ -12,6 +13,7 @@ type Props = CollectionEntry<"blog">["data"] & {
 
 const {
   post: {
+    slug,
     data: { title, description, pubDate, updatedDate, heroImage },
   },
   prev,
@@ -37,16 +39,22 @@ const {
   .neighbor {
     margin: 0 auto 4rem;
     display: grid;
-    grid-template-columns: 330px 330px;
+    grid-template-columns: 1fr 1fr;
     gap: var(--gap);
-    max-width: 720px;
+    max-width: var(--article);
   }
 
   .neighbor span {
     color: gray;
   }
 
-  .card, .empty-card {
+  .act {
+    margin: 0 auto;
+    max-width: var(--article);
+  }
+
+  .card,
+  .empty-card {
     height: 240px;
   }
 
@@ -56,7 +64,6 @@ const {
       grid-template-rows: 1fr 1fr;
     }
   }
-
 </style>
 
 <Default title={title} description={description} heroImage={heroImage}>
@@ -67,18 +74,24 @@ const {
       )
     }
     <h1>{title}</h1>
-    <FormattedDate date={pubDate} />
-    {
-      updatedDate && (
-        <div class="last-updated-on">
-          <FormattedDate date={updatedDate} />에 수정됨
-        </div>
-      )
-    }
-    <hr />
+    <div style="text-align: end; color: gray; font-weight: 700; margin: 8px 0 32px">
+      <FormattedDate date={pubDate} />
+      {
+        updatedDate && (
+          <>
+            <br />
+            <span style="font-style: italic;">
+              <FormattedDate date={updatedDate} />에 수정됨
+            </span>
+          </>
+        )
+      }
+    </div>
     <slot />
     <hr />
   </article>
+
+  <div class="act"><PostComment slug={slug} client:load /></div>
 
   <div class="neighbor">
     <div>

@@ -1,0 +1,67 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+const metaLabel = {
+  "team": "개발 인원",
+  "stack": "사용 스택",
+  "tag": "태그",
+  "platform": "플랫폼"
+}
+
+type Props = {
+  post: CollectionEntry<"portfolio">;
+  order?: (keyof typeof metaLabel)[];
+};
+
+const { post, order = ["team", "stack", "tag", "platform"] } = Astro.props;
+---
+
+<style>
+  .meta {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 8px 18px;
+    /* align-items: center; */
+  }
+
+  .meta .label {
+    color: #5f5f5f;
+    font-size: 0.9rem;
+    font-weight: 800;
+    padding-top: 4px;
+  }
+
+  .meta span {
+    display: inline-block;
+    padding: 3px 9px;
+    border-radius: 999px;
+    border: 1px solid #099f93;
+    color: #099f93;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  .stack,
+  .tag,
+  .platform,
+  .team {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+</style>
+
+<div class="meta">
+  <div class="label">사용 스택</div>
+  <div class="stack">
+    {post.data.stack.map((v) => <span>{v}</span>)}
+  </div>
+  <div class="label">태그</div>
+  <div class="tag">
+    {post.data.tag.map((v) => <span>{v}</span>)}
+  </div>
+  <div class="label">플랫폼</div>
+  <div class="platform">
+    {post.data.platform.map((v) => <span>{v}</span>)}
+  </div>
+</div>

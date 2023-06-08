@@ -1,6 +1,6 @@
 ---
 title: Microplatform
-period: 2020년 12월
+period: 2020/12
 team: 개인
 stack: [C#, Unity]
 description: 간단한 2D 플랫포머 게임
