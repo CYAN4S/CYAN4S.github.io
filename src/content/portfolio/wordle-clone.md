@@ -3,7 +3,7 @@ title: Wordle Clone
 period: 2022년 7월
 team: 개인
 stack: [C#, Unity]
-description: 유명 영단어 게임 Wordle의 클론작
+description: 유명한 영단어 퍼즐게임인 Wordle을 Unity로 클론 코딩하였습니다.
 repo: https://github.com/cyan4s/wordle-clone
 tag: [게임, 퍼즐]
 platform: [웹]

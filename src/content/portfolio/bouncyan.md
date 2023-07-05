@@ -3,7 +3,7 @@ title: Bouncing Cyan!
 period: 2023년 2월
 team: 개인
 stack: [SVG, SolidJS, JS/TS, Vite]
-description: 통통 튀는 캐릭터 애니메이션
+description: 귀여운 캐릭터가 통통 튀는 애니메이션을 볼 수 있는 웹사이트입니다.
 repo: https://github.com/cyan4s/bouncyan
 link: https://boun.cyan4s.com
 tag: [아트, 에니메이션, 웹]

@@ -3,7 +3,7 @@ title: SloydJS
 period: 2020년 5월
 team: 개인
 stack: [JS/TS]
-description: 숫자 슬라이드 퍼즐 게임 및 솔버
+description: 웹 기반의 숫자 슬라이드 퍼즐 게임입니다. 크기 변경, 섞기, 타이머, 솔버 기능이 있습니다.
 repo: https://github.com/cyan4s/sloydjs
 link: https://sloyd.pages.dev
 tag: [게임, 퍼즐]

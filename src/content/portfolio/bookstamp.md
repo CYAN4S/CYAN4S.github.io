@@ -3,7 +3,7 @@ title: Bookstamp
 period: 2022년 3월 - 2022년 12월
 team: 3인 팀
 stack: [Firebase, JS/TS, Next.js, React, TensorFlow]
-description: 딥러닝 기반 연관 도서 추천 기능이 있는 도서 커뮤니티
+description: 도서가 중심이 되는 커뮤니티 웹서비스로, 딥러닝 기반의 도서 추천 기능이 특징입니다.
 repo: https://github.com/cyan4s/book-community
 link: https://book-community.vercel.app
 tag: [소셜, 웹]
