@@ -3,7 +3,7 @@ title: Bouncy Rumble
 period: 2022년 11월 - 현재
 team: 개인
 stack: [C#, Unity]
-description: 공을 부풀려 던지는 TPS 게임
+description: 캐릭터가 맵 내에서 자신의 무기인 공을 공기로 부풀려서, 상대에게 맞추는 3인칭 슈팅 게임입니다.
 repo: https://github.com/cyan4s/bouncy-rumble
 tag: [3D, TPS, 게임, 슈팅]
 platform: [Windows]

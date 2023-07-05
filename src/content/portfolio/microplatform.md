@@ -3,7 +3,7 @@ title: Microplatform
 period: 2020/12
 team: 개인
 stack: [C#, Unity]
-description: 간단한 2D 플랫포머 게임
+description: 간단한 2D 플랫포머 게임으로, 키보드 및 터치를 지원합니다.
 repo: https://github.com/cyan4s/microplatform
 tag: [게임, 플랫포머]
 platform: [Android, 웹]

@@ -3,7 +3,7 @@ title: 개인 웹사이트
 period: 장기간
 team: 개인
 stack: [Astro, JS/TS, PostgreSQL, Supabase, Three.js]
-description: 자기소개 사이트
+description: 블로그, 포트폴리오, 이력서 등의 개인 작업물들을 보여주기 위한 사이트입니다.
 repo: https://github.com/cyan4s/cyan4s.github.io
 link: https://cyan4s.com
 tag: [아트, 웹]

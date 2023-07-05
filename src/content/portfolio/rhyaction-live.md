@@ -3,7 +3,7 @@ title: RHYACTION LIVE
 period: 2022년 9월 - 현재
 team: 개인
 stack: [C#, FMOD, Unity]
-description: 오픈소스 노트 낙하형 리듬게임
+description: 음악에 맟춰 떨어지는 노트를 맞추는 전통적인 리듬 게임입니다.
 repo: https://github.com/cyan4s/rhyaction-live
 tag: [게임, 리듬]
 platform: [Windows]

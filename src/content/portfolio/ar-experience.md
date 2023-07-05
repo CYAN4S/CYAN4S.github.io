@@ -3,7 +3,7 @@ title: AR Experience
 period: 2022년 9월
 team: 개인
 stack: [C#, Unity]
-description: AR 이미지 트래커 및 슈팅 게임
+description: AR 체험 앱으로, 이미지 트래킹 및 슈팅 게임이 포함되어 있습니다.
 repo: https://github.com/cyan4s/ar-experience
 tag: [3D, AR, 게임, 슈팅, 아트]
 platform: [Android]
