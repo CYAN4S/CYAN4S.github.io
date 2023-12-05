@@ -7,7 +7,7 @@ import solidJs from "@astrojs/solid-js";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://www.cyan4s.com",
+  site: "https://cyan4s.com",
   integrations: [mdx(), sitemap(), solidJs()],
   markdown: {
     shikiConfig: {
@@ -16,4 +16,6 @@ export default defineConfig({
     },
   },
   compressHTML: true,
+  experimental: {
+  },
 });

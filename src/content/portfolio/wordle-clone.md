@@ -7,7 +7,7 @@ description: 유명한 영단어 퍼즐게임인 Wordle을 Unity로 클론 코�
 repo: https://github.com/cyan4s/wordle-clone
 tag: [게임, 퍼즐]
 platform: [웹]
-heroImage: /portfolio/wordle-clone/wd.png
+heroImage: ../../assets/portfolio/wordle-clone/wd.png
 ---
 
 🧩 유명한 영단어 퍼즐게임인 Wordle을 Unity로 클론 코딩하였습니다.

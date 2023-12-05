@@ -1,5 +1,5 @@
 ---
-import { CollectionEntry, getCollection } from "astro:content";
+import { type CollectionEntry, getCollection } from "astro:content";
 import Default from "../../layouts/Default.astro";
 import ScrollToTop from "../../components/ScrollToTop.astro";
 import Meta from "../../components/Meta.astro";
@@ -35,7 +35,7 @@ const { Content } = await post.render();
       <p><strong>🚧 포트폴리오 사이트는 아직 공사 중이에요.</strong></p>
       <p>내용적으로 부실하거나, 현재와 맞지 않는 내용이 있을 수 있어요. 최대한 빨리 수정할께요!</p>
     </blockquote>
-    <img src={post.data.heroImage} alt="" />
+    <img src={post.data.heroImage?.src} alt="" />
     <h1>{post.data.title}</h1>
     <Meta post={post} />
     <hr />

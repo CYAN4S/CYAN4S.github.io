@@ -84,7 +84,7 @@ import Default from "../layouts/Default.astro";
     .read {
       font-size: 0.9rem;
       font-weight: 800;
-      color: #888;
+      color: #6c6c6c;
       text-align: end;
     }
 
@@ -99,7 +99,7 @@ import Default from "../layouts/Default.astro";
     align-items: center;
 
     img {
-      max-width: 400px;
+      max-width: min(400px, calc(100vw - 60px));
       max-height: 600px;
       margin: 0 auto;
     }
@@ -134,7 +134,7 @@ import Default from "../layouts/Default.astro";
         <div class="logo"><Icon id="cyan4s" size={36} /></div>
         <h1>
           모두를 위한 게임 크리에이터,<br />
-          <span style="color: var(--cyan)">손인호</span>입니다!
+          <span style="color: var(--cyan)">CYAN4S</span>입니다!
         </h1>
         <p>
           <strong>게임 프로그래밍</strong>을 시작으로, 그래픽 디자인, 기획 등
@@ -158,8 +158,8 @@ import Default from "../layouts/Default.astro";
         </p>
         <p class="read">CYAN4S[시안포에스] / 손인호(Inho Son)</p>
       </div>
-      <a href="https://boun.cyan4s.com" class="t-2">
-        <img src="/bouncyan.svg" width="100%" />
+      <a href="https://boun.cyan4s.com" class="t-2" aria-label="Link for more info about this animation">
+        <img src="/bouncyan.svg" width="400px" height="600px" alt="Cyan's jumping animation"/>
       </a>
     </div>
   </section>

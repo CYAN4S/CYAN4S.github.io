@@ -7,11 +7,11 @@ description: 음악에 맟춰 떨어지는 노트를 맞추는 전통적인 리�
 repo: https://github.com/cyan4s/rhyaction-live
 tag: [게임, 리듬]
 platform: [Windows]
-heroImage: /portfolio/rhyaction-live/rllogo.png
+heroImage: ../../assets/portfolio/rhyaction-live/rllogo.png
 periodDetail: { "v0.1": ["2022/09", "2023/02"] }
 ---
 
-![게임 플레이 스크린샷](/portfolio/rhyaction-live/ss.jpg)
+![게임 플레이 스크린샷](../../assets/portfolio/rhyaction-live/ss.jpg)
 
 게임 플레이 스크린샷
 
@@ -39,7 +39,7 @@ periodDetail: { "v0.1": ["2022/09", "2023/02"] }
 
 ### 채보 에디터
 
-![Untitled.png](/portfolio/rhyaction-live/editor.png)
+![Untitled.png](../../assets/portfolio/rhyaction-live/editor.png)
 
 _개발 중이며, 아직 빌드에 포함되어 있지 않았습니다._
 
@@ -49,13 +49,13 @@ _개발 중이며, 아직 빌드에 포함되어 있지 않았습니다._
 
 ## 그래픽 디자인
 
-![선곡 화면 컨셉 아트 (**실제 게임 화면이 아닙니다**)](/portfolio/rhyaction-live/select-concept.png)
+![선곡 화면 컨셉 아트 (**실제 게임 화면이 아닙니다**)](../../assets/portfolio/rhyaction-live/select-concept.png)
 
 선곡 화면 컨셉 아트 (**실제 게임 화면이 아닙니다**)
 
 전체적으로 공상과학 느낌의 HUD 디자인에서 영감을 받은 디자인입니다.
 
-사용자 친화적인 UI/UX를 설계하기 위해 노력하였습니다. 해당 컨셉 아트 내 선곡 화면의 경우, “곡 선택 → 곡 정보 확인 → 버튼 선택 → 난이도 선택 → 게임 설정 → 시작” 흐름이 자연스럽게 동선을 설계하였습니다.
+사용자 친화적인 UI/UX를 설계하기 위해 노력하였습니다. 해당 컨셉 아트 내 선곡 화면의 경우, "곡 선택 → 곡 정보 확인 → 버튼 선택 → 난이도 선택 → 게임 설정 → 시작" 흐름이 자연스럽게 동선을 설계하였습니다.
 
 **Affinity Designer**
 

@@ -7,10 +7,10 @@ description: 캐릭터가 맵 내에서 자신의 무기인 공을 공기로 부
 repo: https://github.com/cyan4s/bouncy-rumble
 tag: [3D, TPS, 게임, 슈팅]
 platform: [Windows]
-heroImage: /portfolio/bouncy-rumble/brlogo.png
+heroImage: ../../assets/portfolio/bouncy-rumble/brlogo.png
 ---
 
-![게임 플레이 스크린샷](/portfolio/bouncy-rumble/s1.png)
+![게임 플레이 스크린샷](../../assets/portfolio/bouncy-rumble/s1.png)
 
 게임 플레이 스크린샷
 
@@ -42,7 +42,7 @@ heroImage: /portfolio/bouncy-rumble/brlogo.png
 
 ## 그래픽 디자인
 
-![게임 타이틀 스크린샷](/portfolio/bouncy-rumble/s2.png)
+![게임 타이틀 스크린샷](../../assets/portfolio/bouncy-rumble/s2.png)
 
 게임 타이틀 스크린샷
 
@@ -72,7 +72,7 @@ heroImage: /portfolio/bouncy-rumble/brlogo.png
 
 ## 프로그래밍 및 프로젝트 관리
 
-![Unity 에디터 화면](/portfolio/bouncy-rumble/p.png)
+![Unity 에디터 화면](../../assets/portfolio/bouncy-rumble/p.png)
 
 Unity 에디터 화면
 
@@ -92,7 +92,7 @@ Hierarchy가 복잡해지는 것을 막기 위해, RiderFlow의 에셋 정리 �
 
 - 발표 슬라이드 링크 — [https://1drv.ms/p/s!AhqhYoAMSzYV8zwrSyNLV5h5mVI\_?e=wJMg0Y](https://1drv.ms/p/s!AhqhYoAMSzYV8zwrSyNLV5h5mVI_?e=wJMg0Y)
 
-![발표 당시 사용한 슬라이드 #1](/portfolio/bouncy-rumble/hackathon.png)
+![발표 당시 사용한 슬라이드 #1](../../assets/portfolio/bouncy-rumble/hackathon.png)
 
 발표 당시 사용한 슬라이드 #1
 

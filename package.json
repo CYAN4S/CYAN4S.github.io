@@ -11,19 +11,19 @@
     "host": "astro dev --host"
   },
   "dependencies": {
-    "@astrojs/mdx": "^0.17.2",
-    "@astrojs/rss": "^2.1.1",
-    "@astrojs/sitemap": "^1.2.0",
-    "@astrojs/solid-js": "^2.1.1",
-    "@supabase/supabase-js": "^2.21.0",
-    "astro": "^2.0.17",
+    "@astrojs/mdx": "^1.1.0",
+    "@astrojs/rss": "^3.0.0",
+    "@astrojs/sitemap": "^3.0.0",
+    "@astrojs/solid-js": "^3.0.1",
+    "@supabase/supabase-js": "^2.36.0",
+    "astro": "^3.4.0",
     "js-cookie": "^3.0.5",
-    "sass": "^1.62.1",
-    "solid-js": "^1.7.5",
-    "three": "^0.152.2"
+    "sass": "^1.68.0",
+    "solid-js": "^1.7.12",
+    "three": "^0.156.1"
   },
   "devDependencies": {
     "@types/js-cookie": "^3.0.3",
-    "@types/three": "^0.152.0"
+    "@types/three": "^0.156.0"
   }
 }

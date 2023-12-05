@@ -3,8 +3,9 @@ import type { CollectionEntry } from "astro:content";
 import FormattedDate from "../components/FormattedDate.astro";
 import Default from "./Default.astro";
 import ScrollToTop from "../components/ScrollToTop.astro";
+// import PostComment from "../components/PostComment";
+import { Image } from "astro:assets";
 import PostComment from "../components/PostComment";
-import Reaction from "../components/Reaction.astro";
 
 type Props = CollectionEntry<"blog">["data"] & {
   post: CollectionEntry<"blog">;
@@ -16,6 +17,7 @@ const {
   post: {
     slug,
     data: { title, description, pubDate, updatedDate, heroImage },
+    id,
   },
   prev,
   next,
@@ -69,30 +71,44 @@ const {
 
 <Default title={title} description={description} heroImage={heroImage}>
   <article>
-    {
-      heroImage && (
-        <img src={heroImage} alt={`게시글 '${title}'의 헤더 이미지`} />
-      )
-    }
-    <h1>{title}</h1>
-    <div style="text-align: end; color: gray; font-weight: 700; margin: 8px 0 32px">
-      <FormattedDate date={pubDate} />
+    <div>
       {
-        updatedDate && (
-          <>
-            <br />
-            <span style="font-style: italic;">
-              <FormattedDate date={updatedDate} />에 수정됨
-            </span>
-          </>
+        heroImage && (
+          <Image
+            src={heroImage}
+            alt={`게시글 '${title}'의 헤더 이미지`}
+            loading="eager"
+            transition:name={`${id}-img`}
+          />
         )
       }
+      <h1 transition:name={`${id}-title`}>{title}</h1>
+      <p transition:name={`${id}-description`}>{description}</p>
+      <div
+        style="text-align: end; color: gray; font-weight: 700; margin: 8px 0 32px"
+        transition:name={`${id}-date`}
+      >
+        <FormattedDate date={pubDate} />
+        {
+          updatedDate && (
+            <>
+              <br />
+              <span style="font-style: italic;">
+                <FormattedDate date={updatedDate} />에 수정됨
+              </span>
+            </>
+          )
+        }
+      </div>
     </div>
+    <hr>
     <slot />
-    <hr />
   </article>
 
-  <div class="act"><PostComment slug={slug} client:load /></div>
+  <div class="act">
+    <PostComment slug={slug} client:load />
+    <hr>
+  </div>
   {/* <Reaction slug={slug}/> */}
 
   <div class="neighbor">
@@ -101,9 +117,11 @@ const {
       {
         prev ? (
           <a class="card" href={`/blog/${prev.slug}`}>
-            <div class="card-title">{prev.data.title}</div>
+            <div class="card-title" transition:name={`${prev.id}-title`}>
+              {prev.data.title}
+            </div>
             <div class="card-desc">{prev.data.description}</div>
-            <div class="card-date">
+            <div class="card-date" transition:name={`${prev.id}-date`}>
               <FormattedDate date={prev.data.pubDate} />
             </div>
           </a>
@@ -119,9 +137,11 @@ const {
       {
         next ? (
           <a class="card" href={`/blog/${next.slug}`}>
-            <div class="card-title">{next.data.title}</div>
+            <div class="card-title" transition:name={`${next.id}-title`}>
+              {next.data.title}
+            </div>
             <div class="card-desc">{next.data.description}</div>
-            <div class="card-date">
+            <div class="card-date" transition:name={`${next.id}-date`}>
               <FormattedDate date={next.data.pubDate} />
             </div>
           </a>

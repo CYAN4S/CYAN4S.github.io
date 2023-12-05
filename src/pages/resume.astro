@@ -2,10 +2,7 @@
 import Default from "../layouts/Default.astro";
 import ScrollToTop from "../components/ScrollToTop.astro";
 
-import { CollectionEntry, getCollection } from "astro:content";
-import ResumeCard from "../components/ResumeCard.astro";
-import Meta from "../components/Meta.astro";
-import ResumeSmallCard from "../components/ResumeSmallCard.astro";
+import { getCollection } from "astro:content";
 import Content from "../components/Resume.astro"
 
 const folios = await getCollection("portfolio");

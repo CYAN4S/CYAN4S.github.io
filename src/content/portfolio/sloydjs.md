@@ -8,7 +8,7 @@ repo: https://github.com/cyan4s/sloydjs
 link: https://sloyd.pages.dev
 tag: [게임, 퍼즐]
 platform: [웹]
-heroImage: /portfolio/sloydjs/sl.png
+heroImage: ../../assets/portfolio/sloydjs/sl.png
 ---
 
 🧩 웹 기반의 숫자 슬라이드 퍼즐 게임입니다. 크기 변경, 섞기, 타이머, 솔버 기능이 있습니다.

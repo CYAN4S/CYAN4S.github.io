@@ -61,17 +61,15 @@ import Icon from "./Icon.astro";
   }
 </style>
 
-<header>
+<header transition:name="header">
   <a href="/" id="cyan4s"><Icon id="cyan4s" />CYAN4S</a>
   <nav id="h-1" class="hide">
     <HeaderLink href="/blog">Blog</HeaderLink>
     <HeaderLink href="/portfolio">Portfolio</HeaderLink>
-    <HeaderLink href="/resume">Résumé</HeaderLink>
   </nav>
   <nav id="h-2">
-    <a href="https://github.com/CYAN4S"><Icon id="github" /></a>
-    <a href="https://twitter.com/cyan4s"><Icon id="twitter" /></a>
-    <a href="https://stella.place/@cyan4s"><Icon id="misskey" /></a>
+    <a href="https://github.com/CYAN4S" aria-label="CYAN4S's GitHub"><Icon id="github" /></a>
+    <a href="https://x.com/cyan4s" aria-label="CYAN4S's Twitter(X)"><Icon id="twitter" /></a>
     <div id="menu-btn"><Icon id="menu" /></div>
   </nav>
 </header>

@@ -8,12 +8,12 @@ repo: https://github.com/cyan4s/book-community
 link: https://book-community.vercel.app
 tag: [소셜, 웹]
 platform: [웹]
-heroImage: /portfolio/bookstamp/bslogo.png
+heroImage: ../../assets/portfolio/bookstamp/bslogo.png
 ---
 
 🔖 **Next.js** 기반 **도서 커뮤니티** 웹서비스이며, **딥러닝 기반의 연관 도서 추천** 기능이 있습니다.
 
-![앱 내 도서 검색 결과 화면](/portfolio/bookstamp/search.png)
+![앱 내 도서 검색 결과 화면](../../assets/portfolio/bookstamp/search.png)
 
 앱 내 도서 검색 결과 화면
 
@@ -42,7 +42,7 @@ heroImage: /portfolio/bookstamp/bslogo.png
 
 ## 디자인
 
-![Figma를 통한 UI 프로토타입 설계 화면](/portfolio/bookstamp/concept.png)
+![Figma를 통한 UI 프로토타입 설계 화면](../../assets/portfolio/bookstamp/concept.png)
 
 Figma를 통한 UI 프로토타입 설계 화면
 
@@ -58,7 +58,7 @@ Figma를 통한 UI 프로토타입 설계 화면
 
 ## 프로젝트 매니지먼트
 
-![기술 스택 구조 다이어그램 (Flutter 앱 개발은 무산되었습니다.)](/portfolio/bookstamp/api.png)
+![기술 스택 구조 다이어그램 (Flutter 앱 개발은 무산되었습니다.)](../../assets/portfolio/bookstamp/api.png)
 
 기술 스택 구조 다이어그램 (Flutter 앱 개발은 무산되었습니다.)
 
@@ -110,7 +110,7 @@ React 상태 관리 라이브러리인 Recoil을 도입하였습니다.
 
 특정 도서에 대한 연관 도서를 추천하는 인공지능을 제작하였습니다.
 
-![ML 모델 구조 다이어그램](/portfolio/bookstamp/arc.png)
+![ML 모델 구조 다이어그램](../../assets/portfolio/bookstamp/arc.png)
 
 ML 모델 구조 다이어그램
 

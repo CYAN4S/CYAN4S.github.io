@@ -1,6 +1,19 @@
 <canvas id="c"></canvas>
+<div id="pre" />
 <style>
   canvas#c {
+    width: 100lvw;
+    height: 100lvh;
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -2;
+    padding: 0;
+    margin: 0;
+  }
+
+  div#pre {
     width: 100lvw;
     height: 100lvh;
     display: block;
@@ -10,6 +23,22 @@
     z-index: -1;
     padding: 0;
     margin: 0;
+    background-color: white;
+  }
+
+  div#pre.fo {
+    animation-name: fadeout;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+  }
+
+  @keyframes fadeout {
+    from {
+      background-color: #FFFF;
+    }
+    to {
+      background-color: #FFF0;
+    }
   }
 </style>
 <script>
@@ -92,19 +121,19 @@
   camera.rotation.y = Math.PI / 2;
 
   // Renderer
-  const canvas = document.querySelector<HTMLCanvasElement>("#c")!;
-  const renderer = new WebGLRenderer({ canvas, antialias: true });
+  let canvas = document.querySelector<HTMLCanvasElement>("#c");
+  let renderer = canvas && new WebGLRenderer({ canvas, antialias: true });
 
   // Light
-  const directionalLight = new DirectionalLight(0xffffff, 0.8);
+  const directionalLight = new DirectionalLight(0xffffff, 2);
   directionalLight.position.set(5, 10, 7.5);
   scene.add(directionalLight);
 
-  const directionalFloorLight = new DirectionalLight(0xffffff, 0.05);
+  const directionalFloorLight = new DirectionalLight(0xffffff, 0.1);
   directionalFloorLight.position.set(0, -1, 0);
   scene.add(directionalFloorLight);
 
-  const ambientLight = new AmbientLight(0xffffff, 0.8);
+  const ambientLight = new AmbientLight(0xffffff, 3);
   scene.add(ambientLight);
 
   // Object
@@ -134,6 +163,10 @@
   function render() {
     requestAnimationFrame(render);
 
+    if (!renderer || !canvas) {
+      return;
+    }
+
     if (resizeRendererToDisplaySize(renderer)) {
       const canvas = renderer.domElement;
       camera.aspect = canvas.clientWidth / canvas.clientHeight;
@@ -159,6 +192,19 @@
     renderer.render(scene, camera);
   }
 
-  // Start
-  render();
+  // astro:page-load
+  window.addEventListener('load', () => {
+    canvas = document.querySelector<HTMLCanvasElement>("#c");
+    if (!canvas) return;
+
+    pre = document.querySelector<HTMLDivElement>("#pre");
+    if (!pre) return;
+    
+    renderer = canvas && new WebGLRenderer({ canvas, antialias: true });
+    render();
+
+    pre.className = "fo";
+  });
+
+  let pre = document.querySelector<HTMLDivElement>("#pre");
 </script>

@@ -7,7 +7,7 @@ description: 간단한 2D 플랫포머 게임으로, 키보드 및 터치를 지
 repo: https://github.com/cyan4s/microplatform
 tag: [게임, 플랫포머]
 platform: [Android, 웹]
-heroImage: /portfolio/microplatform/mp.png
+heroImage: ../../assets/portfolio/microplatform/mp.png
 ---
 
 😶 간단한 2D 플랫포머 게임으로, 키보드 및 터치를 지원합니다.

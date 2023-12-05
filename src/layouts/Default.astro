@@ -2,11 +2,12 @@
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import type { ImageMetadata } from "astro";
 
 type Props = {
   title?: string;
   description?: string;
-  heroImage?: string;
+  heroImage?: ImageMetadata;
   seamless?: boolean;
 } & Record<string, any>;
 

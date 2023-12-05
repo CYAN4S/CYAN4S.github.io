@@ -1,10 +1,16 @@
 ---
 import type { CollectionEntry } from "astro:content";
 import Meta from "./Meta.astro";
+import { Image } from "astro:assets";
 
 type Props = {
   folio: CollectionEntry<"portfolio">;
-  img?: string;
+  img?: {
+    height: number;
+    src: string;
+    width: number;
+    format: "avif" | "png" | "webp" | "jpeg" | "jpg" | "svg" | "tiff" | "gif";
+  };
 };
 
 const { folio, img = folio.data.heroImage } = Astro.props;
@@ -32,7 +38,7 @@ const { folio, img = folio.data.heroImage } = Astro.props;
 
 <section>
   <div class="grid-1-1 head">
-    <img src={img} alt={`${folio.data.title}의 대표 이미지`} />
+    <Image src={img} alt={`${folio.data.title}의 대표 이미지`} />
     <div>
       <div>
         <h3>{folio.data.title}</h3>

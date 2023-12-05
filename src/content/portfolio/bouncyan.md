@@ -8,10 +8,10 @@ repo: https://github.com/cyan4s/bouncyan
 link: https://boun.cyan4s.com
 tag: [아트, 에니메이션, 웹]
 platform: [웹]
-heroImage: /portfolio/bouncyan/bc.png
+heroImage: ../../assets/portfolio/bouncyan/bc.png
 ---
 
-![bc.png](/portfolio/bouncyan/bc.png)
+![bc.png](../../assets/portfolio/bouncyan/bc.png)
 
 🎈 저의 페르소나 캐릭터 '시안'의 애니메이션 시연 웹사이트입니다.
 

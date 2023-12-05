@@ -2,26 +2,56 @@
 import { getCollection } from "astro:content";
 import FormattedDate from "../../components/FormattedDate.astro";
 import Default from "../../layouts/Default.astro";
+import { Image } from "astro:assets";
+import placeholder from "../../assets/default-blog.webp";
 
 const posts = (await getCollection("blog"))
   .sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf())
   .reverse();
 ---
 
+<style lang="scss">
+  .xx {
+    display: flex;
+    flex-direction: row;
+
+    img {
+      width: 200px;
+      height: 200px;
+    }
+  }
+</style>
+
 <Default
   title="CYAN4S Blog"
   description="CYAN4S의 블로그입니다."
-  heroImage="/placeholder-blog.png"
+  heroImage={placeholder}
 >
 
   <div class="card-grid">
     {
       posts.map((post) => (
         <a class="card" href={`/blog/${post.slug}/`}>
-          <img src={post.data.heroImage || "/placeholder-blog.png"}/>
-          <div class="card-title">{post.data.title}</div>
-          <div class="card-desc">{post.data.description}</div>
-          <div class="card-date"><FormattedDate date={post.data.pubDate}/></div>
+          <Image
+            src={post.data.heroImage ?? placeholder}
+            alt=""
+            loading="eager"
+            transition:name={`${post.id}-img`}
+            class="card-img-sq"
+          />
+          <div>
+            <div class="card-title" transition:name={`${post.id}-title`}>
+              {post.data.title}
+            </div>
+
+            <div class="card-desc" transition:name={`${post.id}-description`}>
+              {post.data.description}
+            </div>
+            
+            <div class="card-date" transition:name={`${post.id}-date`}>
+              <FormattedDate date={post.data.pubDate} />
+            </div>
+          </div>
         </a>
       ))
     }
