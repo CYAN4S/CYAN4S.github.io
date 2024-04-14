@@ -11,12 +11,12 @@
     "host": "astro dev --host"
   },
   "dependencies": {
-    "@astrojs/mdx": "^1.1.0",
-    "@astrojs/rss": "^3.0.0",
-    "@astrojs/sitemap": "^3.0.0",
-    "@astrojs/solid-js": "^3.0.1",
+    "@astrojs/mdx": "^2.3.0",
+    "@astrojs/rss": "^4.0.5",
+    "@astrojs/sitemap": "^3.1.2",
+    "@astrojs/solid-js": "^4.1.0",
     "@supabase/supabase-js": "^2.36.0",
-    "astro": "^3.4.0",
+    "astro": "^4.6.1",
     "js-cookie": "^3.0.5",
     "sass": "^1.68.0",
     "solid-js": "^1.7.12",

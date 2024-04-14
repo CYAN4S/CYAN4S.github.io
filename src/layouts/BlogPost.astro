@@ -105,11 +105,10 @@ const {
     <slot />
   </article>
 
-  <div class="act">
+  {/*<div class="act">
     <PostComment slug={slug} client:load />
     <hr>
-  </div>
-  {/* <Reaction slug={slug}/> */}
+  </div>*/}
 
   <div class="neighbor">
     <div>
@@ -117,11 +116,11 @@ const {
       {
         prev ? (
           <a class="card" href={`/blog/${prev.slug}`}>
-            <div class="card-title" transition:name={`${prev.id}-title`}>
+            <div class="card-title">
               {prev.data.title}
             </div>
             <div class="card-desc">{prev.data.description}</div>
-            <div class="card-date" transition:name={`${prev.id}-date`}>
+            <div class="card-date">
               <FormattedDate date={prev.data.pubDate} />
             </div>
           </a>
@@ -137,11 +136,11 @@ const {
       {
         next ? (
           <a class="card" href={`/blog/${next.slug}`}>
-            <div class="card-title" transition:name={`${next.id}-title`}>
+            <div class="card-title">
               {next.data.title}
             </div>
             <div class="card-desc">{next.data.description}</div>
-            <div class="card-date" transition:name={`${next.id}-date`}>
+            <div class="card-date">
               <FormattedDate date={next.data.pubDate} />
             </div>
           </a>
