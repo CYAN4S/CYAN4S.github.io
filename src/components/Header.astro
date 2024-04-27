@@ -68,18 +68,25 @@ import Icon from "./Icon.astro";
     <HeaderLink href="/portfolio">Portfolio</HeaderLink>
   </nav>
   <nav id="h-2">
-    <a href="https://github.com/CYAN4S" aria-label="CYAN4S's GitHub"><Icon id="github" /></a>
-    <a href="https://x.com/cyan4s" aria-label="CYAN4S's Twitter(X)"><Icon id="twitter" /></a>
-    <div id="menu-btn"><Icon id="menu" /></div>
+    <a href="https://github.com/CYAN4S" aria-label="CYAN4S's GitHub">
+      <Icon id="github" />
+    </a>
+    <a href="https://x.com/cyan4s" aria-label="CYAN4S's Twitter(X)">
+      <Icon id="twitter" />
+    </a>
+    <div id="menu-btn">
+      <Icon id="menu" />
+    </div>
   </nav>
 </header>
 
 <script>
-  const menuBtn = document.getElementById("menu-btn")!;
-  const menu = document.getElementById("h-1")!;
-
-  menuBtn.addEventListener("click", () => {
-    if (menu.classList.contains("hide")) menu.classList.remove("hide");
-    else menu.classList.add("hide");
+  document.addEventListener("astro:page-load", () => {
+    const menuBtn = document.getElementById("menu-btn")!;
+    const menu = document.getElementById("h-1")!;
+    menuBtn.addEventListener("click", () => {
+      if (menu.classList.contains("hide")) menu.classList.remove("hide");
+      else menu.classList.add("hide");
+    });
   });
 </script>

@@ -13,7 +13,9 @@ import Icon from "./Icon.astro";
     border-radius: 999px;
     border: none;
     background-color: var(--cyan);
-    transition: background-color 0.2s, transform 0.1s;
+    transition:
+      background-color 0.2s,
+      transform 0.1s;
     padding: 0;
     margin: 0;
   }
@@ -29,12 +31,15 @@ import Icon from "./Icon.astro";
 </style>
 
 <button id="top" aria-label="Scroll to top">
-  <Icon id="uparrow" fill="fff" size={28}/>
+  <Icon id="uparrow" fill="fff" size={28} />
 </button>
 
 <script>
-  const button = document.getElementById("top")!;
-  button.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+  document.addEventListener("astro:page-load", () => {
+    const button = document.getElementById("top");
+    if (!button) return;
+    button.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
   });
 </script>
