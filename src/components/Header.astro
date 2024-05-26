@@ -81,12 +81,10 @@ import Icon from "./Icon.astro";
 </header>
 
 <script>
-  document.addEventListener("astro:page-load", () => {
-    const menuBtn = document.getElementById("menu-btn")!;
-    const menu = document.getElementById("h-1")!;
-    menuBtn.addEventListener("click", () => {
-      if (menu.classList.contains("hide")) menu.classList.remove("hide");
-      else menu.classList.add("hide");
-    });
+  const menuBtn = document.getElementById("menu-btn")!;
+  const menu = document.getElementById("h-1")!;
+  menuBtn.addEventListener("click", () => {
+    if (menu.classList.contains("hide")) menu.classList.remove("hide");
+    else menu.classList.add("hide");
   });
 </script>
