@@ -35,11 +35,8 @@ import Icon from "./Icon.astro";
 </button>
 
 <script>
-  document.addEventListener("astro:page-load", () => {
-    const button = document.getElementById("top");
-    if (!button) return;
-    button.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
+  const button = document.getElementById("top");
+  button!.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
   });
 </script>
