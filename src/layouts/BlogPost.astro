@@ -3,9 +3,7 @@ import type { CollectionEntry } from "astro:content";
 import FormattedDate from "../components/FormattedDate.astro";
 import Default from "./Default.astro";
 import ScrollToTop from "../components/ScrollToTop.astro";
-// import PostComment from "../components/PostComment";
 import { Image } from "astro:assets";
-import PostComment from "../components/PostComment";
 
 type Props = CollectionEntry<"blog">["data"] & {
   post: CollectionEntry<"blog">;
@@ -104,11 +102,6 @@ const {
     <hr>
     <slot />
   </article>
-
-  {/*<div class="act">
-    <PostComment slug={slug} client:load />
-    <hr>
-  </div>*/}
 
   <div class="neighbor">
     <div>

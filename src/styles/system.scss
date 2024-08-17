@@ -1,0 +1,66 @@
+// Variables
+* {
+  // Identity
+  --font-display: "Plus Jakarta Sans";
+  --font-normal: Pretendard, "Pretendard Variable", Inter, Suit, -apple-system,
+    BlinkMacSystemFont;
+  --font-emphasis-weight: 800;
+
+  --color-primary: #26bfb3;
+
+  // Layout
+  --gap-side: 42px;
+  --gap-grid: 36px;
+  --gap-small: 8px;
+
+  --font-size: 16px;
+
+  // Element specific
+  --header-height: 72px;
+  --article-width: 780px;
+
+  --card-image-height: 210px;
+}
+
+@media screen and (max-width: 520px) {
+  * {
+    --header-height: 60px;
+    --gap-side: 12px;
+    --gap-grid: 24px;
+    --gap-small: 6px;
+    --card-image-height: 180px;
+  }
+}
+
+// Usage
+.tab-horizontal-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-small);
+
+  font-family: var(--font-display);
+  font-size: var(--font-size);
+
+  .current {
+    font-weight: var(--font-emphasis-weight);
+  }
+}
+
+.article-grid-container {
+  display: grid;
+  gap: var(--gap-grid);
+
+  .card {
+    height: 450px;
+
+    img {
+      height: var(--card-image-height);
+    }
+
+    .summary {
+      display: flex;
+      margin: 18px 0 24px;
+      gap: var(--gap-small);
+    }
+  }
+}
