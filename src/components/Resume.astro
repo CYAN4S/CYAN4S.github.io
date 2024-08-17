@@ -1,21 +1,3 @@
----
-import { getCollection } from "astro:content";
-import ResumeCard from "./ResumeCard.astro";
-import ResumeSmallCard from "./ResumeSmallCard.astro";
-
-const { ...props } = Astro.props;
-
-const folios = await getCollection("portfolio");
-
-function find(slug: string) {
-  return folios.find((v) => v.slug === slug)!;
-}
-
-import uiImage from "../assets/portfolio/rhyaction-live/select-concept.png"
-import warehouseImage from "../assets/resume/warehouse.jpg";
-import { Image } from "astro:assets";
----
-
 <article>
   <h1>임시로 배포가 중단되었습니다.</h1>
 </article>

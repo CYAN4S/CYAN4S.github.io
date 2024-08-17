@@ -1,21 +1,15 @@
 ---
-// Import the global.css file here so that it is included on
-// all pages through the use of the <BaseHead /> component.
-// import "../styles/pretendard.css";
 import "../styles/global.scss";
-import { Image } from "astro:assets";
 import defaultImage from "../assets/default.webp";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 export interface Props {
   title?: string;
   description?: string;
   image?: ImageMetadata;
 }
-
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
-import { ViewTransitions } from "astro:transitions";
-
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 const {
   title = SITE_TITLE,

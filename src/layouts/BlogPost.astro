@@ -4,8 +4,6 @@ import FormattedDate from "../components/FormattedDate.astro";
 import Default from "./Default.astro";
 import ScrollToTop from "../components/ScrollToTop.astro";
 import { Image } from "astro:assets";
-import PostComment from "../components/PostComment";
-import Reaction from "../components/Reaction";
 
 type Props = CollectionEntry<"blog">["data"] & {
   post: CollectionEntry<"blog">;
@@ -104,15 +102,6 @@ const {
     <hr>
     <slot />
   </article>
-
-  <div class="reaction">
-    <Reaction client:load slug={slug}/>
-  </div>
-
-  {/*<div class="act">
-    <PostComment slug={slug} client:load />
-    <hr>
-  </div>*/}
 
   <div class="neighbor">
     <div>
