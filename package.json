@@ -11,10 +11,10 @@
     "host": "astro dev --host"
   },
   "dependencies": {
-    "@astrojs/mdx": "^4.0.8",
-    "@astrojs/rss": "^4.0.11",
-    "@astrojs/sitemap": "^3.2.1",
-    "astro": "^5.2.3",
+    "@astrojs/mdx": "^4.3.13",
+    "@astrojs/rss": "^4.0.15",
+    "@astrojs/sitemap": "^3.7.0",
+    "astro": "^5.17.2",
     "sass": "^1.68.0",
     "solid-js": "^1.7.12",
     "three": "^0.156.1"
