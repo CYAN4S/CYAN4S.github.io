@@ -3,31 +3,23 @@ import HeaderLink from "./HeaderLink.astro";
 import Icon from "./Icon.astro";
 ---
 
+<!-- 모바일 메뉴 토글 체크박스 (JS 제거용) -->
+<input type="checkbox" id="menu-toggle" class="peer hidden" />
+
 <header
-  class="font-display fixed top-0 z-10 flex h-20 w-full items-center justify-between gap-4 bg-white/80 px-6 text-primary backdrop-blur-lg"
+  id="main-header"
+  class="font-display fixed flex justify-between gap-4 text-primary z-10 left-0 right-0 top-0 px-6 backdrop-blur-sm bg-white/30 h-20 items-center transition-all duration-400 ease-out border border-transparent [&.scrolled]:top-4 [&.scrolled]:left-4 [&.scrolled]:right-4 [&.scrolled]:rounded-[40px] [&.scrolled]:border-white/40 [&.scrolled]:bg-linear-to-b [&.scrolled]:from-white/95 [&.scrolled]:to-white/75 [&.scrolled]:shadow-common"
 >
   <a
     href="/"
     id="cyan4s"
-    class="flex items-center gap-4 text-2xl font-extrabold text-primary no-underline"
+    class="flex items-center gap-3 text-2xl font-extrabold text-primary no-underline"
   >
     <Icon id="cyan4s" />CYAN4S
   </a>
 
   <!-- 데스크탑용 (sm 이상에서 보임) -->
   <nav class="hidden items-center gap-4 sm:flex">
-    <HeaderLink href="/blog">Blog</HeaderLink>
-    <HeaderLink href="/portfolio">Portfolio</HeaderLink>
-  </nav>
-
-  <!-- 모바일 메뉴 토글 체크박스 (JS 제거용) -->
-  <input type="checkbox" id="menu-toggle" class="peer hidden" />
-
-  <!-- 모바일용 (sm 미만에서 보임, 체크박스 상태에 따라 위치 변경) -->
-  <nav
-    id="h-1"
-    class="fixed -right-26 top-25 flex flex-col items-center gap-4 rounded-2xl border border-white/50 bg-white/80 p-4 shadow backdrop-blur-lg transition-[right] duration-200 peer-checked:right-4 sm:hidden"
-  >
     <HeaderLink href="/blog">Blog</HeaderLink>
     <HeaderLink href="/portfolio">Portfolio</HeaderLink>
   </nav>
@@ -47,3 +39,28 @@ import Icon from "./Icon.astro";
     </label>
   </nav>
 </header>
+
+<!-- 모바일용 (sm 미만에서 보임, 체크박스 상태에 따라 위치 변경) -->
+<nav
+  id="mobile-menu"
+  class="font-display text-primary fixed -right-30 top-25 z-20 flex flex-col items-center gap-4 rounded-2xl border border-white/40 bg-white/80 p-4 shadow-common backdrop-blur-3xl transition-all ease-in-out duration-200 peer-checked:right-4 [&.scrolled]:top-28 sm:hidden"
+>
+  <HeaderLink href="/blog">Blog</HeaderLink>
+  <HeaderLink href="/portfolio">Portfolio</HeaderLink>
+</nav>
+
+<script>
+  const header = document.getElementById("main-header");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const onScroll = () => {
+    if (window.scrollY > 0) {
+      header?.classList.add("scrolled");
+      mobileMenu?.classList.add("scrolled");
+    } else {
+      header?.classList.remove("scrolled");
+      mobileMenu?.classList.remove("scrolled");
+    }
+  };
+  window.addEventListener("scroll", onScroll);
+  onScroll();
+</script>

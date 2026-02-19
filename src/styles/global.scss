@@ -149,21 +149,6 @@ article img {
   margin: 48px auto;
 }
 
-[class^="flex"] {
-  display: flex;
-  justify-content: space-between;
-  gap: var(--gap);
-}
-
-[class^="flex"] > * {
-  flex: 1;
-}
-
-[class^="grid"] {
-  display: grid;
-  gap: 10px var(--gap);
-}
-
 .grid-1-2 {
   grid-template-columns: 1fr 2fr;
 }
