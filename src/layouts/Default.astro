@@ -2,6 +2,7 @@
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import type { ImageMetadata } from "astro";
+import "../styles/global.css";
 
 type Props = {
   title?: string;
@@ -13,7 +14,7 @@ type Props = {
 const { title, description, heroImage, seamless } = Astro.props;
 ---
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ko">
   <head>
     <BaseHead title={title} description={description} image={heroImage} />
