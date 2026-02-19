@@ -15,24 +15,6 @@
   box-sizing: border-box;
 }
 
-header {
-  background: linear-gradient(#fff, #fff2);
-  position: fixed;
-  width: 100%;
-  top: 0;
-  height: 80px;
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-family: "Plus Jakarta Sans";
-  color: var(--cyan);
-  gap: var(--gap);
-  padding: 0 var(--gap);
-  z-index: 1;
-}
-
 body {
   font-family: var(--text);
   line-height: 1.5;
@@ -79,8 +61,8 @@ p {
   margin: 0 0 1.2rem;
 }
 
-a,
-a:visited {
+article a,
+article a:visited {
   color: #00746b;
   text-decoration-style: dotted;
 }
