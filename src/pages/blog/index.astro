@@ -10,45 +10,48 @@ const posts = (await getCollection("blog"))
   .reverse();
 ---
 
-<style lang="scss">
-  .xx {
-    display: flex;
-    flex-direction: row;
-
-    img {
-      width: 200px;
-      height: 200px;
-    }
-  }
-</style>
-
 <Default
   title="CYAN4S Blog"
   description="CYAN4S의 블로그입니다."
   heroImage={placeholder}
 >
-
-  <div class="card-grid">
+  <div
+    class="grid grid-cols-[repeat(auto-fill,minmax(360px,1fr))] gap-4 items-center justify-center p-4"
+  >
     {
       posts.map((post) => (
-        <a class="card" href={`/blog/${post.slug}/`}>
-          <Image
-            src={post.data.heroImage ?? placeholder}
-            alt=""
-            loading="eager"
-            transition:name={`${post.id}-img`}
-            class="card-img-sq"
-          />
+        <a
+          class="flex flex-col group h-[450px] border border-[#eee] rounded-lg overflow-hidden no-underline shadow-[0px_8px_8px_-8px_#0001] transition-shadow duration-200 hover:shadow-[0px_8px_16px_-8px_#00b8a970]"
+          href={`/blog/${post.slug}/`}
+        >
+          <div class="overflow-hidden border-b border-[#eee]">
+            <Image
+              src={post.data.heroImage ?? placeholder}
+              alt=""
+              loading="eager"
+              transition:name={`${post.id}-img`}
+              class="max-h-[300px] object-cover h-auto w-full transition-transform duration-300 group-hover:scale-105"
+            />
+          </div>
           <div>
-            <div class="card-title" transition:name={`${post.id}-title`}>
+            <div
+              class="pt-5 px-6 pb-0 text-[#444] text-[1.4rem] font-semibold"
+              transition:name={`${post.id}-title`}
+            >
               {post.data.title}
             </div>
 
-            <div class="card-desc" transition:name={`${post.id}-description`}>
+            <div
+              class="pt-3 px-6 pb-0 text-[#333] text-base font-normal"
+              transition:name={`${post.id}-description`}
+            >
               {post.data.description}
             </div>
-            
-            <div class="card-date" transition:name={`${post.id}-date`}>
+
+            <div
+              class="py-2 px-6 text-[0.9rem] font-extrabold text-[#888] text-right"
+              transition:name={`${post.id}-date`}
+            >
               <FormattedDate date={post.data.pubDate} />
             </div>
           </div>
@@ -57,9 +60,3 @@ const posts = (await getCollection("blog"))
     }
   </div>
 </Default>
-
-<style>
-  .card-intro {
-    display: flex;
-  }
-</style>

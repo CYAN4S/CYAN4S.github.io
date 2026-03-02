@@ -18,17 +18,8 @@ main {
   scroll-margin-top: 80px;
 }
 
-main > * {
-  padding: var(--gap);
-}
-
 *::selection {
   background-color: #00ffea;
-}
-
-article {
-  max-width: var(--article);
-  margin: 0 auto;
 }
 
 article img {
@@ -40,15 +31,6 @@ article img {
   width: auto;
   height: auto;
   margin: 48px auto;
-}
-
-
-.jc-c {
-  justify-content: center;
-}
-
-.ai-c {
-  align-items: center;
 }
 
 .card-grid {
