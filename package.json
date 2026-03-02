@@ -15,7 +15,7 @@
     "@astrojs/rss": "^4.0.15",
     "@astrojs/sitemap": "^3.7.0",
     "@tailwindcss/vite": "^4.2.0",
-    "astro": "^5.17.2",
+    "astro": "^5.18.0",
     "gsap": "^3.14.2",
     "sass": "^1.68.0",
     "solid-js": "^1.7.12",
