@@ -15,14 +15,15 @@ const posts = (await getCollection("blog"))
   description="CYAN4S의 블로그입니다."
   heroImage={placeholder}
 >
+  <h1 class="p-4 pb-12 pt-12 text-6xl font-display font-extrabold text-primary">Blog</h1>
   <div
-    class="grid grid-cols-[repeat(auto-fill,minmax(360px,1fr))] gap-4 items-center justify-center p-4"
+    class="grid grid-cols-[repeat(auto-fill,minmax(360px,1fr))] gap-4 items-center justify-center p-4 mb-16"
   >
     {
       posts.map((post) => (
         <a
-          class="flex flex-col group h-[450px] border border-[#eee] rounded-lg overflow-hidden no-underline shadow-[0px_8px_8px_-8px_#0001] transition-shadow duration-200 hover:shadow-[0px_8px_16px_-8px_#00b8a970]"
-          href={`/blog/${post.slug}/`}
+          class="flex flex-col group h-112 border border-[#eee] rounded-xl overflow-hidden no-underline shadow-[0px_8px_8px_-8px_#0001] transition-shadow duration-200 hover:shadow-[0px_8px_16px_-8px_#00b8a970]"
+          href={`/blog/${post.id}/`}
         >
           <div class="overflow-hidden border-b border-[#eee]">
             <Image
@@ -30,7 +31,7 @@ const posts = (await getCollection("blog"))
               alt=""
               loading="eager"
               transition:name={`${post.id}-img`}
-              class="max-h-[300px] object-cover h-auto w-full transition-transform duration-300 group-hover:scale-105"
+              class="max-h-75 object-cover h-auto w-full transition-transform duration-300 group-hover:scale-105"
             />
           </div>
           <div>
