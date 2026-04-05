@@ -64,9 +64,9 @@
   const meshData = [
     { matrix: [0, 0, 0], geometry: 2.2, material: cyan },
     { matrix: [2.53, 2.3, -2.49], geometry: 0.2, material: yellow },
-    { matrix: [-1.87, 2.54, -1.94], geometry: 0.5, material: pink },
+    { matrix: [-1.87, 2.54, -1.94], geometry: 0.5, material: yellow },
     { matrix: [3.02, 1.21, -2.19], geometry: 0.8, material: white },
-    { matrix: [0.24, -0.02, -3.53], geometry: 0.6, material: pink },
+    { matrix: [0.24, -0.02, -3.53], geometry: 0.6, material: yellow },
     { matrix: [0.27, 3.26, -3.24], geometry: 1.0, material: cyan },
     { matrix: [-1.51, -2.32, -1.91], geometry: 0.8, material: white },
     { matrix: [-1.64, -2.62, 1.98], geometry: 1.0, material: yellow },
@@ -78,8 +78,15 @@
     { matrix: [0.33, -4.66, 2.06], geometry: 0.6, material: cyan },
   ];
 
+  function getSegments(r: number): [number, number] {
+    if (r >= 1.5) return [64, 32];
+    if (r >= 0.7) return [48, 24];
+    return [32, 16];
+  }
+
   const meshes = meshData.map((v) => {
-    const result = new Mesh(new SphereGeometry(v.geometry, 64, 32), v.material);
+    const [wSeg, hSeg] = getSegments(v.geometry);
+    const result = new Mesh(new SphereGeometry(v.geometry, wSeg, hSeg), v.material);
     result.position.set(v.matrix[0], v.matrix[1], v.matrix[2]);
     return result;
   });
@@ -121,7 +128,7 @@
 
   // Renderer
   let canvas = document.querySelector<HTMLCanvasElement>("#c");
-  let renderer = canvas && new WebGLRenderer({ canvas, antialias: true });
+  let renderer: WebGLRenderer | null = null;
 
   // Light
   const directionalLight = new DirectionalLight(0xffffff, 2);
@@ -192,6 +199,7 @@
   }
 
   canvas = document.querySelector<HTMLCanvasElement>("#c");
-  renderer = canvas && new WebGLRenderer({ canvas, antialias: true });
+  renderer = canvas && new WebGLRenderer({ canvas });
+  if (renderer) renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
   render();
 </script>

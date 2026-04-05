@@ -12,25 +12,85 @@ import Default from "../layouts/Default.astro";
     class="mx-8 flex min-h-lvh flex-col items-start justify-center bg-transparent"
   >
     <div
-      class="flex overflow-hidden font-display text-[min(6rem,17vw)] font-extrabold text-primary"
+      class="flex font-display text-[min(6rem,17vw)] font-extrabold text-primary leading-tight"
     >
-      <span class="text-shadow-[0_2px_6px_#f5f5f5,0_1px_2px_#f5f5f5]">CREATOR</span>
+      <div id="wrap-creator" class="overflow-hidden pt-[0.4em] -mt-[0.4em]">
+        <span
+          id="word-creator"
+          class="block text-shadow-[0_2px_6px_#f5f5f5,0_1px_2px_#f5f5f5]"
+          >CREATOR</span
+        >
+      </div>
       &nbsp;
     </div>
     <div
-      class="flex overflow-hidden font-display text-[min(6rem,17vw)] font-extrabold text-primary"
+      class="flex font-display text-[min(6rem,17vw)] font-extrabold text-primary leading-tight"
     >
-      <span class="text-shadow-[0_2px_6px_#f5f5f5,0_1px_2px_#f5f5f5]">FOR</span>
+      <div id="wrap-for" class="overflow-hidden pt-[0.4em] -mt-[0.4em]">
+        <span
+          id="word-for"
+          class="block text-shadow-[0_2px_6px_#f5f5f5,0_1px_2px_#f5f5f5]"
+          >FOR</span
+        >
+      </div>
       &nbsp;
-      <span class="text-shadow-[0_2px_6px_#f5f5f5,0_1px_2px_#f5f5f5]">US</span>
+      <div id="wrap-us" class="overflow-hidden pt-[0.4em] -mt-[0.4em]">
+        <span
+          id="word-us"
+          class="block text-shadow-[0_2px_6px_#f5f5f5,0_1px_2px_#f5f5f5]"
+          >US</span
+        >
+      </div>
     </div>
   </section>
+
+  <script>
+    import gsap from "gsap";
+    import ScrollTrigger from "gsap/ScrollTrigger";
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    // 등장 애니메이션
+    gsap.from(["#word-creator", "#word-for", "#word-us"], {
+      yPercent: 80,
+      scaleY: 0.6,
+      transformOrigin: "bottom center",
+      duration: 2,
+      ease: "elastic.out(1, 0.5)",
+      stagger: 0.2,
+    });
+
+    // 스크롤 패럴랙스 — 카드보다 느리게 올라가 입체감
+    gsap.to(["#wrap-creator", "#wrap-for", "#wrap-us"], {
+      y: 280,
+      ease: "none",
+      scrollTrigger: {
+        trigger: "#title",
+        start: "top top",
+        end: "bottom top",
+        scrub: true,
+      },
+    });
+
+    // 소개 카드 등장
+    gsap.from("#intro-card", {
+      y: 60,
+      opacity: 0,
+      duration: 0.9,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: "#intro-card",
+        start: "top 85%",
+      },
+    });
+  </script>
 
   <section
     class="mx-auto flex min-h-lvh flex-col items-start justify-center bg-transparent content-center flex-wrap"
   >
     <div
-      class="border border-white/40 shadow-common m-4 grid max-w-6xl grid-cols-1 items-stretch justify-between gap-4 overflow-hidden rounded-3xl bg-white/80 backdrop-blur-3xl md:gap-0 md:grid-cols-[1fr_400px]"
+      id="intro-card"
+      class="border border-white/40 shadow-common m-4 grid max-w-6xl grid-cols-1 items-stretch justify-between gap-4 overflow-hidden rounded-3xl bg-white/95 md:gap-0 md:grid-cols-[1fr_360px]"
     >
       <div class="prose mx-auto p-8">
         <div class="mt-4"><Icon id="cyan4s" size={36} /></div>
@@ -39,20 +99,18 @@ import Default from "../layouts/Default.astro";
           <span class="text-primary">CYAN4S</span>입니다.
         </h1>
         <p>
-          <strong>게임 프로그래밍</strong>을 기반으로, 그래픽 디자인, 기획 등
-          <strong>게임 개발 전반</strong>을 깊이 있게 다루고 있습니다. 다각도의
-          시야로 프로젝트를 바라보며, 최선의 해답을 찾아내는 게임계의
-          <strong>다재다능한 제너럴리스트</strong>를 지향합니다.
+          <strong>게임 프로그래밍</strong>을 시작으로, 그래픽 디자인, 기획 등
+          <strong>게임 개발 전반</strong>을 다뤄요. 게임 개발 분야에서
+          <strong>다재다능한 올라운더</strong>를 지향해요.
         </p>
         <p>
           게임 중에선 <strong>리듬게임</strong>을 가장 좋아하지만, 장르를 가리지
-          않고 다양한 게임에서 즐거움을 찾고 있습니다. 게임 외에도 웹 개발,
-          캐릭터 드로잉, EDM 작곡, 큐브 맞추기 같은 다양한 취미를 통해 창작을
-          위한 활력을 얻습니다.
+          않고 다양한 게임을 즐겨요. 게임 외에도 웹 개발, 캐릭터 드로잉, EDM
+          작곡, 큐브 맞추기 같은 다양한 취미가 있어요.
         </p>
         <p>
-          <strong>커다란 풍선</strong>을 굉장히 좋아합니다. 커다란 풍선을
-          안거나, 풍선 안에 들어가 편안히 휴식하는 것을 특히 좋아합니다.
+          <strong>커다란 풍선</strong>을 굉장히 좋아해요! 풍선을 꽈악
+          끌어안거나, 풍선 안에 들어가서 노는 것을 좋아해요. ;)
         </p>
         <p class="text-end text-sm font-extrabold text-gray-500">
           CYAN4S[시안포에스] / 손인호(Inho Son)
@@ -63,13 +121,12 @@ import Default from "../layouts/Default.astro";
         class="bg-[#DEF6F4] flex items-center justify-center p-8 md:p-0"
         aria-label="Link for more info about this animation"
       >
-        <img
-          src="/bouncyan.svg"
-          width="400px"
-          height="600px"
-          alt="Cyan's jumping animation"
-          class="mx-auto max-h-[600px] max-w-[min(400px,calc(100vw-60px))]"
-        />
+        <object
+          data="/bouncyan.svg"
+          type="image/svg+xml"
+          aria-label="Cyan's jumping animation"
+          class="mx-auto block w-[min(400px,calc(100vw-60px))] aspect-2/3"
+        ></object>
       </a>
     </div>
   </section>
