@@ -22,13 +22,14 @@ const {
 ---
 
 <Default title={title} description={description} heroImage={heroImage}>
-  <article class="prose max-w-3xl mx-auto
+  <article
+    class="prose max-w-3xl mx-auto
   p-4 pt-8 pb-8
   prose-a:text-primary prose-a:decoration-dotted
   prose-headings:text-gray-700
   prose-code:font-normal prose-code:bg-yellow-50 [&_pre_code]:bg-transparent
-  prose-img:max-w-full prose-img:max-h-[540px] prose-img:rounded-[var(--rad)] prose-img:block prose-img:w-auto prose-img:h-auto prose-img:mx-auto
-  ">
+  prose-img:max-w-full prose-img:max-h-135 prose-img:rounded-lg prose-img:block prose-img:w-auto prose-img:h-auto prose-img:mx-auto"
+  >
     <div>
       {
         heroImage && (
@@ -41,16 +42,14 @@ const {
       }
       <h1>{title}</h1>
       <p>{description}</p>
-      <div class="text-end text-gray-500 font-bold mt-2 mb-8">
+      <div class="text-gray-500 font-bold mt-2 mb-8 text-sm">
         <FormattedDate date={pubDate} />
         {
           updatedDate && (
-            <>
-              <br />
-              <span class="italic">
-                <FormattedDate date={updatedDate} />에 수정됨
-              </span>
-            </>
+            <span class="italic font-normal">
+              {" — "}
+              <FormattedDate date={updatedDate} />에 수정됨
+            </span>
           )
         }
       </div>
@@ -59,9 +58,15 @@ const {
     <slot />
   </article>
 
-  <div class="mx-auto mb-16 grid sm:grid-cols-2 grid-cols-1 gap-6 p-4 max-w-3xl">
+  <div
+    class="mx-auto mb-16 grid sm:grid-cols-2 grid-cols-1 gap-6 p-4 max-w-3xl"
+  >
     <BlogPostNav label="이전 게시글" post={prev} emptyText="첫 게시글입니다." />
-    <BlogPostNav label="다음 게시글" post={next} emptyText="마지막 게시글입니다." />
+    <BlogPostNav
+      label="다음 게시글"
+      post={next}
+      emptyText="마지막 게시글입니다."
+    />
   </div>
   <ScrollToTop />
 </Default>

@@ -6,10 +6,6 @@ import { getCollection } from "astro:content";
 import Content from "../components/Resume.astro"
 
 const folios = await getCollection("portfolio");
-
-function find(slug: string) {
-  return folios.find((v) => v.slug === slug)!;
-}
 ---
 
 <Default title="CYAN4S Résumé" description="손인호의 이력서입니다." >

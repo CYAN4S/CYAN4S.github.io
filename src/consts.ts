@@ -2,4 +2,4 @@
 // You can import this data from anywhere in your site by using the `import` keyword.
 
 export const SITE_TITLE = 'CYAN4S : Creator for us';
-export const SITE_DESCRIPTION = '게임 개발자 CYAN4S의 홈페이지입니다.';
+export const SITE_DESCRIPTION = '모두를 위한 게임 크리에이터, CYAN4S입니다.';
