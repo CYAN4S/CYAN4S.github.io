@@ -2,5 +2,7 @@
     "icons": [
       { "src": "/icon-192.png", "type": "image/png", "sizes": "192x192" },
       { "src": "/icon-512.png", "type": "image/png", "sizes": "512x512" }
-    ]
+    ],
+    "background_color": "#26bfb3",
+    "theme_color": "#26bfb3"
   }
