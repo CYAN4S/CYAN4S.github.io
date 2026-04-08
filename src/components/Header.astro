@@ -3,91 +3,63 @@ import HeaderLink from "./HeaderLink.astro";
 import Icon from "./Icon.astro";
 ---
 
-<style lang="scss">
-  #cyan4s {
-    display: flex;
-    gap: 12px;
-    align-items: center;
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: var(--cyan);
-    text-decoration: none;
-  }
+<!-- 모바일 메뉴 토글 체크박스 (JS 제거용) -->
+<input type="checkbox" id="menu-toggle" class="peer hidden" />
 
-  #h-1 {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-  }
+<header
+  id="main-header"
+  class="font-display fixed flex justify-between gap-4 text-primary z-10 left-0 right-0 top-0 px-6 backdrop-blur-sm bg-white/30 h-20 items-center transition-all duration-400 ease-out border border-transparent [&.scrolled]:top-4 [&.scrolled]:left-4 [&.scrolled]:right-4 [&.scrolled]:rounded-[40px] [&.scrolled]:border-white/40 [&.scrolled]:bg-white/90 [&.scrolled]:shadow-common"
+>
+  <a
+    href="/"
+    id="cyan4s"
+    class="flex items-center gap-3 text-2xl font-extrabold text-primary no-underline"
+  >
+    <Icon id="cyan4s" />CYAN4S
+  </a>
 
-  #h-2 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-
-    > * {
-      width: 24px;
-      height: 24px;
-    }
-  }
-
-  #menu-btn {
-    display: none;
-  }
-
-  @media (max-width: 600px) {
-    #menu-btn {
-      display: block;
-      cursor: pointer;
-    }
-    #h-1 {
-      position: fixed;
-      flex-direction: column;
-      background-color: #fffc;
-      border: 1px solid #fff8;
-      box-shadow: 0px 8px 8px -8px #0002;
-      border-radius: var(--gap);
-      padding: var(--gap);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      top: 100px;
-      right: var(--gap);
-      transition: right 0.2s;
-    }
-    #h-1.hide {
-      right: -120px;
-    }
-  }
-</style>
-
-<header>
-  <a href="/" id="cyan4s"><Icon id="cyan4s" />CYAN4S</a>
-  <nav id="h-1" class="hide">
+  <!-- 데스크탑용 (sm 이상에서 보임) -->
+  <nav class="hidden items-center gap-4 sm:flex">
     <HeaderLink href="/blog">Blog</HeaderLink>
-    <HeaderLink href="/portfolio">Portfolio</HeaderLink>
+    <!-- <HeaderLink href="/portfolio">Portfolio</HeaderLink> -->
+    <HeaderLink href="/links">Links</HeaderLink>
   </nav>
-  <nav id="h-2">
+
+  <nav class="flex items-center justify-center gap-4 *:h-6 *:w-6">
+    <a href="https://x.com/cyan4s" aria-label="CYAN4S' X">
+      <Icon id="twitter" />
+    </a>
     <a href="https://github.com/CYAN4S" aria-label="CYAN4S' GitHub">
       <Icon id="github" />
     </a>
-    <a href="https://bsky.app/profile/cyan4s.com" aria-label="CYAN4S' Bluesky">
-      <Icon id="bluesky" />
-    </a>
-    <a href="https://bio.cyan4s.com" aria-label="CYAN4S' Link in bio page">
-      <Icon id="link" />
-    </a>
-    <div id="menu-btn">
+    <label for="menu-toggle" class="cursor-pointer sm:hidden">
       <Icon id="menu" />
-    </div>
+    </label>
   </nav>
 </header>
 
+<!-- 모바일용 (sm 미만에서 보임, 체크박스 상태에 따라 위치 변경) -->
+<nav
+  id="mobile-menu"
+  class="font-display text-primary fixed -right-30 top-25 z-20 flex flex-col items-center gap-4 rounded-2xl border border-white/40 bg-white/80 p-4 shadow-common backdrop-blur-3xl transition-all ease-in-out duration-200 peer-checked:right-4 [&.scrolled]:top-28 sm:hidden"
+>
+  <HeaderLink href="/blog">Blog</HeaderLink>
+  <!-- <HeaderLink href="/portfolio">Portfolio</HeaderLink> -->
+  <HeaderLink href="/links">Links</HeaderLink>
+</nav>
+
 <script>
-  const menuBtn = document.getElementById("menu-btn")!;
-  const menu = document.getElementById("h-1")!;
-  menuBtn.addEventListener("click", () => {
-    if (menu.classList.contains("hide")) menu.classList.remove("hide");
-    else menu.classList.add("hide");
-  });
+  const header = document.getElementById("main-header");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const onScroll = () => {
+    if (window.scrollY > 0) {
+      header?.classList.add("scrolled");
+      mobileMenu?.classList.add("scrolled");
+    } else {
+      header?.classList.remove("scrolled");
+      mobileMenu?.classList.remove("scrolled");
+    }
+  };
+  window.addEventListener("scroll", onScroll);
+  onScroll();
 </script>

@@ -4,161 +4,129 @@ import Icon from "../components/Icon.astro";
 import Default from "../layouts/Default.astro";
 ---
 
-<style lang="scss">
-  section {
-    min-height: 100lvh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    background-color: transparent;
-  }
-
-  #title {
-    background-color: transparent;
-
-    div {
-      font: 800 min(6rem, 17vw) "Plus Jakarta Sans";
-      color: var(--cyan);
-      display: flex;
-      overflow: hidden;
-    }
-
-    span {
-      text-shadow:
-        0px 2px 6px #f5f5f5,
-        0px 1px 2px #f5f5f5;
-    }
-
-    .a {
-      animation-duration: 1s;
-      animation-name: slideup;
-      animation-fill-mode: both;
-    }
-  }
-
-  @keyframes slideup {
-    from {
-      transform: translate(0, 90%);
-    }
-    to {
-      transform: none;
-    }
-  }
-
-  .t {
-    display: grid;
-    grid-template-columns: 1fr 400px;
-    align-items: stretch;
-    justify-content: space-between;
-    background-color: white;
-    margin: var(--gap) auto;
-    max-width: 1080px;
-    gap: var(--gap);
-    border-radius: var(--gap);
-    overflow: hidden;
-    box-shadow: 0px 16px 16px -8px #00b8a922;
-  }
-
-  @media (max-width: 960px) {
-    .t {
-      grid-template-columns: auto;
-      grid-template-rows: 1fr auto;
-      align-items: stretch;
-      justify-content: space-between;
-      background-color: white;
-      margin: var(--gap) auto;
-      max-width: 1080px;
-      gap: 0;
-    }
-  }
-
-  .t-1 {
-    padding: var(--gap);
-    margin: auto;
-    h1 {
-      margin-top: 1rem;
-    }
-    .read {
-      font-size: 0.9rem;
-      font-weight: 800;
-      color: #6c6c6c;
-      text-align: end;
-    }
-
-    .logo {
-      margin-top: 1rem;
-    }
-  }
-
-  .t-2 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--cyan);
-
-    img {
-      max-width: min(400px, calc(100vw - 60px));
-      max-height: 600px;
-      margin: 0 auto;
-    }
-  }
-</style>
-
 <Default seamless={true}>
   <Demo />
 
-  <section id="title">
-    <div>
-      <span class="a" style="animation-delay: 0.25s">CREATOR</span>&nbsp;
+  <section
+    id="title"
+    class="mx-8 flex min-h-lvh flex-col items-start justify-center bg-transparent"
+  >
+    <div
+      class="flex font-display text-[min(6rem,17vw)] font-extrabold text-primary leading-tight"
+    >
+      <div id="wrap-creator" class="overflow-hidden pt-[0.4em] -mt-[0.4em]">
+        <span
+          id="word-creator"
+          class="block text-shadow-[0_2px_6px_#f5f5f5,0_1px_2px_#f5f5f5]"
+          >CREATOR</span
+        >
+      </div>
+      &nbsp;
     </div>
-    <div>
-      <span class="a" style="animation-delay: 0.5s">FOR</span>&nbsp;
-      <span class="a" style="animation-delay: 0.75s">US</span>
+    <div
+      class="flex font-display text-[min(6rem,17vw)] font-extrabold text-primary leading-tight"
+    >
+      <div id="wrap-for" class="overflow-hidden pt-[0.4em] -mt-[0.4em]">
+        <span
+          id="word-for"
+          class="block text-shadow-[0_2px_6px_#f5f5f5,0_1px_2px_#f5f5f5]"
+          >FOR</span
+        >
+      </div>
+      &nbsp;
+      <div id="wrap-us" class="overflow-hidden pt-[0.4em] -mt-[0.4em]">
+        <span
+          id="word-us"
+          class="block text-shadow-[0_2px_6px_#f5f5f5,0_1px_2px_#f5f5f5]"
+          >US</span
+        >
+      </div>
     </div>
   </section>
 
-  <section>
-    <div class="t">
-      <div class="t-1">
-        <div class="logo"><Icon id="cyan4s" size={36} /></div>
-        <h1>
+  <script>
+    import gsap from "gsap";
+    import ScrollTrigger from "gsap/ScrollTrigger";
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    // 등장 애니메이션
+    gsap.from(["#word-creator", "#word-for", "#word-us"], {
+      yPercent: 80,
+      scaleY: 0.6,
+      transformOrigin: "bottom center",
+      duration: 2,
+      ease: "elastic.out(1, 0.5)",
+      stagger: 0.2,
+    });
+
+    // 스크롤 패럴랙스 — 카드보다 느리게 올라가 입체감
+    gsap.to(["#wrap-creator", "#wrap-for", "#wrap-us"], {
+      y: 280,
+      ease: "none",
+      scrollTrigger: {
+        trigger: "#title",
+        start: "top top",
+        end: "bottom top",
+        scrub: true,
+      },
+    });
+
+    // 소개 카드 등장
+    gsap.from("#intro-card", {
+      y: 60,
+      opacity: 0,
+      duration: 0.9,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: "#intro-card",
+        start: "top 85%",
+      },
+    });
+  </script>
+
+  <section
+    class="mx-auto flex min-h-lvh flex-col items-start justify-center bg-transparent content-center flex-wrap"
+  >
+    <div
+      id="intro-card"
+      class="border border-white/40 shadow-common m-4 grid max-w-6xl grid-cols-1 items-stretch justify-between gap-4 overflow-hidden rounded-3xl bg-white/95 md:gap-0 md:grid-cols-[1fr_360px]"
+    >
+      <div class="prose mx-auto p-8">
+        <div class="mt-4"><Icon id="cyan4s" size={36} /></div>
+        <h1 class="mt-8 break-keep text-4xl font-bold">
           모두를 위한 게임 크리에이터,<br />
-          <span style="color: var(--cyan)">CYAN4S</span>입니다!
+          <span class="text-primary">CYAN4S</span>입니다.
         </h1>
         <p>
           <strong>게임 프로그래밍</strong>을 시작으로, 그래픽 디자인, 기획 등
-          <strong>게임 개발의 전반</strong>을 다루고 있어요. 게임 개발 분야에서
-          다재다능한 인물이 되기 위해 열심히 노력하고 있어요!
+          <strong>게임 개발 전반</strong>을 다뤄요. 게임 개발 분야에서
+          <strong>다재다능한 올라운더</strong>를 지향해요.
         </p>
         <p>
-          당연히 게임을 좋아하고, 게임 중에선 <strong>리듬게임</strong>을 가장
-          좋아해요. 요즘에는 장르를 가리지 않고, 다양한 장르의 게임을 즐기고
-          있어요.
+          게임 중에선 <strong>리듬게임</strong>을 가장 좋아하지만, 장르를 가리지
+          않고 다양한 게임을 즐겨요. 게임 외에도 웹 개발, 캐릭터 드로잉, EDM
+          작곡, 큐브 맞추기 같은 다양한 취미가 있어요.
         </p>
         <p>
-          게임 외에도 웹 개발, 캐릭터 드로잉, EDM 작곡, 큐브 맞추기 같은 취미가
-          있고, 이 중에서 <strong>웹 개발</strong> 분야에 특히 관심이 많아요.
-          그리고 풍선 안에 들어가는 특이한 취미도 가지고 있어요.
+          <strong>커다란 풍선</strong>을 굉장히 좋아해요! 풍선을 꽈악
+          끌어안거나, 풍선 안에 들어가서 노는 것을 좋아해요. ;)
         </p>
-        <p>
-          <strong>커다란 공</strong>을 굉장히 좋아해요! 커다란 공을 꽈악
-          끌어안거나, 풍선 속에 들어와 있으면 기분이 좋아요. 집에 커다란 공을
-          한가득 쌓아두고 지내고 있답니다. ;)
+        <p class="text-end text-sm font-extrabold text-gray-500">
+          CYAN4S[시안포에스] / 손인호(Inho Son)
         </p>
-        <p class="read">CYAN4S[시안포에스] / 손인호(Inho Son)</p>
       </div>
       <a
         href="https://boun.cyan4s.com"
-        class="t-2"
+        class="bg-[#DEF6F4] flex items-center justify-center p-8 md:p-0"
         aria-label="Link for more info about this animation"
       >
-        <img
-          src="/bouncyan.svg"
-          width="400px"
-          height="600px"
-          alt="Cyan's jumping animation"
-        />
+        <object
+          data="/bouncyan.svg"
+          type="image/svg+xml"
+          aria-label="Cyan's jumping animation"
+          class="mx-auto block w-[min(400px,calc(100vw-60px))] aspect-2/3"
+        ></object>
       </a>
     </div>
   </section>

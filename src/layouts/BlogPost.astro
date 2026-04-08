@@ -4,6 +4,7 @@ import FormattedDate from "../components/FormattedDate.astro";
 import Default from "./Default.astro";
 import ScrollToTop from "../components/ScrollToTop.astro";
 import { Image } from "astro:assets";
+import BlogPostNav from "../components/BlogPostNav.astro";
 
 type Props = CollectionEntry<"blog">["data"] & {
   post: CollectionEntry<"blog">;
@@ -13,62 +14,22 @@ type Props = CollectionEntry<"blog">["data"] & {
 
 const {
   post: {
-    slug,
     data: { title, description, pubDate, updatedDate, heroImage },
-    id,
   },
   prev,
   next,
 } = Astro.props;
 ---
 
-<style>
-  .title {
-    font-size: 2em;
-    margin: 0.25em 0 0;
-  }
-
-  hr {
-    border-top: 1px solid #ddd;
-    margin: 2rem 0 2rem;
-  }
-
-  .last-updated-on {
-    font-style: italic;
-  }
-
-  .neighbor {
-    margin: 0 auto 4rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--gap);
-    max-width: var(--article);
-  }
-
-  .neighbor span {
-    color: gray;
-  }
-
-  .act {
-    margin: 0 auto;
-    max-width: var(--article);
-  }
-
-  .card,
-  .empty-card {
-    height: 240px;
-  }
-
-  @media (max-width: 740px) {
-    .neighbor {
-      grid-template-columns: auto;
-      grid-template-rows: 1fr 1fr;
-    }
-  }
-</style>
-
 <Default title={title} description={description} heroImage={heroImage}>
-  <article>
+  <article
+    class="prose max-w-3xl mx-auto
+  p-4 pt-8 pb-8
+  prose-a:text-primary prose-a:decoration-dotted
+  prose-headings:text-gray-700
+  prose-code:font-normal prose-code:bg-yellow-50 [&_pre_code]:bg-transparent
+  prose-img:max-w-full prose-img:max-h-135 prose-img:rounded-lg prose-img:block prose-img:w-auto prose-img:h-auto prose-img:mx-auto"
+  >
     <div>
       {
         heroImage && (
@@ -76,74 +37,36 @@ const {
             src={heroImage}
             alt={`게시글 '${title}'의 헤더 이미지`}
             loading="eager"
-            transition:name={`${id}-img`}
           />
         )
       }
-      <h1 transition:name={`${id}-title`}>{title}</h1>
-      <p transition:name={`${id}-description`}>{description}</p>
-      <div
-        style="text-align: end; color: gray; font-weight: 700; margin: 8px 0 32px"
-        transition:name={`${id}-date`}
-      >
+      <h1>{title}</h1>
+      <p>{description}</p>
+      <div class="text-gray-500 font-bold mt-2 mb-8 text-sm">
         <FormattedDate date={pubDate} />
         {
           updatedDate && (
-            <>
-              <br />
-              <span style="font-style: italic;">
-                <FormattedDate date={updatedDate} />에 수정됨
-              </span>
-            </>
+            <span class="italic font-normal">
+              {" — "}
+              <FormattedDate date={updatedDate} />에 수정됨
+            </span>
           )
         }
       </div>
     </div>
-    <hr>
+    <hr />
     <slot />
   </article>
 
-  <div class="neighbor">
-    <div>
-      <p><strong>이전 게시글</strong></p>
-      {
-        prev ? (
-          <a class="card" href={`/blog/${prev.slug}`}>
-            <div class="card-title">
-              {prev.data.title}
-            </div>
-            <div class="card-desc">{prev.data.description}</div>
-            <div class="card-date">
-              <FormattedDate date={prev.data.pubDate} />
-            </div>
-          </a>
-        ) : (
-          <div class="empty-card">
-            <span>첫 게시글입니다.</span>
-          </div>
-        )
-      }
-    </div>
-    <div>
-      <p><strong>다음 게시글</strong></p>
-      {
-        next ? (
-          <a class="card" href={`/blog/${next.slug}`}>
-            <div class="card-title">
-              {next.data.title}
-            </div>
-            <div class="card-desc">{next.data.description}</div>
-            <div class="card-date">
-              <FormattedDate date={next.data.pubDate} />
-            </div>
-          </a>
-        ) : (
-          <div class="empty-card">
-            <span>마지막 게시글입니다.</span>
-          </div>
-        )
-      }
-    </div>
+  <div
+    class="mx-auto mb-16 grid sm:grid-cols-2 grid-cols-1 gap-6 p-4 max-w-3xl"
+  >
+    <BlogPostNav label="이전 게시글" post={prev} emptyText="첫 게시글입니다." />
+    <BlogPostNav
+      label="다음 게시글"
+      post={next}
+      emptyText="마지막 게시글입니다."
+    />
   </div>
   <ScrollToTop />
 </Default>

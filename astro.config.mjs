@@ -1,10 +1,8 @@
 import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
+import tailwindcss from "@tailwindcss/vite";
 
-// https://astro.build/config
-
-// https://astro.build/config
 export default defineConfig({
   site: "https://cyan4s.com",
   integrations: [mdx(), sitemap()],
@@ -15,6 +13,10 @@ export default defineConfig({
     },
   },
   compressHTML: true,
-  experimental: {
+  vite: {
+    plugins: [tailwindcss()],
+  },
+  devToolbar: {
+    enabled: false,
   },
 });
