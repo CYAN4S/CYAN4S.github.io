@@ -7,6 +7,7 @@ import profileImage from "../assets/profile.png";
 const activeLinks = [
   {
     name: "X (Twitter)",
+    id: "@cyan4s",
     url: "https://x.com/cyan4s",
     icon: "twitter",
     fill: "000000",
@@ -14,6 +15,7 @@ const activeLinks = [
   },
   {
     name: "GitHub",
+    id: "CYAN4S",
     url: "https://github.com/CYAN4S",
     icon: "github",
     fill: "181717",
@@ -21,6 +23,7 @@ const activeLinks = [
   },
   {
     name: "Instagram",
+    id: "cyan4s",
     url: "https://instagram.com/cyan4s",
     icon: "instagram",
     fill: "E4405F",
@@ -28,6 +31,7 @@ const activeLinks = [
   },
   {
     name: "SoundCloud",
+    id: "cyan4s",
     url: "https://soundcloud.com/cyan4s",
     icon: "soundcloud",
     fill: "FF3300",
@@ -35,6 +39,7 @@ const activeLinks = [
   },
   {
     name: "Dribbble",
+    id: "cyan4s",
     url: "https://dribbble.com/cyan4s",
     icon: "dribbble",
     fill: "EA4C89",
@@ -42,13 +47,15 @@ const activeLinks = [
   },
   {
     name: "Pixiv",
-    url: "https://pixiv.net/cyan4s",
+    id: "15130363",
+    url: "https://www.pixiv.net/users/15130363",
     icon: "pixiv",
     fill: "0096FA",
     hoverText: "group-hover:text-[#0096FA]",
   },
   {
     name: "Steam",
+    id: "cyan4s",
     url: "https://steamcommunity.com/id/cyan4s",
     icon: "steam",
     fill: "000000",
@@ -56,14 +63,24 @@ const activeLinks = [
   },
   {
     name: "Unsplash",
+    id: "@cyan4s",
     url: "https://unsplash.com/@cyan4s",
     icon: "unsplash",
     fill: "000000",
     hoverText: "group-hover:text-black",
   },
   {
+    name: "LinkedIn",
+    id: "cyan4s",
+    url: "https://linkedin.com/in/cyan4s",
+    icon: "linkedin",
+    fill: "000000",
+    hoverText: "group-hover:text-[#000000]",
+  },
+  {
     name: "Email",
-    url: "mailto:contact@cyan4s.com",
+    id: "me@cyan4s.com",
+    url: "mailto:me@cyan4s.com",
     icon: "email",
     fill: "26bfb3",
     hoverText: "group-hover:text-primary",
@@ -81,7 +98,6 @@ const inactiveLinks = [
   { name: "Behance", url: "https://www.behance.net/cyan4s", icon: "behance" },
   { name: "Pinterest", url: "https://pinterest.com/cyan4s", icon: "pinterest" },
   { name: "Vimeo", url: "https://vimeo.com/cyan4s", icon: "vimeo" },
-  { name: "LinkedIn", url: "https://linkedin.com/in/cyan4s", icon: "linkedin" },
 ];
 ---
 
@@ -107,7 +123,9 @@ const inactiveLinks = [
           class="h-full w-full object-cover"
         />
       </div>
-      <h1 class="font-display mb-2 text-3xl font-extrabold text-primary text-shadow-[0_2px_6px_#f5f5f5,0_1px_2px_#f5f5f5]">
+      <h1
+        class="font-display mb-2 text-3xl font-extrabold text-primary text-shadow-[0_2px_6px_#f5f5f5,0_1px_2px_#f5f5f5]"
+      >
         CYAN4S
       </h1>
       <p class="font-medium text-gray-500">모두를 위한 게임 크리에이터</p>
@@ -126,13 +144,16 @@ const inactiveLinks = [
                 <Icon id={link.icon} size={32} fill={link.fill} />
               </div>
 
-              <div
-                class={`relative z-10 ml-4 text-xl font-bold text-gray-700 transition-colors duration-300 ${link.hoverText}`}
-              >
-                {link.name}
+              <div class="relative z-10 ml-4 flex flex-col">
+                <span
+                  class={`text-xl font-bold text-gray-700 transition-colors duration-300 ${link.hoverText}`}
+                >
+                  {link.name}
+                </span>
+                <span class="text-sm text-gray-400">{link.id}</span>
               </div>
 
-              <div class="relative z-10 ml-auto mr-2 translate-x-[-10px] text-gray-300 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:text-gray-400 group-hover:opacity-100">
+              <div class="relative z-10 ml-auto mr-2 -translate-x-2.5 text-gray-300 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:text-gray-400 group-hover:opacity-100">
                 <Icon id="link" size={24} fill="cbd5e1" />
               </div>
             </a>
