@@ -6,9 +6,11 @@ CYAN4S의 개인 웹사이트(https://cyan4s.com). 블로그, 포트폴리오, �
 
 - **스택:** Astro 7, MDX, Tailwind CSS 4 (+ typography), GSAP, three.js
 - **콘텐츠:** `src/content/blog`, `src/content/portfolio` (스키마는 `src/content.config.ts`)
-- **스타일:** Tailwind 테마와 전역 스타일은 `src/styles/global.css`에 있다. 스타일은 Tailwind 클래스로 작성한다. SCSS는 2026-09에 모두 걷어냈다.
+- **스타일:** 스타일은 Tailwind 클래스로만 작성하고 `<style>` 블록은 쓰지 않는다. 2026-09~10에 SCSS와 `<style>` 블록을 모두 Tailwind로 옮겼다.
+  - Tailwind 테마, 전역 스타일(`@font-face`, `::selection`), 커스텀 애니메이션(`animate-fadeout`)은 `src/styles/global.css`에 있다.
   - `global.css`는 `Default.astro` 레이아웃에서 불러온다. 이 레이아웃을 쓰지 않는 `resume-print.astro`에는 Tailwind와 전역 스타일이 적용되지 않는다.
-  - 일부 컴포넌트와 페이지(`Meta`, `Demo`, `404`, `portfolio/[...id]`)에는 아직 일반 CSS `<style>` 블록이 남아 있다.
+  - 인라인 `style=`은 런타임 값이 필요한 곳(`Icon.astro`의 색상, `links.astro`의 배경 이미지)에만 남아 있다.
+  - Tailwind 임의 값의 타입이 모호할 때는 속성을 명시한다. 예: `font-[bolder]`는 글꼴 이름(`font-family`)으로 해석되므로 `[font-weight:bolder]`라고 쓴다.
 - **명령어:** `npm run dev`, `npm run build`, `npm run preview`
 - **검증:** 테스트와 lint가 없다. 커밋 전에 `npm run build`가 통과하는지 반드시 확인한다.
 
@@ -46,4 +48,4 @@ CYAN4S의 개인 웹사이트(https://cyan4s.com). 블로그, 포트폴리오, �
 - `package.json`에 `overrides`로 Vite 버전을 고정하지 않는다. Astro 6 시절에 넣은 `vite: ^7` override가 Astro 7(Vite 8 필요)의 빌드를 깨뜨린 적이 있다.
 - 빌드할 때 나오는 "Some chunks are larger than 500 kB" 경고는 메인 페이지의 three.js 번들 때문이다. 빌드에는 문제가 없다.
 - `src/components/Resume.astro`에는 "임시로 배포가 중단되었습니다." 문구만 들어 있어서 이력서 페이지가 사실상 비어 있다.
-- `src/components/Footer.astro`와 `src/styles/social.css`는 현재 어디서도 쓰지 않는다. `Footer.astro`는 나중에 쓰려고 남겨 둔 것이라 지우지 않는다. 스타일은 없는 상태다.
+- `src/components/Footer.astro`는 현재 어디서도 쓰지 않는다. 나중에 쓰려고 남겨 둔 것이라 지우지 않는다. 스타일은 없는 상태다.
