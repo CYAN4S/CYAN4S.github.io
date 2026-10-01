@@ -23,12 +23,6 @@ const { post } = Astro.props;
 const { Content } = await render(post);
 ---
 
-<style>
-  hr {
-    margin: 4rem 0;
-  }
-</style>
-
 <Default>
   <article>
     <blockquote class="mb-6">
@@ -41,7 +35,7 @@ const { Content } = await render(post);
     <img src={post.data.heroImage?.src} alt="" />
     <h1>{post.data.title}</h1>
     <Meta post={post} />
-    <hr />
+    <hr class="my-16" />
     <Content />
   </article>
   <ScrollToTop />

@@ -1,43 +1,5 @@
-<canvas id="c"></canvas>
-<div id="pre"></div>
-<style>
-  canvas#c {
-    width: 100lvw;
-    height: 100lvh;
-    display: block;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: -2;
-    padding: 0;
-    margin: 0;
-  }
-
-  div#pre {
-    width: 100lvw;
-    height: 100lvh;
-    display: block;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    padding: 0;
-    margin: 0;
-    background-color: white;
-    animation-name: fadeout;
-    animation-duration: 1s;
-    animation-fill-mode: both;
-  }
-
-  @keyframes fadeout {
-    from {
-      background-color: #ffff;
-    }
-    to {
-      background-color: #fff0;
-    }
-  }
-</style>
+<canvas id="c" class="fixed top-0 left-0 -z-2 m-0 block h-lvh w-lvw p-0"></canvas>
+<div id="pre" class="fixed top-0 left-0 -z-1 m-0 block h-lvh w-lvw animate-fadeout bg-white p-0"></div>
 <script>
   import { MeshStandardMaterial } from "three";
   import { Mesh, SphereGeometry } from "three";
