@@ -9,17 +9,27 @@ const posts = await getCollection("portfolio");
   title="CYAN4S Portfolio"
   description="CYAN4S의 포트폴리오입니다."
 >
-  <blockquote style="margin: var(--gap) var(--gap) 0">
+  <blockquote class="mx-6 mt-6">
     <p><strong>🚧 포트폴리오 사이트는 아직 공사 중이에요.</strong></p>
     <p>내용적으로 부실하거나, 현재와 맞지 않는 내용이 있을 수 있어요. 최대한 빨리 수정할께요!</p>
   </blockquote>
-  <div class="card-grid">
+  <div class="grid grid-cols-[repeat(auto-fill,minmax(360px,1fr))] items-center justify-center gap-6">
     {
       posts.map((post) => (
-        <a class="card" href={`/portfolio/${post.id}`}>
-          <img src={post.data.heroImage?.src} />
-          <div class="card-title">{post.data.title}</div>
-          <div class="card-desc">{post.data.description}</div>
+        <a
+          class="flex h-[450px] flex-col overflow-hidden rounded-lg border border-[#eee] no-underline shadow-[0_8px_8px_-8px_#0001] transition-[box-shadow,transform] duration-200 hover:scale-[1.01] hover:shadow-[0_8px_16px_-8px_#00b8a970]"
+          href={`/portfolio/${post.id}`}
+        >
+          <img
+            class="h-auto max-h-[300px] w-auto border-b border-[#eee] object-cover"
+            src={post.data.heroImage?.src}
+          />
+          <div class="px-6 pt-5 text-[1.4rem] font-semibold text-[#444]">
+            {post.data.title}
+          </div>
+          <div class="px-6 pt-3 text-base font-normal text-[#333]">
+            {post.data.description}
+          </div>
         </a>
       ))
     }
